@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Welcome, {{ student['name'] }}</h2>
+  <p><strong>Roll No:</strong> {{ student['roll_no'] }} | <strong>Dept:</strong> {{ student['department'] or 'N/A' }} | <strong>Semester:</strong> {{ student['semester'] or 'N/A' }}</p>
+  <div class="stats-grid">
+    <div class="stat">
+      <span>Total Classes</span>
+      <h3>{{ stats.total }}</h3>
+    </div>
+    <div class="stat">
+      <span>Attended</span>
+      <h3>{{ stats.attended }}</h3>
+    </div>
+    <div class="stat">
+      <span>Attendance %</span>
+      <h3>{{ stats.percentage }}%</h3>
+    </div>
+    <div class="stat">
+      <span>Shortage to {{ min_percentage }}%</span>
+      <h3>{{ stats.shortage_now }}</h3>
+    </div>
+  </div>
+
+  {% if stats.needed_to_recover > 0 %}
+    <p class="warning">You need to attend next <strong>{{ stats.needed_to_recover }}</strong> classes continuously to reach {{ min_percentage }}%.</p>
+  {% else %}
+    <p class="ok">You are at or above {{ min_percentage }}% attendance.</p>
+  {% endif %}
+</section>
+
+<section class="card">
+  <h3>Recent Attendance</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Subject</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in records %}
+        <tr>
+          <td>{{ r['attendance_date'] }}</td>
+          <td>{{ r['subject'] }}</td>
+          <td>{{ 'Present' if r['status'] == 1 else 'Absent' }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="3">No attendance records found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

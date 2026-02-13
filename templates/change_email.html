@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card narrow">
+  <h2>Change Email</h2>
+  <p>Update your registered email address.</p>
+
+  <form method="post">
+    <label for="current_email">Current Email</label>
+    <input id="current_email" value="{{ student['email'] or '' }}" disabled>
+
+    <label for="new_email">New Email</label>
+    <input id="new_email" name="new_email" type="email" required>
+
+    <button type="submit">Update Email</button>
+  </form>
+</section>
+{% endblock %}

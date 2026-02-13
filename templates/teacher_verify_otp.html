@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card narrow">
+  <h2>Teacher Verify OTP</h2>
+  <p>Enter OTP from email and set your new password.</p>
+
+  <form method="post">
+    <label for="otp">OTP</label>
+    <input id="otp" name="otp" maxlength="6" required>
+
+    <label for="new_password">New Password</label>
+    <input id="new_password" name="new_password" type="password" required>
+
+    <label for="confirm_password">Confirm Password</label>
+    <input id="confirm_password" name="confirm_password" type="password" required>
+
+    <button type="submit">Reset Password</button>
+  </form>
+</section>
+{% endblock %}

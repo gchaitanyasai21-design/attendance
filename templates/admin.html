@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Teacher Panel</h2>
+  <p>Add attendance and manage teacher actions.</p>
+
+  <div class="admin-grid">
+    <form method="post" class="subcard">
+      <h3>Add Attendance</h3>
+      <input type="hidden" name="action" value="add_attendance">
+
+      <label>Roll Number</label>
+      <input name="roll_no" required>
+
+      <label>Subject</label>
+      <input name="subject" required>
+
+      <label>Date</label>
+      <input type="date" name="attendance_date">
+
+      <label>Status</label>
+      <select name="status">
+        <option value="1">Present</option>
+        <option value="0">Absent</option>
+      </select>
+
+      <button type="submit">Add Attendance</button>
+    </form>
+
+    <form method="get" class="subcard">
+      <h3>Student Attendance</h3>
+      <label>Student Roll Number</label>
+      <input name="attendance_roll_no" value="{{ attendance_roll_no or '' }}" required>
+      <button type="submit">View Attendance</button>
+    </form>
+
+    {% if can_manage_teachers %}
+      <form method="post" class="subcard">
+        <h3>Add Teacher</h3>
+        <input type="hidden" name="action" value="add_teacher">
+
+        <label>Name</label>
+        <input name="name" required>
+
+        <label>Username</label>
+        <input name="username" required>
+
+        <label>Email</label>
+        <input name="email" type="email" required>
+
+        <label>Password</label>
+        <input name="password" type="password" required>
+
+        <button type="submit">Add Teacher</button>
+      </form>
+
+      <form method="post" class="subcard">
+        <h3>Remove Teacher</h3>
+        <input type="hidden" name="action" value="remove_teacher">
+
+        <label>Username</label>
+        <input name="username" required>
+
+        <button type="submit">Remove Teacher</button>
+      </form>
+    {% endif %}
+  </div>
+</section>
+
+{% if attendance_student %}
+  <section class="card">
+    <h3>Attendance for {{ attendance_student['name'] }} ({{ attendance_student['roll_no'] }})</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Subject</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for r in attendance_records %}
+          <tr>
+            <td>{{ r['attendance_date'] }}</td>
+            <td>{{ r['subject'] }}</td>
+            <td>
+              <form method="post" class="inline-form">
+                <input type="hidden" name="action" value="update_attendance">
+                <input type="hidden" name="record_id" value="{{ r['id'] }}">
+                <input type="hidden" name="attendance_roll_no" value="{{ attendance_student['roll_no'] }}">
+                <select name="status">
+                  <option value="1" {{ 'selected' if r['status'] == 1 else '' }}>Present</option>
+                  <option value="0" {{ 'selected' if r['status'] == 0 else '' }}>Absent</option>
+                </select>
+                <button type="submit">Save</button>
+              </form>
+            </td>
+            <td>
+              <form method="post" class="inline-form">
+                <input type="hidden" name="action" value="delete_attendance">
+                <input type="hidden" name="record_id" value="{{ r['id'] }}">
+                <input type="hidden" name="attendance_roll_no" value="{{ attendance_student['roll_no'] }}">
+                <button type="submit">Delete</button>
+              </form>
+            </td>
+          </tr>
+        {% else %}
+          <tr>
+            <td colspan="4">No attendance records found.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </section>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <div class="card-head">
+    <h2>Student Details</h2>
+    <form method="get" class="search-form">
+      <input
+        type="search"
+        name="q"
+        value="{{ search_query or '' }}"
+        placeholder="Search name, roll no, branch..."
+      >
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Roll Number</th>
+        <th>Email</th>
+        <th>Department</th>
+        <th>Semester</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in students %}
+        <tr>
+          <td>{{ s['name'] }}</td>
+          <td>{{ s['first_name'] or '-' }}</td>
+          <td>{{ s['last_name'] or '-' }}</td>
+          <td>{{ s['roll_no'] }}</td>
+          <td>{{ s['email'] or '-' }}</td>
+          <td>{{ s['department'] or '-' }}</td>
+          <td>{{ s['semester'] or '-' }}</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="7">No students found.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}
