@@ -20,11 +20,11 @@
       {% endif %}
       <nav>
         {% if session.get('role') == 'student' %}
-          <a href="{{ url_for('dashboard') }}">Dashboard</a>
           <a href="{{ url_for('change_password') }}">Change Password</a>
           <a href="{{ url_for('logout') }}">Logout</a>
         {% elif session.get('role') == 'teacher' %}
           <a href="{{ url_for('admin') }}">Teacher Panel</a>
+          <a href="{{ url_for('teacher_notifications') }}">Notifications</a>
           <a href="{{ url_for('teacher_students') }}">Student Details</a>
           <a href="{{ url_for('teacher_change_credentials') }}">Change Credentials</a>
           <a href="{{ url_for('logout') }}">Logout</a>

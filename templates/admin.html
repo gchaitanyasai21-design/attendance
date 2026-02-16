@@ -70,6 +70,12 @@
 {% if attendance_student %}
   <section class="card">
     <h3>Attendance for {{ attendance_student['name'] }} ({{ attendance_student['roll_no'] }})</h3>
+    <p><strong>Total Attendance Percentage:</strong> {{ "%.2f"|format(attendance_percentage) }}%</p>
+    <form method="post" id="bulk-attendance-form" class="inline-form" style="margin-bottom: 12px;">
+      <input type="hidden" name="action" value="update_attendance_bulk">
+      <input type="hidden" name="attendance_roll_no" value="{{ attendance_student['roll_no'] }}">
+      <button type="submit">Save All Changes</button>
+    </form>
     <table>
       <thead>
         <tr>
@@ -85,16 +91,11 @@
             <td>{{ r['attendance_date'] }}</td>
             <td>{{ r['subject'] }}</td>
             <td>
-              <form method="post" class="inline-form">
-                <input type="hidden" name="action" value="update_attendance">
-                <input type="hidden" name="record_id" value="{{ r['id'] }}">
-                <input type="hidden" name="attendance_roll_no" value="{{ attendance_student['roll_no'] }}">
-                <select name="status">
-                  <option value="1" {{ 'selected' if r['status'] == 1 else '' }}>Present</option>
-                  <option value="0" {{ 'selected' if r['status'] == 0 else '' }}>Absent</option>
-                </select>
-                <button type="submit">Save</button>
-              </form>
+              <input type="hidden" form="bulk-attendance-form" name="record_ids" value="{{ r['id'] }}">
+              <select form="bulk-attendance-form" name="status_{{ r['id'] }}">
+                <option value="1" {{ 'selected' if r['status'] == 1 else '' }}>Present</option>
+                <option value="0" {{ 'selected' if r['status'] == 0 else '' }}>Absent</option>
+              </select>
             </td>
             <td>
               <form method="post" class="inline-form">

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Notifications</h2>
+  <p>Students with attendance below 30%.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Department</th>
+        <th>Semester</th>
+        <th>Attended</th>
+        <th>Total Classes</th>
+        <th>Attendance %</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for s in low_attendance_students %}
+        <tr>
+          <td>{{ s['name'] }}</td>
+          <td>{{ s['roll_no'] }}</td>
+          <td>{{ s['department'] or '-' }}</td>
+          <td>{{ s['semester'] or '-' }}</td>
+          <td>{{ s['attended_classes'] }}</td>
+          <td>{{ s['total_classes'] }}</td>
+          <td>{{ s['attendance_percentage'] }}%</td>
+        </tr>
+      {% else %}
+        <tr>
+          <td colspan="7">No students are below 30% attendance.</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</section>
+{% endblock %}

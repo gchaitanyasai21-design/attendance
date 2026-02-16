@@ -1196,6 +1196,8 @@ def admin():
     attendance_roll_no = request.args.get("attendance_roll_no", "").strip()
     attendance_student = None
     attendance_records = []
+    attendance_stats = None
+    attendance_percentage = 0.0
 
     if request.method == "POST":
         action = request.form.get("action")
@@ -1270,17 +1272,18 @@ def admin():
                 else:
                     flash("Teacher not found.", "error")
 
-        if action in {"update_attendance", "delete_attendance"}:
-            record_id = request.form.get("record_id", "").strip()
+        if action in {"update_attendance", "delete_attendance", "update_attendance_bulk"}:
             roll_no = request.form.get("attendance_roll_no", "").strip()
             redirect_roll_no = roll_no or redirect_roll_no
-            if not record_id.isdigit():
-                flash("Invalid attendance record.", "error")
-                return redirect(
-                    url_for("admin", attendance_roll_no=redirect_roll_no)
-                    if redirect_roll_no
-                    else url_for("admin")
-                )
+            if action in {"update_attendance", "delete_attendance"}:
+                record_id = request.form.get("record_id", "").strip()
+                if not record_id.isdigit():
+                    flash("Invalid attendance record.", "error")
+                    return redirect(
+                        url_for("admin", attendance_roll_no=redirect_roll_no)
+                        if redirect_roll_no
+                        else url_for("admin")
+                    )
 
             if action == "update_attendance":
                 status = request.form.get("status", "0").strip()
@@ -1295,6 +1298,28 @@ def admin():
                 db.execute("DELETE FROM attendance_records WHERE id = ?", (int(record_id),))
                 db.commit()
                 flash("Attendance deleted.", "success")
+
+            if action == "update_attendance_bulk":
+                record_ids = []
+                for raw_id in request.form.getlist("record_ids"):
+                    raw_id = (raw_id or "").strip()
+                    if raw_id.isdigit():
+                        record_ids.append(int(raw_id))
+                record_ids = list(dict.fromkeys(record_ids))
+
+                if not record_ids:
+                    flash("No attendance records selected for update.", "error")
+                else:
+                    updates = []
+                    for rec_id in record_ids:
+                        status = request.form.get(f"status_{rec_id}", "0").strip()
+                        updates.append((1 if status == "1" else 0, rec_id))
+                    db.executemany(
+                        "UPDATE attendance_records SET status = ? WHERE id = ?",
+                        updates,
+                    )
+                    db.commit()
+                    flash(f"Saved {len(updates)} attendance updates.", "success")
 
         return redirect(
             url_for("admin", attendance_roll_no=redirect_roll_no)
@@ -1317,6 +1342,8 @@ def admin():
                 """,
                 (attendance_student["id"],),
             ).fetchall()
+            attendance_stats = calculate_stats(attendance_student["id"])
+            attendance_percentage = attendance_stats["percentage"]
         else:
             flash("Student not found for attendance lookup.", "error")
     return render_template(
@@ -1325,6 +1352,8 @@ def admin():
         attendance_roll_no=attendance_roll_no,
         attendance_student=attendance_student,
         attendance_records=attendance_records,
+        attendance_stats=attendance_stats,
+        attendance_percentage=attendance_percentage,
     )
 
 
@@ -1378,6 +1407,41 @@ def teacher_students():
     )
 
 
+@app.route("/teacher/notifications")
+def teacher_notifications():
+    if not get_logged_in_teacher_id():
+        return redirect(url_for("login"))
+
+    db = get_db()
+    low_attendance_students = db.execute(
+        """
+        SELECT
+            s.id,
+            s.name,
+            s.roll_no,
+            s.department,
+            s.semester,
+            SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END) AS attended_classes,
+            COUNT(ar.id) AS total_classes,
+            ROUND(
+                (100.0 * SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END)) / COUNT(ar.id),
+                2
+            ) AS attendance_percentage
+        FROM students s
+        LEFT JOIN attendance_records ar ON ar.student_id = s.id
+        GROUP BY s.id, s.name, s.roll_no, s.department, s.semester
+        HAVING COUNT(ar.id) > 0
+           AND ((100.0 * SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END)) / COUNT(ar.id)) < 30
+        ORDER BY attendance_percentage ASC, s.roll_no ASC
+        """
+    ).fetchall()
+
+    return render_template(
+        "teacher_notifications.html",
+        low_attendance_students=low_attendance_students,
+    )
+
+
 with app.app_context():
     init_db()
     import_students_data()
@@ -1388,5 +1452,6 @@ with app.app_context():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "5000"))
     host = os.environ.get("HOST", "0.0.0.0")
+    print("Checkpoint: startup configuration loaded.")
     print(f"Starting server on http://{host}:{port}")
     app.run(host=host, port=port, debug=True)
