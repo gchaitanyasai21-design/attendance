@@ -48,6 +48,9 @@ CLASS_DOCX_PATHS = [
 ]
 TIME_TABLE_DOCX_PATHS = [
     os.environ.get("TIME_TABLE_DOCX", "").strip(),
+    os.path.join(BASE_DIR, "data", "time_table.docx"),
+    os.path.join(BASE_DIR, "time_table.docx"),
+    os.path.join(BASE_DIR, "time table .docx"),
     r"C:\Users\gchai\Downloads\time table .docx",
 ]
 
