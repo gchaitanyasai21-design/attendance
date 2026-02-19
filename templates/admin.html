@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="card">
-  <h2>Teacher Panel</h2>
-  <p>Add attendance and manage teacher actions.</p>
+  <h2>Faculty Panel</h2>
+  <p>Add attendance and manage faculty actions.</p>
 
   <div class="admin-grid">
     <form method="post" class="subcard">
@@ -36,7 +36,7 @@
 
     {% if can_manage_teachers %}
       <form method="post" class="subcard">
-        <h3>Add Teacher</h3>
+        <h3>Add Faculty</h3>
         <input type="hidden" name="action" value="add_teacher">
 
         <label>Name</label>
@@ -51,17 +51,17 @@
         <label>Password</label>
         <input name="password" type="password" required>
 
-        <button type="submit">Add Teacher</button>
+        <button type="submit">Add Faculty</button>
       </form>
 
       <form method="post" class="subcard">
-        <h3>Remove Teacher</h3>
+        <h3>Remove Faculty</h3>
         <input type="hidden" name="action" value="remove_teacher">
 
         <label>Username</label>
         <input name="username" required>
 
-        <button type="submit">Remove Teacher</button>
+        <button type="submit">Remove Faculty</button>
       </form>
     {% endif %}
   </div>

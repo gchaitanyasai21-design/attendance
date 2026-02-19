@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="card">
+  <h2>Time Table - {{ student['department'] or 'N/A' }}</h2>
+  {% if timetable %}
+    <div class="timetable-wrap">
+      <table class="timetable">
+        <tbody>
+          {% for row in timetable.schedule %}
+            {% set is_header_row = loop.index0 == 0 %}
+            <tr>
+              {% for cell in row %}
+                {% if is_header_row or loop.index0 == 0 %}
+                  <th>{{ cell | e | replace('\n', '<br>') | safe }}</th>
+                {% else %}
+                  <td>{{ cell | e | replace('\n', '<br>') | safe }}</td>
+                {% endif %}
+              {% endfor %}
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+
+    {% if timetable.courses %}
+      <h3>Courses</h3>
+      <div class="timetable-wrap">
+        <table>
+          <thead>
+            <tr>
+              {% for cell in timetable.courses.headers %}
+                <th>{{ cell | e }}</th>
+              {% endfor %}
+            </tr>
+          </thead>
+          <tbody>
+            {% for row in timetable.courses.rows %}
+              <tr>
+                {% for cell in row %}
+                  <td>{{ cell | e | replace('\n', '<br>') | safe }}</td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  {% else %}
+    <p>No timetable found for your section.</p>
+  {% endif %}
+</section>
+{% endblock %}

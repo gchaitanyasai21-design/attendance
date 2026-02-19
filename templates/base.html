@@ -6,7 +6,7 @@
   <title>{{ title or college_name }}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
-<body>
+<body class="{% if request.endpoint == 'login' %}login-body{% endif %}" {% if request.endpoint == 'login' %}style="background-image: url('{{ url_for('static', filename='login-building.jpg') }}')" {% endif %}>
   <div class="container">
     <header class="topbar">
       <h1>
@@ -21,9 +21,10 @@
       <nav>
         {% if session.get('role') == 'student' %}
           <a href="{{ url_for('change_password') }}">Change Password</a>
+          <a href="{{ url_for('timetable') }}">Time Table</a>
           <a href="{{ url_for('logout') }}">Logout</a>
         {% elif session.get('role') == 'teacher' %}
-          <a href="{{ url_for('admin') }}">Teacher Panel</a>
+          <a href="{{ url_for('admin') }}">Faculty Panel</a>
           <a href="{{ url_for('teacher_notifications') }}">Notifications</a>
           <a href="{{ url_for('teacher_students') }}">Student Details</a>
           <a href="{{ url_for('teacher_change_credentials') }}">Change Credentials</a>

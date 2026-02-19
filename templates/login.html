@@ -1,16 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="login-header">
+  <img class="login-logo" src="{{ url_for('static', filename='login-logo.png') }}" alt="College Logo">
+</div>
 <section class="card narrow">
   <h2>ATTENDANCE PORTAL</h2>
-  <p>Login as student or teacher.</p>
+  <p>Login as student or faculty.</p>
   <form method="post">
     <label for="login_type">Login Type</label>
     <select id="login_type" name="login_type" required>
       <option value="student" {{ 'selected' if selected_login_type == 'student' else '' }}>Student</option>
-      <option value="teacher" {{ 'selected' if selected_login_type == 'teacher' else '' }}>Teacher</option>
+      <option value="teacher" {{ 'selected' if selected_login_type == 'teacher' else '' }}>Faculty</option>
     </select>
 
-    <label for="username">Roll Number / Teacher Username</label>
+    <label for="username">Roll Number / Faculty Username</label>
     <input id="username" name="username" required>
 
     <label for="password">Password</label>
@@ -22,7 +25,7 @@
   <p class="inline-links">
     <a href="{{ url_for('forgot_password') }}">Student Forgot Password?</a>
     |
-    <a href="{{ url_for('teacher_forgot_password') }}">Teacher Forgot Password?</a>
+    <a href="{{ url_for('teacher_forgot_password') }}">Faculty Forgot Password?</a>
   </p>
 </section>
 {% endblock %}

@@ -6,6 +6,7 @@ import smtplib
 import time
 from datetime import date, timedelta
 from email.message import EmailMessage
+from typing import Dict, List, Optional
 import xml.etree.ElementTree as ET
 import zipfile
 from flask import Flask, flash, g, redirect, render_template, request, session, url_for
@@ -44,6 +45,10 @@ CLASS_DOCX_PATHS = [
     r"C:\Users\gchai\Downloads\IT-A .docx",
     r"C:\Users\gchai\Downloads\IT-B .docx",
     r"C:\Users\gchai\Downloads\MECH .docx",
+]
+TIME_TABLE_DOCX_PATHS = [
+    os.environ.get("TIME_TABLE_DOCX", "").strip(),
+    r"C:\Users\gchai\Downloads\time table .docx",
 ]
 
 CIVIL_ATTENDANCE_DATA = [
@@ -88,6 +93,10 @@ DEFAULT_TEACHER_EMAIL = os.environ.get("TEACHER_EMAIL", "teacher@college.local")
 ADMIN_TEACHER_USERNAME = os.environ.get("ADMIN_TEACHER_USERNAME", "HODMIC@").strip().lower()
 ADMIN_TEACHER_PASSWORD = os.environ.get("ADMIN_TEACHER_PASSWORD", "hod123@").strip()
 ADMIN_TEACHER_EMAIL = os.environ.get("ADMIN_TEACHER_EMAIL", "hodmic@college.local").strip().lower()
+
+_TIMETABLE_CACHE: Dict[str, dict] = {}
+_TIMETABLE_CACHE_PATH: Optional[str] = None
+_TIMETABLE_CACHE_MTIME: Optional[float] = None
 
 
 def get_db():
@@ -302,7 +311,7 @@ def _seed_default_teacher(db):
         VALUES (?, ?, ?)
         """,
         (
-            "Default Teacher",
+            "Default Faculty",
             DEFAULT_TEACHER_USERNAME,
             generate_password_hash(DEFAULT_TEACHER_PASSWORD),
         ),
@@ -330,7 +339,7 @@ def _seed_admin_teacher(db):
         VALUES (?, ?, ?)
         """,
         (
-            "Admin Teacher",
+            "Admin Faculty",
             ADMIN_TEACHER_USERNAME,
             generate_password_hash(ADMIN_TEACHER_PASSWORD),
         ),
@@ -417,6 +426,169 @@ def _build_spread_statuses(attended_classes: int, total_classes: int):
 def _roman_to_int(value: str):
     mapping = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
     return mapping.get(value.strip().upper())
+
+
+def _normalize_section_label(value: str) -> str:
+    text = " ".join((value or "").split())
+    text = text.replace(" - ", "-").replace("- ", "-").replace(" -", "-")
+    return text.upper()
+
+
+def _clean_cell_text(value: str) -> str:
+    if not value:
+        return ""
+    text = value.replace("\r", "\n")
+    lines = []
+    for line in text.split("\n"):
+        cleaned = " ".join(line.split())
+        if cleaned:
+            lines.append(cleaned)
+    return "\n".join(lines)
+
+
+def _looks_like_schedule_table(table) -> bool:
+    if not table.rows or len(table.rows) < 3:
+        return False
+    row1 = (table.rows[1].cells[0].text or "").upper()
+    row2 = (table.rows[2].cells[0].text or "").upper()
+    return "PERIOD" in row1 and "DAY" in row2
+
+
+def _looks_like_course_table(table) -> bool:
+    if not table.rows or len(table.rows) < 2:
+        return False
+    header_text = " ".join((cell.text or "").upper() for cell in table.rows[1].cells)
+    return "COURSE CODE" in header_text and "COURSE TITLE" in header_text
+
+
+def _extract_table_rows(table) -> List[List[str]]:
+    rows: List[List[str]] = []
+    for row in table.rows:
+        rows.append([_clean_cell_text(cell.text) for cell in row.cells])
+    return rows
+
+
+def _parse_timetable_docx(docx_path: str) -> Dict[str, dict]:
+    if Document is None:
+        return {}
+    if not os.path.exists(docx_path):
+        return {}
+
+    doc = Document(docx_path)
+    results: Dict[str, dict] = {}
+    idx = 0
+
+    while idx < len(doc.tables):
+        table = doc.tables[idx]
+        if _looks_like_schedule_table(table):
+            class_label_raw = (table.rows[0].cells[0].text or "").strip()
+            class_label = _normalize_section_label(class_label_raw)
+            schedule_rows = _extract_table_rows(table)
+            courses = None
+
+            if idx + 1 < len(doc.tables) and _looks_like_course_table(doc.tables[idx + 1]):
+                course_rows = _extract_table_rows(doc.tables[idx + 1])
+                if course_rows and "CLASS IN-CHARGE" in (course_rows[0][0] or "").upper():
+                    course_rows = course_rows[1:]
+                if course_rows:
+                    courses = {
+                        "headers": course_rows[0],
+                        "rows": course_rows[1:],
+                    }
+                idx += 1
+
+            if class_label:
+                results[class_label] = {
+                    "label": class_label_raw or class_label,
+                    "schedule": schedule_rows,
+                    "courses": courses,
+                }
+        idx += 1
+
+    return results
+
+
+def _dedupe_schedule_period_columns(schedule: List[List[str]]) -> List[List[str]]:
+    if not schedule or len(schedule) < 2:
+        return schedule
+
+    period_row = schedule[1]
+    if not period_row:
+        return schedule
+
+    keep_indexes = [0]
+    seen_period_numbers = set()
+
+    for idx in range(1, len(period_row)):
+        label = (period_row[idx] or "").strip()
+        if label.isdigit():
+            if label in seen_period_numbers:
+                continue
+            seen_period_numbers.add(label)
+        keep_indexes.append(idx)
+
+    if len(keep_indexes) == len(period_row):
+        return schedule
+
+    deduped: List[List[str]] = []
+    for row in schedule:
+        deduped.append([row[i] if i < len(row) else "" for i in keep_indexes])
+    return deduped
+
+
+def _load_timetables() -> Dict[str, dict]:
+    global _TIMETABLE_CACHE, _TIMETABLE_CACHE_PATH, _TIMETABLE_CACHE_MTIME
+
+    for path in TIME_TABLE_DOCX_PATHS:
+        if not path:
+            continue
+        if not os.path.exists(path):
+            continue
+        mtime = os.path.getmtime(path)
+        if _TIMETABLE_CACHE and _TIMETABLE_CACHE_PATH == path and _TIMETABLE_CACHE_MTIME == mtime:
+            return _TIMETABLE_CACHE
+        data = _parse_timetable_docx(path)
+        _TIMETABLE_CACHE = data
+        _TIMETABLE_CACHE_PATH = path
+        _TIMETABLE_CACHE_MTIME = mtime
+        return data
+    return {}
+
+
+def _get_student_timetable(student_department: str) -> Optional[dict]:
+    section_key = _normalize_section_label(student_department or "")
+    if not section_key:
+        return None
+    timetables = _load_timetables()
+    timetable = timetables.get(section_key)
+    if not timetable:
+        return None
+
+    schedule = timetable.get("schedule") or []
+    if len(schedule) >= 3:
+        header_row = schedule[0]
+        period_row = schedule[1]
+        day_row = schedule[2]
+        if (
+            header_row
+            and period_row
+            and day_row
+            and "PERIOD" in (period_row[0] or "").upper()
+            and "DAY" in (day_row[0] or "").upper()
+        ):
+            adjusted = [row[:] for row in schedule]
+            label = timetable.get("label") or header_row[0]
+            new_header = [""] * len(header_row)
+            new_header[0] = label
+            adjusted[0] = new_header
+            adjusted[1] = [period_row[0]] + header_row[1:]
+            schedule = adjusted
+
+    deduped_schedule = _dedupe_schedule_period_columns(schedule)
+    if deduped_schedule is not schedule:
+        timetable = {**timetable, "schedule": deduped_schedule}
+
+    return timetable
 
 
 def _parse_class_docx(docx_path: str):
@@ -821,7 +993,7 @@ def login():
             ).fetchone()
 
             if not student:
-                flash("Student not found. Ask teacher to add your profile.", "error")
+                flash("Student not found. Ask faculty to add your profile.", "error")
                 return render_template("login.html", selected_login_type=login_type)
 
             password_hash = student["password_hash"]
@@ -840,7 +1012,7 @@ def login():
             (username.lower(),),
         ).fetchone()
         if not teacher:
-            flash("Teacher account not found.", "error")
+            flash("Faculty account not found.", "error")
             return render_template("login.html", selected_login_type=login_type)
 
         if not check_password_hash(teacher["password_hash"], password):
@@ -917,7 +1089,7 @@ def teacher_forgot_password():
         ).fetchone()
 
         if not teacher or not teacher["email"] or teacher["email"].lower() != email:
-            flash("Teacher username and email do not match.", "error")
+            flash("Faculty username and email do not match.", "error")
             return render_template("teacher_forgot_password.html")
 
         otp = f"{secrets.randbelow(1000000):06d}"
@@ -998,7 +1170,7 @@ def verify_otp():
 def teacher_verify_otp():
     teacher_id = session.get("password_reset_teacher_id")
     if not teacher_id:
-        flash("Start from teacher forgot password first.", "error")
+        flash("Start from faculty forgot password first.", "error")
         return redirect(url_for("teacher_forgot_password"))
 
     if request.method == "POST":
@@ -1039,7 +1211,7 @@ def teacher_verify_otp():
         )
         db.commit()
         session.pop("password_reset_teacher_id", None)
-        flash("Teacher password reset successful. Please login.", "success")
+        flash("Faculty password reset successful. Please login.", "success")
         return redirect(url_for("login"))
 
     return render_template("teacher_verify_otp.html")
@@ -1139,7 +1311,7 @@ def teacher_change_credentials():
             flash("Username already exists.", "error")
             return render_template("teacher_change_credentials.html", teacher=teacher)
 
-        flash("Teacher credentials updated successfully.", "success")
+        flash("Faculty credentials updated successfully.", "success")
         return redirect(url_for("admin"))
 
     return render_template("teacher_change_credentials.html", teacher=teacher)
@@ -1164,6 +1336,7 @@ def dashboard():
     db = get_db()
     student = db.execute("SELECT * FROM students WHERE id = ?", (student_id,)).fetchone()
     stats = calculate_stats(student_id)
+    timetable = _get_student_timetable(student["department"])
 
     records = db.execute(
         """
@@ -1182,6 +1355,24 @@ def dashboard():
         stats=stats,
         min_percentage=MIN_PERCENTAGE,
         records=records,
+        timetable=timetable,
+    )
+
+
+@app.route("/timetable")
+def timetable():
+    student_id = get_logged_in_student_id()
+    if not student_id:
+        return redirect(url_for("login"))
+
+    db = get_db()
+    student = db.execute("SELECT * FROM students WHERE id = ?", (student_id,)).fetchone()
+    timetable = _get_student_timetable(student["department"])
+
+    return render_template(
+        "timetable.html",
+        student=student,
+        timetable=timetable,
     )
 
 
@@ -1225,7 +1416,7 @@ def admin():
 
         if action == "add_teacher":
             if not can_manage_teachers:
-                flash("Only the admin user can manage teachers.", "error")
+                flash("Only the admin user can manage faculty.", "error")
                 return redirect(url_for("admin"))
 
             name = request.form.get("name", "").strip()
@@ -1245,22 +1436,22 @@ def admin():
                         (name, username, email, generate_password_hash(password)),
                     )
                     db.commit()
-                    flash("Teacher added.", "success")
+                    flash("Faculty added.", "success")
                 except sqlite3.IntegrityError:
-                    flash("Teacher username already exists.", "error")
+                    flash("Faculty username already exists.", "error")
 
         if action == "remove_teacher":
             if not can_manage_teachers:
-                flash("Only the admin user can manage teachers.", "error")
+                flash("Only the admin user can manage faculty.", "error")
                 return redirect(url_for("admin"))
 
             username = request.form.get("username", "").strip().lower()
             if not username:
-                flash("Teacher username is required.", "error")
+                flash("Faculty username is required.", "error")
             elif current_teacher and username == current_teacher["username"].strip().lower():
-                flash("You cannot remove the current logged-in teacher.", "error")
+                flash("You cannot remove the current logged-in faculty.", "error")
             elif username == ADMIN_TEACHER_USERNAME:
-                flash("You cannot remove the admin teacher.", "error")
+                flash("You cannot remove the admin faculty.", "error")
             else:
                 deleted = db.execute(
                     "DELETE FROM teachers WHERE username = ?",
@@ -1268,9 +1459,9 @@ def admin():
                 ).rowcount
                 db.commit()
                 if deleted:
-                    flash("Teacher removed.", "success")
+                    flash("Faculty removed.", "success")
                 else:
-                    flash("Teacher not found.", "error")
+                    flash("Faculty not found.", "error")
 
         if action in {"update_attendance", "delete_attendance", "update_attendance_bulk"}:
             roll_no = request.form.get("attendance_roll_no", "").strip()
@@ -1450,8 +1641,7 @@ with app.app_context():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", "5000"))
-    host = os.environ.get("HOST", "0.0.0.0")
-    print("Checkpoint: startup configuration loaded.")
-    print(f"Starting server on http://{host}:{port}")
-    app.run(host=host, port=port, debug=True)
+    with app.app_context():
+        init_db()
+        import_class_docx_attendance()
+    app.run(host="0.0.0.0", port=5000, debug=True)

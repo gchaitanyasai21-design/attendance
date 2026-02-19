@@ -2,7 +2,7 @@
   --bg: #f5f7fb;
   --card: #ffffff;
   --text: #17202a;
-  --muted: #5f6b7a;
+  --muted: #06090b;
   --primary: #0f6cbd;
   --border: #dbe3ef;
   --good: #0e9f6e;
@@ -16,6 +16,22 @@ body {
   font-family: "Segoe UI", Tahoma, sans-serif;
   background: linear-gradient(180deg, #f7faff, #eef3fb);
   color: var(--text);
+}
+.login-body {
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+.login-header {
+  display: flex;
+  justify-content: center;
+  margin: 8px 0 12px;
+}
+.login-logo {
+  width: 200px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.18));
 }
 .container {
   max-width: 1000px;
@@ -62,6 +78,11 @@ nav a {
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 14px;
+}
+.login-body .card {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(219, 227, 239, 0.6);
+  backdrop-filter: blur(4px);
 }
 .narrow { max-width: 440px; margin: 30px auto; }
 label {
@@ -146,6 +167,13 @@ th, td {
   text-align: left;
   padding: 8px;
   font-size: 0.95rem;
+}
+.timetable-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+.timetable {
+  min-width: 720px;
 }
 .alerts { margin-bottom: 10px; }
 .alert {
