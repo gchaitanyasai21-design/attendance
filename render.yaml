@@ -2,11 +2,17 @@ services:
   - type: web
     name: attendance
     runtime: python
-    plan: free
+    plan: starter
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
+    disk:
+      name: attendance-data
+      mountPath: /var/data
+      sizeGB: 1
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.11
       - key: SECRET_KEY
         generateValue: true
+      - key: ATTENDANCE_DB_PATH
+        value: /var/data/attendance.db

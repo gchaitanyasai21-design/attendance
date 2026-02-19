@@ -17,10 +17,11 @@ except Exception:  # pragma: no cover - optional dependency
     Document = None
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.path.join(BASE_DIR, "attendance.db")
+DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
+FORCE_BOOTSTRAP_IMPORT = os.environ.get("FORCE_BOOTSTRAP_IMPORT", "0").strip() == "1"
 STUDENT_DATA_PATHS = [
     os.environ.get("STUDENT_DATA_XLSX", "").strip(),
     os.path.join(BASE_DIR, "25Batch_Students_data.xlsx"),
@@ -104,6 +105,9 @@ _TIMETABLE_CACHE_MTIME: Optional[float] = None
 
 def get_db():
     if "db" not in g:
+        db_dir = os.path.dirname(DB_PATH)
+        if db_dir:
+            os.makedirs(db_dir, exist_ok=True)
         g.db = sqlite3.connect(DB_PATH, timeout=60)
         g.db.row_factory = sqlite3.Row
     return g.db
@@ -964,6 +968,23 @@ def seed_civil_attendance_data():
     db.commit()
 
 
+def _should_bootstrap_seed_data(db) -> bool:
+    if FORCE_BOOTSTRAP_IMPORT:
+        return True
+    students_count = db.execute("SELECT COUNT(*) AS c FROM students").fetchone()["c"]
+    attendance_count = db.execute("SELECT COUNT(*) AS c FROM attendance_records").fetchone()["c"]
+    return students_count == 0 and attendance_count == 0
+
+
+def bootstrap_seed_data_if_needed():
+    db = get_db()
+    if not _should_bootstrap_seed_data(db):
+        return
+    import_students_data()
+    import_class_docx_attendance()
+    seed_civil_attendance_data()
+
+
 def send_otp_email(to_email: str, otp: str):
     if not app.config["SMTP_HOST"] or not app.config["SMTP_USER"] or not app.config["SMTP_PASSWORD"]:
         raise RuntimeError("SMTP is not configured.")
@@ -1664,13 +1685,11 @@ def teacher_notifications():
 
 with app.app_context():
     init_db()
-    import_students_data()
-    import_class_docx_attendance()
-    seed_civil_attendance_data()
+    bootstrap_seed_data_if_needed()
 
 
 if __name__ == "__main__":
     with app.app_context():
         init_db()
-        import_class_docx_attendance()
+        bootstrap_seed_data_if_needed()
     app.run(host="0.0.0.0", port=5000, debug=True)
