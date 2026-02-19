@@ -558,12 +558,38 @@ def _load_timetables() -> Dict[str, dict]:
     return {}
 
 
+def _resolve_timetable_key(section_key: str, timetables: Dict[str, dict]) -> Optional[str]:
+    if section_key in timetables:
+        return section_key
+
+    # Common merged section in source doc.
+    if section_key in {"CIVIL", "MECH", "CE", "ME"} and "CE/ME" in timetables:
+        return "CE/ME"
+
+    # Support compact values like CSEA, ECEB, ITA.
+    compact = section_key.replace(" ", "")
+    if "-" not in compact and len(compact) >= 2 and compact[-1].isalpha():
+        compact_candidate = f"{compact[:-1]}-{compact[-1]}"
+        if compact_candidate in timetables:
+            return compact_candidate
+
+    # If only branch is available (e.g. CSE/ECE/IT/AIDS/AIML), pick first section.
+    branch = section_key.split("-", 1)[0].strip()
+    if branch:
+        matches = sorted(k for k in timetables if k.startswith(f"{branch}-"))
+        if matches:
+            return matches[0]
+
+    return None
+
+
 def _get_student_timetable(student_department: str) -> Optional[dict]:
     section_key = _normalize_section_label(student_department or "")
     if not section_key:
         return None
     timetables = _load_timetables()
-    timetable = timetables.get(section_key)
+    resolved_key = _resolve_timetable_key(section_key, timetables)
+    timetable = timetables.get(resolved_key) if resolved_key else None
     if not timetable:
         return None
 
