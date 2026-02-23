@@ -26,6 +26,7 @@ SNAPSHOT_DATE = date(2026, 1, 31)
 ATTENDANCE_WINDOW_START = date(2026, 1, 19)
 ATTENDANCE_WINDOW_END = date(2026, 1, 31)
 ATTENDANCE_TOTAL_CLASSES = 61
+ATTENDANCE_HOLIDAYS = {date(2026, 1, 26)}
 ATTENDANCE_SNAPSHOT_PATH = os.path.join(BASE_DIR, "data", "attendance_snapshot_2026_01_19_31.json")
 STUDENT_DATA_PATHS = [
     os.environ.get("STUDENT_DATA_XLSX", "").strip(),
@@ -446,7 +447,7 @@ def _build_attendance_class_dates(total_classes: int):
     teaching_dates: List[date] = []
     current = ATTENDANCE_WINDOW_START
     while current <= ATTENDANCE_WINDOW_END:
-        if current.weekday() != 6:  # Exclude Sunday.
+        if current.weekday() != 6 and current not in ATTENDANCE_HOLIDAYS:  # Exclude Sundays and holidays.
             teaching_dates.append(current)
         current += timedelta(days=1)
 
@@ -995,24 +996,17 @@ def seed_civil_attendance_data():
 
 def normalize_attendance_window_if_needed():
     snapshot = _load_attendance_snapshot()
-    if not snapshot:
-        return
 
     db = get_db()
     start_date = ATTENDANCE_WINDOW_START.isoformat()
     end_date = ATTENDANCE_WINDOW_END.isoformat()
 
-    for roll_no, row in snapshot.items():
-        student = db.execute(
-            "SELECT id FROM students WHERE roll_no = ?",
-            (roll_no,),
-        ).fetchone()
-        if not student:
-            continue
-
+    students = db.execute(
+        "SELECT id, roll_no FROM students ORDER BY id"
+    ).fetchall()
+    for student in students:
         student_id = student["id"]
-        target_total = max(0, int(row.get("total", ATTENDANCE_TOTAL_CLASSES)))
-        target_attended = min(max(0, int(row.get("attended", 0))), target_total)
+        roll_no = (student["roll_no"] or "").strip()
         current = db.execute(
             """
             SELECT
@@ -1025,6 +1019,24 @@ def normalize_attendance_window_if_needed():
             """,
             (student_id,),
         ).fetchone()
+        if roll_no in snapshot:
+            row = snapshot[roll_no]
+            target_total = max(0, int(row.get("total", ATTENDANCE_TOTAL_CLASSES)))
+            target_attended = min(max(0, int(row.get("attended", 0))), target_total)
+        else:
+            target_total = max(0, int(current["total_classes"]))
+            target_attended = min(max(0, int(current["attended_classes"])), target_total)
+
+        holiday_rows = 0
+        for holiday in ATTENDANCE_HOLIDAYS:
+            holiday_rows += db.execute(
+                """
+                SELECT COUNT(*) AS c
+                FROM attendance_records
+                WHERE student_id = ? AND attendance_date = ?
+                """,
+                (student_id, holiday.isoformat()),
+            ).fetchone()["c"]
 
         needs_fix = (
             int(current["total_classes"]) != target_total
@@ -1033,6 +1045,7 @@ def normalize_attendance_window_if_needed():
             or current["max_date"] is None
             or current["min_date"] < start_date
             or current["max_date"] > end_date
+            or holiday_rows > 0
         )
         if not needs_fix:
             continue
