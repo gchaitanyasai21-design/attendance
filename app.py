@@ -4,7 +4,6 @@ import sqlite3
 import secrets
 import smtplib
 import time
-import json
 from datetime import date, timedelta
 from email.message import EmailMessage
 from typing import Dict, List, Optional
@@ -19,7 +18,7 @@ except Exception:  # pragma: no cover - optional dependency
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.join(os.environ.get("USERPROFILE", ""), "Downloads")
-DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
+DB_PATH = os.path.join(BASE_DIR, "attendance.db")
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
@@ -61,9 +60,6 @@ TIME_TABLE_DOCX_PATHS = [
     os.path.join(BASE_DIR, "time_table.docx"),
     os.path.join(BASE_DIR, "time table .docx"),
 ]
-ATTENDANCE_SNAPSHOT_PATH = os.path.join(
-    BASE_DIR, "data", "attendance_snapshot_2026_01_19_31.json"
-)
 
 CIVIL_ATTENDANCE_DATA = [
     ("25H71A0101", 55, 61),
@@ -111,14 +107,10 @@ ADMIN_TEACHER_EMAIL = os.environ.get("ADMIN_TEACHER_EMAIL", "hodmic@college.loca
 _TIMETABLE_CACHE: Dict[str, dict] = {}
 _TIMETABLE_CACHE_PATH: Optional[str] = None
 _TIMETABLE_CACHE_MTIME: Optional[float] = None
-_ATTENDANCE_SNAPSHOT_CACHE: Optional[Dict[str, dict]] = None
 
 
 def get_db():
     if "db" not in g:
-        db_dir = os.path.dirname(DB_PATH)
-        if db_dir:
-            os.makedirs(db_dir, exist_ok=True)
         g.db = sqlite3.connect(DB_PATH, timeout=60)
         g.db.row_factory = sqlite3.Row
     return g.db
@@ -463,25 +455,6 @@ def _build_attendance_class_dates(total_classes: int):
         for _ in range(classes_for_day):
             dates.append(dt.isoformat())
     return dates
-
-
-def _load_attendance_snapshot() -> Dict[str, dict]:
-    global _ATTENDANCE_SNAPSHOT_CACHE
-    if _ATTENDANCE_SNAPSHOT_CACHE is not None:
-        return _ATTENDANCE_SNAPSHOT_CACHE
-    if not os.path.exists(ATTENDANCE_SNAPSHOT_PATH):
-        _ATTENDANCE_SNAPSHOT_CACHE = {}
-        return _ATTENDANCE_SNAPSHOT_CACHE
-    try:
-        with open(ATTENDANCE_SNAPSHOT_PATH, "r", encoding="utf-8") as fh:
-            raw = json.load(fh)
-        if isinstance(raw, dict):
-            _ATTENDANCE_SNAPSHOT_CACHE = raw
-        else:
-            _ATTENDANCE_SNAPSHOT_CACHE = {}
-    except Exception:
-        _ATTENDANCE_SNAPSHOT_CACHE = {}
-    return _ATTENDANCE_SNAPSHOT_CACHE
 
 
 def _roman_to_int(value: str):
@@ -998,64 +971,6 @@ def seed_civil_attendance_data():
     db.commit()
 
 
-def normalize_attendance_window_if_needed():
-    db = get_db()
-    start_date = ATTENDANCE_WINDOW_START.isoformat()
-    end_date = ATTENDANCE_WINDOW_END.isoformat()
-    snapshot = _load_attendance_snapshot()
-    student_rows = db.execute(
-        """
-        SELECT
-            s.id AS student_id,
-            s.roll_no AS roll_no,
-            COALESCE(SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END), 0) AS attended_classes,
-            COUNT(ar.id) AS total_classes,
-            MIN(ar.attendance_date) AS min_date,
-            MAX(ar.attendance_date) AS max_date
-        FROM students s
-        LEFT JOIN attendance_records ar ON ar.student_id = s.id
-        GROUP BY s.id
-        """,
-    ).fetchall()
-
-    attendance_dates = _build_attendance_class_dates(ATTENDANCE_TOTAL_CLASSES)
-    for row in student_rows:
-        student_id = row["student_id"]
-        roll_no = (row["roll_no"] or "").strip()
-        current_attended = min(max(0, int(row["attended_classes"])), ATTENDANCE_TOTAL_CLASSES)
-        target_attended = current_attended
-        if roll_no in snapshot:
-            target_attended = min(
-                max(0, int(snapshot[roll_no].get("attended", current_attended))),
-                ATTENDANCE_TOTAL_CLASSES,
-            )
-
-        needs_fix = (
-            int(row["total_classes"]) != ATTENDANCE_TOTAL_CLASSES
-            or row["min_date"] is None
-            or row["max_date"] is None
-            or row["min_date"] < start_date
-            or row["max_date"] > end_date
-            or current_attended != target_attended
-        )
-        if not needs_fix:
-            continue
-
-        statuses = _build_spread_statuses(target_attended, ATTENDANCE_TOTAL_CLASSES)
-        db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
-        db.executemany(
-            """
-            INSERT INTO attendance_records(student_id, attendance_date, subject, status)
-            VALUES (?, ?, ?, ?)
-            """,
-            [
-                (student_id, attendance_date, "Overall", status)
-                for attendance_date, status in zip(attendance_dates, statuses)
-            ],
-        )
-    db.commit()
-
-
 def send_otp_email(to_email: str, otp: str):
     if not app.config["SMTP_HOST"] or not app.config["SMTP_USER"] or not app.config["SMTP_PASSWORD"]:
         raise RuntimeError("SMTP is not configured.")
@@ -1461,15 +1376,11 @@ def dashboard():
 
     records = db.execute(
         """
-        SELECT
-            attendance_date,
-            COUNT(*) AS total_classes,
-            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS present_classes
+        SELECT attendance_date, subject, status
         FROM attendance_records
         WHERE student_id = ?
-        GROUP BY attendance_date
-        ORDER BY attendance_date DESC
-        LIMIT 12
+        ORDER BY attendance_date DESC, subject ASC, id DESC
+        LIMIT 25
         """,
         (student_id,),
     ).fetchall()
@@ -1482,8 +1393,6 @@ def dashboard():
         records=records,
         timetable=timetable,
     )
-
-
 @app.route("/timetable")
 def timetable():
     student_id = get_logged_in_student_id()
@@ -1761,11 +1670,9 @@ def teacher_notifications():
 
 with app.app_context():
     init_db()
-    normalize_attendance_window_if_needed()
 
 
 if __name__ == "__main__":
     with app.app_context():
         init_db()
-        normalize_attendance_window_if_needed()
     app.run(host="0.0.0.0", port=5000, debug=True)
