@@ -17,45 +17,48 @@ except Exception:  # pragma: no cover - optional dependency
     Document = None
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
+DOWNLOADS_DIR = os.path.join(os.environ.get("USERPROFILE", ""), "Downloads")
+DB_PATH = os.path.join(BASE_DIR, "attendance.db")
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
 ATTENDANCE_WINDOW_START = date(2026, 1, 19)
 ATTENDANCE_WINDOW_END = date(2026, 1, 31)
 ATTENDANCE_TOTAL_CLASSES = 61
-FORCE_BOOTSTRAP_IMPORT = os.environ.get("FORCE_BOOTSTRAP_IMPORT", "0").strip() == "1"
 STUDENT_DATA_PATHS = [
     os.environ.get("STUDENT_DATA_XLSX", "").strip(),
     os.path.join(BASE_DIR, "25Batch_Students_data.xlsx"),
-    r"C:\Users\gchai\OneDrive\Documents\25Batch_Students_data.xlsx",
 ]
-CLASS_DOCX_PATHS = [
-    r"C:\Users\gchai\Downloads\AIDS-A  .docx",
-    r"C:\Users\gchai\Downloads\AIDS-B  .docx",
-    r"C:\Users\gchai\Downloads\AIDS-C  .docx",
-    r"C:\Users\gchai\Downloads\AIML-A  .docx",
-    r"C:\Users\gchai\Downloads\AIML-B  .docx",
-    r"C:\Users\gchai\Downloads\CSE-A .docx",
-    r"C:\Users\gchai\Downloads\CSE-B .docx",
-    r"C:\Users\gchai\Downloads\CSE-C.docx",
-    r"C:\Users\gchai\Downloads\CSE-D .docx",
-    r"C:\Users\gchai\Downloads\CSE-E  .docx",
-    r"C:\Users\gchai\Downloads\CSE-F .docx",
-    r"C:\Users\gchai\Downloads\ECE-A .docx",
-    r"C:\Users\gchai\Downloads\ECE-B.docx",
-    r"C:\Users\gchai\Downloads\ECE-C .docx",
-    r"C:\Users\gchai\Downloads\EEE .docx",
-    r"C:\Users\gchai\Downloads\IT-A .docx",
-    r"C:\Users\gchai\Downloads\IT-B .docx",
-    r"C:\Users\gchai\Downloads\MECH .docx",
+_env_class_docx_paths = [
+    path.strip()
+    for path in os.environ.get("CLASS_ATTENDANCE_DOCX", "").split(os.pathsep)
+    if path.strip()
+]
+CLASS_DOCX_PATHS = _env_class_docx_paths + [
+    os.path.join(DOWNLOADS_DIR, "AIDS-A  .docx"),
+    os.path.join(DOWNLOADS_DIR, "AIDS-B  .docx"),
+    os.path.join(DOWNLOADS_DIR, "AIDS-C  .docx"),
+    os.path.join(DOWNLOADS_DIR, "AIML-A  .docx"),
+    os.path.join(DOWNLOADS_DIR, "AIML-B  .docx"),
+    os.path.join(DOWNLOADS_DIR, "CIVIL  ATTENDANCE.docx"),
+    os.path.join(DOWNLOADS_DIR, "CSE-A .docx"),
+    os.path.join(DOWNLOADS_DIR, "CSE-B .docx"),
+    os.path.join(DOWNLOADS_DIR, "CSE-C.docx"),
+    os.path.join(DOWNLOADS_DIR, "CSE-D .docx"),
+    os.path.join(DOWNLOADS_DIR, "CSE-E  .docx"),
+    os.path.join(DOWNLOADS_DIR, "CSE-F .docx"),
+    os.path.join(DOWNLOADS_DIR, "ECE-A .docx"),
+    os.path.join(DOWNLOADS_DIR, "ECE-B.docx"),
+    os.path.join(DOWNLOADS_DIR, "ECE-C .docx"),
+    os.path.join(DOWNLOADS_DIR, "EEE .docx"),
+    os.path.join(DOWNLOADS_DIR, "IT-A .docx"),
+    os.path.join(DOWNLOADS_DIR, "IT-B .docx"),
 ]
 TIME_TABLE_DOCX_PATHS = [
     os.environ.get("TIME_TABLE_DOCX", "").strip(),
     os.path.join(BASE_DIR, "data", "time_table.docx"),
     os.path.join(BASE_DIR, "time_table.docx"),
     os.path.join(BASE_DIR, "time table .docx"),
-    r"C:\Users\gchai\Downloads\time table .docx",
 ]
 
 CIVIL_ATTENDANCE_DATA = [
@@ -108,9 +111,6 @@ _TIMETABLE_CACHE_MTIME: Optional[float] = None
 
 def get_db():
     if "db" not in g:
-        db_dir = os.path.dirname(DB_PATH)
-        if db_dir:
-            os.makedirs(db_dir, exist_ok=True)
         g.db = sqlite3.connect(DB_PATH, timeout=60)
         g.db.row_factory = sqlite3.Row
     return g.db
@@ -433,19 +433,27 @@ def _build_spread_statuses(attended_classes: int, total_classes: int):
     return statuses
 
 
-def _build_windowed_attendance_dates(total_classes: int):
+def _build_attendance_class_dates(total_classes: int):
     if total_classes <= 0:
         return []
-    day_count = (ATTENDANCE_WINDOW_END - ATTENDANCE_WINDOW_START).days + 1
-    if day_count <= 0:
-        return [ATTENDANCE_WINDOW_END.isoformat()] * total_classes
 
-    dates = []
-    for i in range(total_classes):
-        day_index = (i * day_count) // total_classes
-        if day_index >= day_count:
-            day_index = day_count - 1
-        dates.append((ATTENDANCE_WINDOW_START + timedelta(days=day_index)).isoformat())
+    teaching_dates: List[date] = []
+    current = ATTENDANCE_WINDOW_START
+    while current <= ATTENDANCE_WINDOW_END:
+        if current.weekday() != 6:  # Exclude Sunday.
+            teaching_dates.append(current)
+        current += timedelta(days=1)
+
+    if not teaching_dates:
+        teaching_dates = [ATTENDANCE_WINDOW_END]
+
+    base = total_classes // len(teaching_dates)
+    remainder = total_classes % len(teaching_dates)
+    dates: List[str] = []
+    for idx, dt in enumerate(teaching_dates):
+        classes_for_day = base + (1 if idx < remainder else 0)
+        for _ in range(classes_for_day):
+            dates.append(dt.isoformat())
     return dates
 
 
@@ -581,38 +589,12 @@ def _load_timetables() -> Dict[str, dict]:
     return {}
 
 
-def _resolve_timetable_key(section_key: str, timetables: Dict[str, dict]) -> Optional[str]:
-    if section_key in timetables:
-        return section_key
-
-    # Common merged section in source doc.
-    if section_key in {"CIVIL", "MECH", "CE", "ME"} and "CE/ME" in timetables:
-        return "CE/ME"
-
-    # Support compact values like CSEA, ECEB, ITA.
-    compact = section_key.replace(" ", "")
-    if "-" not in compact and len(compact) >= 2 and compact[-1].isalpha():
-        compact_candidate = f"{compact[:-1]}-{compact[-1]}"
-        if compact_candidate in timetables:
-            return compact_candidate
-
-    # If only branch is available (e.g. CSE/ECE/IT/AIDS/AIML), pick first section.
-    branch = section_key.split("-", 1)[0].strip()
-    if branch:
-        matches = sorted(k for k in timetables if k.startswith(f"{branch}-"))
-        if matches:
-            return matches[0]
-
-    return None
-
-
 def _get_student_timetable(student_department: str) -> Optional[dict]:
     section_key = _normalize_section_label(student_department or "")
     if not section_key:
         return None
     timetables = _load_timetables()
-    resolved_key = _resolve_timetable_key(section_key, timetables)
-    timetable = timetables.get(resolved_key) if resolved_key else None
+    timetable = timetables.get(section_key)
     if not timetable:
         return None
 
@@ -792,7 +774,7 @@ def import_class_docx_attendance():
             db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
             if total_classes:
                 statuses = _build_spread_statuses(attended_classes, total_classes)
-                attendance_dates = _build_windowed_attendance_dates(total_classes)
+                attendance_dates = _build_attendance_class_dates(total_classes)
                 for attendance_date, status in zip(attendance_dates, statuses):
                     db.execute(
                         """
@@ -976,7 +958,7 @@ def seed_civil_attendance_data():
         total_classes = ATTENDANCE_TOTAL_CLASSES
         attended_classes = min(max(0, attended_classes), total_classes)
         statuses = _build_spread_statuses(attended_classes, total_classes)
-        attendance_dates = _build_windowed_attendance_dates(total_classes)
+        attendance_dates = _build_attendance_class_dates(total_classes)
         for attendance_date, status in zip(attendance_dates, statuses):
             db.execute(
                 """
@@ -987,72 +969,6 @@ def seed_civil_attendance_data():
             )
 
     db.commit()
-
-
-def _should_bootstrap_seed_data(db) -> bool:
-    if FORCE_BOOTSTRAP_IMPORT:
-        return True
-    students_count = db.execute("SELECT COUNT(*) AS c FROM students").fetchone()["c"]
-    attendance_count = db.execute("SELECT COUNT(*) AS c FROM attendance_records").fetchone()["c"]
-    return students_count == 0 and attendance_count == 0
-
-
-def normalize_attendance_data_window_if_needed():
-    db = get_db()
-    students_to_fix = db.execute(
-        """
-        SELECT
-            s.id AS student_id,
-            COALESCE(SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END), 0) AS attended_classes,
-            COUNT(ar.id) AS total_classes,
-            MIN(ar.attendance_date) AS min_date,
-            MAX(ar.attendance_date) AS max_date
-        FROM students s
-        LEFT JOIN attendance_records ar ON ar.student_id = s.id
-        GROUP BY s.id
-        HAVING
-            COUNT(ar.id) != ?
-            OR MIN(ar.attendance_date) < ?
-            OR MAX(ar.attendance_date) > ?
-            OR MIN(ar.attendance_date) IS NULL
-            OR MAX(ar.attendance_date) IS NULL
-        """,
-        (
-            ATTENDANCE_TOTAL_CLASSES,
-            ATTENDANCE_WINDOW_START.isoformat(),
-            ATTENDANCE_WINDOW_END.isoformat(),
-        ),
-    ).fetchall()
-
-    if not students_to_fix:
-        return
-
-    attendance_dates = _build_windowed_attendance_dates(ATTENDANCE_TOTAL_CLASSES)
-    for row in students_to_fix:
-        student_id = row["student_id"]
-        attended_classes = min(max(0, int(row["attended_classes"])), ATTENDANCE_TOTAL_CLASSES)
-        statuses = _build_spread_statuses(attended_classes, ATTENDANCE_TOTAL_CLASSES)
-        db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
-        db.executemany(
-            """
-            INSERT INTO attendance_records(student_id, attendance_date, subject, status)
-            VALUES (?, ?, ?, ?)
-            """,
-            [
-                (student_id, attendance_date, "Overall", status)
-                for attendance_date, status in zip(attendance_dates, statuses)
-            ],
-        )
-    db.commit()
-
-
-def bootstrap_seed_data_if_needed():
-    db = get_db()
-    if not _should_bootstrap_seed_data(db):
-        return
-    import_students_data()
-    import_class_docx_attendance()
-    seed_civil_attendance_data()
 
 
 def send_otp_email(to_email: str, otp: str):
@@ -1510,6 +1426,7 @@ def admin():
     attendance_stats = None
     attendance_percentage = 0.0
 
+
     if request.method == "POST":
         action = request.form.get("action")
         redirect_roll_no = ""
@@ -1755,13 +1672,9 @@ def teacher_notifications():
 
 with app.app_context():
     init_db()
-    bootstrap_seed_data_if_needed()
-    normalize_attendance_data_window_if_needed()
 
 
 if __name__ == "__main__":
     with app.app_context():
         init_db()
-        bootstrap_seed_data_if_needed()
-        normalize_attendance_data_window_if_needed()
     app.run(host="0.0.0.0", port=5000, debug=True)
