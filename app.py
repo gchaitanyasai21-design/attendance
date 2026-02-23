@@ -18,7 +18,7 @@ except Exception:  # pragma: no cover - optional dependency
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.join(os.environ.get("USERPROFILE", ""), "Downloads")
-DB_PATH = os.path.join(BASE_DIR, "attendance.db")
+DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
@@ -111,6 +111,9 @@ _TIMETABLE_CACHE_MTIME: Optional[float] = None
 
 def get_db():
     if "db" not in g:
+        db_dir = os.path.dirname(DB_PATH)
+        if db_dir:
+            os.makedirs(db_dir, exist_ok=True)
         g.db = sqlite3.connect(DB_PATH, timeout=60)
         g.db.row_factory = sqlite3.Row
     return g.db
@@ -971,6 +974,53 @@ def seed_civil_attendance_data():
     db.commit()
 
 
+def normalize_attendance_window_if_needed():
+    db = get_db()
+    start_date = ATTENDANCE_WINDOW_START.isoformat()
+    end_date = ATTENDANCE_WINDOW_END.isoformat()
+    students_to_fix = db.execute(
+        """
+        SELECT
+            s.id AS student_id,
+            COALESCE(SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END), 0) AS attended_classes,
+            COUNT(ar.id) AS total_classes,
+            MIN(ar.attendance_date) AS min_date,
+            MAX(ar.attendance_date) AS max_date
+        FROM students s
+        LEFT JOIN attendance_records ar ON ar.student_id = s.id
+        GROUP BY s.id
+        HAVING
+            COUNT(ar.id) != ?
+            OR MIN(ar.attendance_date) < ?
+            OR MAX(ar.attendance_date) > ?
+            OR MIN(ar.attendance_date) IS NULL
+            OR MAX(ar.attendance_date) IS NULL
+        """,
+        (ATTENDANCE_TOTAL_CLASSES, start_date, end_date),
+    ).fetchall()
+
+    if not students_to_fix:
+        return
+
+    attendance_dates = _build_attendance_class_dates(ATTENDANCE_TOTAL_CLASSES)
+    for row in students_to_fix:
+        student_id = row["student_id"]
+        attended_classes = min(max(0, int(row["attended_classes"])), ATTENDANCE_TOTAL_CLASSES)
+        statuses = _build_spread_statuses(attended_classes, ATTENDANCE_TOTAL_CLASSES)
+        db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
+        db.executemany(
+            """
+            INSERT INTO attendance_records(student_id, attendance_date, subject, status)
+            VALUES (?, ?, ?, ?)
+            """,
+            [
+                (student_id, attendance_date, "Overall", status)
+                for attendance_date, status in zip(attendance_dates, statuses)
+            ],
+        )
+    db.commit()
+
+
 def send_otp_email(to_email: str, otp: str):
     if not app.config["SMTP_HOST"] or not app.config["SMTP_USER"] or not app.config["SMTP_PASSWORD"]:
         raise RuntimeError("SMTP is not configured.")
@@ -1672,9 +1722,11 @@ def teacher_notifications():
 
 with app.app_context():
     init_db()
+    normalize_attendance_window_if_needed()
 
 
 if __name__ == "__main__":
     with app.app_context():
         init_db()
+        normalize_attendance_window_if_needed()
     app.run(host="0.0.0.0", port=5000, debug=True)
