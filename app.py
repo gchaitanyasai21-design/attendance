@@ -4,6 +4,7 @@ import sqlite3
 import secrets
 import smtplib
 import time
+import json
 from datetime import date, timedelta
 from email.message import EmailMessage
 from typing import Dict, List, Optional
@@ -18,13 +19,14 @@ except Exception:  # pragma: no cover - optional dependency
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.join(os.environ.get("USERPROFILE", ""), "Downloads")
-DB_PATH = os.path.join(BASE_DIR, "attendance.db")
+DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
 ATTENDANCE_WINDOW_START = date(2026, 1, 19)
 ATTENDANCE_WINDOW_END = date(2026, 1, 31)
 ATTENDANCE_TOTAL_CLASSES = 61
+ATTENDANCE_SNAPSHOT_PATH = os.path.join(BASE_DIR, "data", "attendance_snapshot_2026_01_19_31.json")
 STUDENT_DATA_PATHS = [
     os.environ.get("STUDENT_DATA_XLSX", "").strip(),
     os.path.join(BASE_DIR, "25Batch_Students_data.xlsx"),
@@ -107,10 +109,14 @@ ADMIN_TEACHER_EMAIL = os.environ.get("ADMIN_TEACHER_EMAIL", "hodmic@college.loca
 _TIMETABLE_CACHE: Dict[str, dict] = {}
 _TIMETABLE_CACHE_PATH: Optional[str] = None
 _TIMETABLE_CACHE_MTIME: Optional[float] = None
+_ATTENDANCE_SNAPSHOT_CACHE: Optional[Dict[str, dict]] = None
 
 
 def get_db():
     if "db" not in g:
+        db_dir = os.path.dirname(DB_PATH)
+        if db_dir:
+            os.makedirs(db_dir, exist_ok=True)
         g.db = sqlite3.connect(DB_PATH, timeout=60)
         g.db.row_factory = sqlite3.Row
     return g.db
@@ -457,6 +463,22 @@ def _build_attendance_class_dates(total_classes: int):
     return dates
 
 
+def _load_attendance_snapshot() -> Dict[str, dict]:
+    global _ATTENDANCE_SNAPSHOT_CACHE
+    if _ATTENDANCE_SNAPSHOT_CACHE is not None:
+        return _ATTENDANCE_SNAPSHOT_CACHE
+    if not os.path.exists(ATTENDANCE_SNAPSHOT_PATH):
+        _ATTENDANCE_SNAPSHOT_CACHE = {}
+        return _ATTENDANCE_SNAPSHOT_CACHE
+    try:
+        with open(ATTENDANCE_SNAPSHOT_PATH, "r", encoding="utf-8") as fh:
+            data = json.load(fh)
+        _ATTENDANCE_SNAPSHOT_CACHE = data if isinstance(data, dict) else {}
+    except Exception:
+        _ATTENDANCE_SNAPSHOT_CACHE = {}
+    return _ATTENDANCE_SNAPSHOT_CACHE
+
+
 def _roman_to_int(value: str):
     mapping = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6}
     return mapping.get(value.strip().upper())
@@ -768,7 +790,7 @@ def import_class_docx_attendance():
                     (roll_no,),
                 ).fetchone()["id"]
 
-            total_classes = ATTENDANCE_TOTAL_CLASSES
+            total_classes = max(0, row["total"])
             attended_classes = min(max(0, row["attended"]), total_classes)
 
             db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
@@ -955,7 +977,7 @@ def seed_civil_attendance_data():
         student_id = student["id"]
 
         db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
-        total_classes = ATTENDANCE_TOTAL_CLASSES
+        total_classes = max(0, total_classes)
         attended_classes = min(max(0, attended_classes), total_classes)
         statuses = _build_spread_statuses(attended_classes, total_classes)
         attendance_dates = _build_attendance_class_dates(total_classes)
@@ -967,6 +989,69 @@ def seed_civil_attendance_data():
                 """,
                 (student_id, attendance_date, "Overall", status),
             )
+
+    db.commit()
+
+
+def normalize_attendance_window_if_needed():
+    snapshot = _load_attendance_snapshot()
+    if not snapshot:
+        return
+
+    db = get_db()
+    start_date = ATTENDANCE_WINDOW_START.isoformat()
+    end_date = ATTENDANCE_WINDOW_END.isoformat()
+
+    for roll_no, row in snapshot.items():
+        student = db.execute(
+            "SELECT id FROM students WHERE roll_no = ?",
+            (roll_no,),
+        ).fetchone()
+        if not student:
+            continue
+
+        student_id = student["id"]
+        target_total = max(0, int(row.get("total", ATTENDANCE_TOTAL_CLASSES)))
+        target_attended = min(max(0, int(row.get("attended", 0))), target_total)
+        current = db.execute(
+            """
+            SELECT
+                COUNT(*) AS total_classes,
+                COALESCE(SUM(status), 0) AS attended_classes,
+                MIN(attendance_date) AS min_date,
+                MAX(attendance_date) AS max_date
+            FROM attendance_records
+            WHERE student_id = ?
+            """,
+            (student_id,),
+        ).fetchone()
+
+        needs_fix = (
+            int(current["total_classes"]) != target_total
+            or int(current["attended_classes"]) != target_attended
+            or current["min_date"] is None
+            or current["max_date"] is None
+            or current["min_date"] < start_date
+            or current["max_date"] > end_date
+        )
+        if not needs_fix:
+            continue
+
+        db.execute("DELETE FROM attendance_records WHERE student_id = ?", (student_id,))
+        if target_total == 0:
+            continue
+        statuses = _build_spread_statuses(target_attended, target_total)
+        attendance_dates = _build_attendance_class_dates(target_total)
+        db.executemany(
+            """
+            INSERT INTO attendance_records(student_id, attendance_date, subject, status)
+            VALUES (?, ?, ?, ?)
+            """,
+            [
+                (student_id, attendance_date, "Overall", status)
+                for attendance_date, status in zip(attendance_dates, statuses)
+            ],
+        )
 
     db.commit()
 
@@ -1376,11 +1461,15 @@ def dashboard():
 
     records = db.execute(
         """
-        SELECT attendance_date, subject, status
+        SELECT
+            attendance_date,
+            COUNT(*) AS total_classes,
+            SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS present_classes
         FROM attendance_records
         WHERE student_id = ?
-        ORDER BY attendance_date DESC, subject ASC, id DESC
-        LIMIT 25
+        GROUP BY attendance_date
+        ORDER BY attendance_date DESC
+        LIMIT 12
         """,
         (student_id,),
     ).fetchall()
@@ -1670,9 +1759,11 @@ def teacher_notifications():
 
 with app.app_context():
     init_db()
+    normalize_attendance_window_if_needed()
 
 
 if __name__ == "__main__":
     with app.app_context():
         init_db()
+        normalize_attendance_window_if_needed()
     app.run(host="0.0.0.0", port=5000, debug=True)
