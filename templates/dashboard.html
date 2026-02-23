@@ -30,25 +30,27 @@
 </section>
 
 <section class="card">
-  <h3>Recent Attendance</h3>
+  <h3>Attendance by Date</h3>
   <table>
     <thead>
       <tr>
         <th>Date</th>
-        <th>Subject</th>
-        <th>Status</th>
+        <th>Classes</th>
+        <th>Present</th>
+        <th>Attendance %</th>
       </tr>
     </thead>
     <tbody>
       {% for r in records %}
         <tr>
           <td>{{ r['attendance_date'] }}</td>
-          <td>{{ r['subject'] }}</td>
-          <td>{{ 'Present' if r['status'] == 1 else 'Absent' }}</td>
+          <td>{{ r['total_classes'] }}</td>
+          <td>{{ r['present_classes'] }}</td>
+          <td>{{ "%.2f"|format((100.0 * r['present_classes']) / r['total_classes']) }}%</td>
         </tr>
       {% else %}
         <tr>
-          <td colspan="3">No attendance records found.</td>
+          <td colspan="4">No attendance records found.</td>
         </tr>
       {% endfor %}
     </tbody>

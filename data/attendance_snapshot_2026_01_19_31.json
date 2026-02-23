@@ -1,0 +1,6584 @@
+{
+  "24H71A05I7": {
+    "attended": 48,
+    "department": "CSE-D",
+    "name": "S Charishma Keerthi",
+    "semester": "2"
+  },
+  "25H71A0101": {
+    "attended": 55,
+    "department": "CIVIL",
+    "name": "Achanti Gokuleswar",
+    "semester": "2"
+  },
+  "25H71A0102": {
+    "attended": 9,
+    "department": "CIVIL",
+    "name": "Akula Venkata Gopi",
+    "semester": "2"
+  },
+  "25H71A0103": {
+    "attended": 0,
+    "department": "CIVIL",
+    "name": "Amudala Siva Sai Mohan",
+    "semester": "2"
+  },
+  "25H71A0104": {
+    "attended": 44,
+    "department": "CIVIL",
+    "name": "Battula Lokesh",
+    "semester": "2"
+  },
+  "25H71A0105": {
+    "attended": 0,
+    "department": "CIVIL",
+    "name": "Chindam Anil Kumar",
+    "semester": "2"
+  },
+  "25H71A0106": {
+    "attended": 9,
+    "department": "CIVIL",
+    "name": "Gottipati Varun",
+    "semester": "2"
+  },
+  "25H71A0107": {
+    "attended": 14,
+    "department": "CIVIL",
+    "name": "Kasimkota Shanmukha Sai",
+    "semester": "2"
+  },
+  "25H71A0108": {
+    "attended": 16,
+    "department": "CIVIL",
+    "name": "Katuri Sai Subramanyam",
+    "semester": "2"
+  },
+  "25H71A0109": {
+    "attended": 18,
+    "department": "CIVIL",
+    "name": "Kumpati Ramteja",
+    "semester": "2"
+  },
+  "25H71A0110": {
+    "attended": 24,
+    "department": "CIVIL",
+    "name": "Paamunuri Vikram Satyanarayana",
+    "semester": "2"
+  },
+  "25H71A0111": {
+    "attended": 34,
+    "department": "CIVIL",
+    "name": "Patapanchula Ashok",
+    "semester": "2"
+  },
+  "25H71A0112": {
+    "attended": 3,
+    "department": "CIVIL",
+    "name": "Pathan Waseem Jafar Khan",
+    "semester": "2"
+  },
+  "25H71A0113": {
+    "attended": 55,
+    "department": "CIVIL",
+    "name": "Payyavula Nehru",
+    "semester": "2"
+  },
+  "25H71A0114": {
+    "attended": 51,
+    "department": "CIVIL",
+    "name": "Peddi Bhargavi",
+    "semester": "2"
+  },
+  "25H71A0117": {
+    "attended": 17,
+    "department": "CIVIL",
+    "name": "Redapangu Prabhu Venkat",
+    "semester": "2"
+  },
+  "25H71A0118": {
+    "attended": 8,
+    "department": "CIVIL",
+    "name": "Regalla Chiranjeevi",
+    "semester": "2"
+  },
+  "25H71A0119": {
+    "attended": 43,
+    "department": "CIVIL",
+    "name": "Sajjala Vedanth Madan Kumar",
+    "semester": "2"
+  },
+  "25H71A0120": {
+    "attended": 46,
+    "department": "CIVIL",
+    "name": "Shaik Irfan",
+    "semester": "2"
+  },
+  "25H71A0121": {
+    "attended": 57,
+    "department": "CIVIL",
+    "name": "Sunkara Vijay",
+    "semester": "2"
+  },
+  "25H71A0122": {
+    "attended": 31,
+    "department": "CIVIL",
+    "name": "Surasani Venkata Narayana",
+    "semester": "2"
+  },
+  "25H71A0123": {
+    "attended": 5,
+    "department": "CIVIL",
+    "name": "Thota Sreekanth",
+    "semester": "2"
+  },
+  "25H71A0124": {
+    "attended": 7,
+    "department": "CIVIL",
+    "name": "Vangeti Daniyelu",
+    "semester": "2"
+  },
+  "25H71A0125": {
+    "attended": 30,
+    "department": "CIVIL",
+    "name": "Veesam Yaswanth",
+    "semester": "2"
+  },
+  "25H71A0126": {
+    "attended": 17,
+    "department": "CIVIL",
+    "name": "Yadala Prasanth",
+    "semester": "2"
+  },
+  "25H71A0201": {
+    "attended": 29,
+    "department": "EEE",
+    "name": "Aluri Uday Kumar",
+    "semester": "2"
+  },
+  "25H71A0202": {
+    "attended": 51,
+    "department": "EEE",
+    "name": "Amarangabhada Sravani",
+    "semester": "2"
+  },
+  "25H71A0203": {
+    "attended": 32,
+    "department": "EEE",
+    "name": "Andaluri Adarsh Baji",
+    "semester": "2"
+  },
+  "25H71A0204": {
+    "attended": 26,
+    "department": "EEE",
+    "name": "Bolleddu Anil Kumar",
+    "semester": "2"
+  },
+  "25H71A0205": {
+    "attended": 27,
+    "department": "EEE",
+    "name": "Bollempalli Vijaya Aditya",
+    "semester": "2"
+  },
+  "25H71A0206": {
+    "attended": 33,
+    "department": "EEE",
+    "name": "Bonthala Koteswara Rao",
+    "semester": "2"
+  },
+  "25H71A0207": {
+    "attended": 41,
+    "department": "EEE",
+    "name": "Donthagani Jahnavi",
+    "semester": "2"
+  },
+  "25H71A0208": {
+    "attended": 26,
+    "department": "EEE",
+    "name": "Dosapati Rajesh",
+    "semester": "2"
+  },
+  "25H71A0209": {
+    "attended": 35,
+    "department": "EEE",
+    "name": "Gattiboyina Om Sathya Teja",
+    "semester": "2"
+  },
+  "25H71A0210": {
+    "attended": 29,
+    "department": "EEE",
+    "name": "Gundru Ram Babu",
+    "semester": "2"
+  },
+  "25H71A0211": {
+    "attended": 41,
+    "department": "EEE",
+    "name": "Gunja Lavanya",
+    "semester": "2"
+  },
+  "25H71A0212": {
+    "attended": 43,
+    "department": "EEE",
+    "name": "Jestadi Manoj Kumar",
+    "semester": "2"
+  },
+  "25H71A0213": {
+    "attended": 13,
+    "department": "EEE",
+    "name": "Kanakapudi Tharun",
+    "semester": "2"
+  },
+  "25H71A0214": {
+    "attended": 26,
+    "department": "EEE",
+    "name": "Kandula Surya",
+    "semester": "2"
+  },
+  "25H71A0215": {
+    "attended": 42,
+    "department": "EEE",
+    "name": "Kasakani Shyam Prasad",
+    "semester": "2"
+  },
+  "25H71A0216": {
+    "attended": 55,
+    "department": "EEE",
+    "name": "Kavya Annapureddy",
+    "semester": "2"
+  },
+  "25H71A0217": {
+    "attended": 25,
+    "department": "EEE",
+    "name": "Kongala Jaya Prakash",
+    "semester": "2"
+  },
+  "25H71A0218": {
+    "attended": 25,
+    "department": "EEE",
+    "name": "Konigipogu Praneeth Raj",
+    "semester": "2"
+  },
+  "25H71A0220": {
+    "attended": 3,
+    "department": "EEE",
+    "name": "Lankapalli Hema Sekhar",
+    "semester": "2"
+  },
+  "25H71A0221": {
+    "attended": 23,
+    "department": "EEE",
+    "name": "Lingala Abhi",
+    "semester": "2"
+  },
+  "25H71A0222": {
+    "attended": 25,
+    "department": "EEE",
+    "name": "Mekala Pradeep",
+    "semester": "2"
+  },
+  "25H71A0223": {
+    "attended": 49,
+    "department": "EEE",
+    "name": "Mola Anil",
+    "semester": "2"
+  },
+  "25H71A0225": {
+    "attended": 20,
+    "department": "EEE",
+    "name": "Nandru Babu",
+    "semester": "2"
+  },
+  "25H71A0226": {
+    "attended": 58,
+    "department": "EEE",
+    "name": "Neelam Geethika",
+    "semester": "2"
+  },
+  "25H71A0227": {
+    "attended": 51,
+    "department": "EEE",
+    "name": "Orsu Venkata Srinivasarao",
+    "semester": "2"
+  },
+  "25H71A0228": {
+    "attended": 25,
+    "department": "EEE",
+    "name": "Palli Harsha Vardhan",
+    "semester": "2"
+  },
+  "25H71A0229": {
+    "attended": 15,
+    "department": "EEE",
+    "name": "Para Teja",
+    "semester": "2"
+  },
+  "25H71A0230": {
+    "attended": 56,
+    "department": "EEE",
+    "name": "Pathan Tasleem",
+    "semester": "2"
+  },
+  "25H71A0231": {
+    "attended": 42,
+    "department": "EEE",
+    "name": "Payyavula Radhika",
+    "semester": "2"
+  },
+  "25H71A0233": {
+    "attended": 49,
+    "department": "EEE",
+    "name": "Peyyala Sushma",
+    "semester": "2"
+  },
+  "25H71A0234": {
+    "attended": 3,
+    "department": "EEE",
+    "name": "Prathuri Abhilash",
+    "semester": "2"
+  },
+  "25H71A0235": {
+    "attended": 26,
+    "department": "EEE",
+    "name": "Rachuri Pranay Bhargav",
+    "semester": "2"
+  },
+  "25H71A0236": {
+    "attended": 33,
+    "department": "EEE",
+    "name": "Ranga Purna Naga Chandra Shekar",
+    "semester": "2"
+  },
+  "25H71A0237": {
+    "attended": 28,
+    "department": "EEE",
+    "name": "Sachin Roy",
+    "semester": "2"
+  },
+  "25H71A0238": {
+    "attended": 19,
+    "department": "EEE",
+    "name": "Sajja Joshua Shalem",
+    "semester": "2"
+  },
+  "25H71A0239": {
+    "attended": 33,
+    "department": "EEE",
+    "name": "Sayed Shabashi",
+    "semester": "2"
+  },
+  "25H71A0240": {
+    "attended": 52,
+    "department": "EEE",
+    "name": "Songa Srinu",
+    "semester": "2"
+  },
+  "25H71A0241": {
+    "attended": 30,
+    "department": "EEE",
+    "name": "Sripathi Sai Pavan",
+    "semester": "2"
+  },
+  "25H71A0242": {
+    "attended": 32,
+    "department": "EEE",
+    "name": "Sunkari Bhavani",
+    "semester": "2"
+  },
+  "25H71A0243": {
+    "attended": 39,
+    "department": "EEE",
+    "name": "Vankayalapati Tejasri",
+    "semester": "2"
+  },
+  "25H71A0244": {
+    "attended": 24,
+    "department": "EEE",
+    "name": "Vegireddy Gowri Shankar",
+    "semester": "2"
+  },
+  "25H71A0245": {
+    "attended": 14,
+    "department": "EEE",
+    "name": "Kama Nithin Kumar",
+    "semester": "2"
+  },
+  "25H71A0401": {
+    "attended": 31,
+    "department": "ECE-A",
+    "name": "Adusumalli Hemanth Kumar",
+    "semester": "2"
+  },
+  "25H71A0402": {
+    "attended": 31,
+    "department": "ECE-A",
+    "name": "Amarthaluri Sathwik Nithyal",
+    "semester": "2"
+  },
+  "25H71A0403": {
+    "attended": 59,
+    "department": "ECE-A",
+    "name": "Anagani Ramya Sri",
+    "semester": "2"
+  },
+  "25H71A0404": {
+    "attended": 49,
+    "department": "ECE-A",
+    "name": "Bandaru Sai Kiran",
+    "semester": "2"
+  },
+  "25H71A0405": {
+    "attended": 61,
+    "department": "ECE-A",
+    "name": "Bannaravuri Vysali",
+    "semester": "2"
+  },
+  "25H71A0406": {
+    "attended": 36,
+    "department": "ECE-A",
+    "name": "Battula Gowtham Srinivas",
+    "semester": "2"
+  },
+  "25H71A0407": {
+    "attended": 33,
+    "department": "ECE-A",
+    "name": "Bellamkonda Gopi Venkat Satish",
+    "semester": "2"
+  },
+  "25H71A0408": {
+    "attended": 51,
+    "department": "ECE-A",
+    "name": "Borra Sruthi",
+    "semester": "2"
+  },
+  "25H71A0409": {
+    "attended": 61,
+    "department": "ECE-A",
+    "name": "Chalamala Jithendra Venu Madhav",
+    "semester": "2"
+  },
+  "25H71A0410": {
+    "attended": 12,
+    "department": "ECE-A",
+    "name": "Chuttukuduru Sowjanya",
+    "semester": "2"
+  },
+  "25H71A0411": {
+    "attended": 31,
+    "department": "ECE-A",
+    "name": "Egala Bala Aditya",
+    "semester": "2"
+  },
+  "25H71A0412": {
+    "attended": 38,
+    "department": "ECE-A",
+    "name": "G B Shambavi Devi",
+    "semester": "2"
+  },
+  "25H71A0413": {
+    "attended": 59,
+    "department": "ECE-A",
+    "name": "Garimella Lakshmana Kumar",
+    "semester": "2"
+  },
+  "25H71A0414": {
+    "attended": 34,
+    "department": "ECE-A",
+    "name": "Gollamandala Prashanth",
+    "semester": "2"
+  },
+  "25H71A0415": {
+    "attended": 61,
+    "department": "ECE-A",
+    "name": "Gundamala Keerthana",
+    "semester": "2"
+  },
+  "25H71A0416": {
+    "attended": 28,
+    "department": "ECE-A",
+    "name": "Jakka Anusha",
+    "semester": "2"
+  },
+  "25H71A0417": {
+    "attended": 41,
+    "department": "ECE-A",
+    "name": "Jangam Pavan Kumar",
+    "semester": "2"
+  },
+  "25H71A0418": {
+    "attended": 33,
+    "department": "ECE-A",
+    "name": "Jarugu Aditya Pavan Kumar",
+    "semester": "2"
+  },
+  "25H71A0419": {
+    "attended": 52,
+    "department": "ECE-A",
+    "name": "Jasthi Karthik",
+    "semester": "2"
+  },
+  "25H71A0420": {
+    "attended": 51,
+    "department": "ECE-A",
+    "name": "Kambampati Venkata Sai Teja",
+    "semester": "2"
+  },
+  "25H71A0421": {
+    "attended": 42,
+    "department": "ECE-A",
+    "name": "Kancharla Manohar",
+    "semester": "2"
+  },
+  "25H71A0422": {
+    "attended": 34,
+    "department": "ECE-A",
+    "name": "Karumuri Vasavi",
+    "semester": "2"
+  },
+  "25H71A0423": {
+    "attended": 51,
+    "department": "ECE-A",
+    "name": "Kethavarapu Dharma Teja",
+    "semester": "2"
+  },
+  "25H71A0424": {
+    "attended": 38,
+    "department": "ECE-A",
+    "name": "Kothapalli Aswateja",
+    "semester": "2"
+  },
+  "25H71A0425": {
+    "attended": 48,
+    "department": "ECE-A",
+    "name": "Mandalapu Nandakishore",
+    "semester": "2"
+  },
+  "25H71A0426": {
+    "attended": 41,
+    "department": "ECE-A",
+    "name": "Mannem Anil Kumar",
+    "semester": "2"
+  },
+  "25H71A0427": {
+    "attended": 51,
+    "department": "ECE-A",
+    "name": "Mokkapati Kesavardhan",
+    "semester": "2"
+  },
+  "25H71A0428": {
+    "attended": 37,
+    "department": "ECE-A",
+    "name": "Molli Shanmukha Ganesh",
+    "semester": "2"
+  },
+  "25H71A0429": {
+    "attended": 42,
+    "department": "ECE-A",
+    "name": "Mukku Kasi Reddy",
+    "semester": "2"
+  },
+  "25H71A0430": {
+    "attended": 24,
+    "department": "ECE-A",
+    "name": "Mullapati Akash",
+    "semester": "2"
+  },
+  "25H71A0431": {
+    "attended": 59,
+    "department": "ECE-A",
+    "name": "Nadakuduru Venkata Pavani",
+    "semester": "2"
+  },
+  "25H71A0432": {
+    "attended": 6,
+    "department": "ECE-A",
+    "name": "Namepalli Phanindra",
+    "semester": "2"
+  },
+  "25H71A0433": {
+    "attended": 39,
+    "department": "ECE-A",
+    "name": "Narla Chandana",
+    "semester": "2"
+  },
+  "25H71A0434": {
+    "attended": 47,
+    "department": "ECE-A",
+    "name": "Pagolu Mahitha",
+    "semester": "2"
+  },
+  "25H71A0435": {
+    "attended": 18,
+    "department": "ECE-A",
+    "name": "Pallipamu Chandu",
+    "semester": "2"
+  },
+  "25H71A0436": {
+    "attended": 28,
+    "department": "ECE-A",
+    "name": "Panugalla Charan Sai Teja",
+    "semester": "2"
+  },
+  "25H71A0437": {
+    "attended": 27,
+    "department": "ECE-A",
+    "name": "Pedapudi Hema Swaroop",
+    "semester": "2"
+  },
+  "25H71A0438": {
+    "attended": 32,
+    "department": "ECE-A",
+    "name": "Polisetti Santosh",
+    "semester": "2"
+  },
+  "25H71A0439": {
+    "attended": 49,
+    "department": "ECE-A",
+    "name": "Putla Bhanu Prakash",
+    "semester": "2"
+  },
+  "25H71A0440": {
+    "attended": 47,
+    "department": "ECE-A",
+    "name": "Ramireddy Bhuvaneswari",
+    "semester": "2"
+  },
+  "25H71A0441": {
+    "attended": 59,
+    "department": "ECE-A",
+    "name": "Ramisetti Veda Sahithi",
+    "semester": "2"
+  },
+  "25H71A0442": {
+    "attended": 52,
+    "department": "ECE-A",
+    "name": "Sarikonda Neha",
+    "semester": "2"
+  },
+  "25H71A0443": {
+    "attended": 53,
+    "department": "ECE-A",
+    "name": "Shaik Abdul Raheem",
+    "semester": "2"
+  },
+  "25H71A0444": {
+    "attended": 25,
+    "department": "ECE-A",
+    "name": "Shaik Jafar Sadik",
+    "semester": "2"
+  },
+  "25H71A0445": {
+    "attended": 33,
+    "department": "ECE-A",
+    "name": "Shaik Kasees Fathima",
+    "semester": "2"
+  },
+  "25H71A0446": {
+    "attended": 42,
+    "department": "ECE-A",
+    "name": "Shaik Nagulmeera",
+    "semester": "2"
+  },
+  "25H71A0447": {
+    "attended": 57,
+    "department": "ECE-A",
+    "name": "Siddi Veera Brahma Chari",
+    "semester": "2"
+  },
+  "25H71A0448": {
+    "attended": 46,
+    "department": "ECE-A",
+    "name": "Sunkara Mounika",
+    "semester": "2"
+  },
+  "25H71A0449": {
+    "attended": 47,
+    "department": "ECE-A",
+    "name": "Tata Sai Manikanta",
+    "semester": "2"
+  },
+  "25H71A0450": {
+    "attended": 41,
+    "department": "ECE-A",
+    "name": "Tellagorla Vinisha",
+    "semester": "2"
+  },
+  "25H71A0451": {
+    "attended": 45,
+    "department": "ECE-A",
+    "name": "Tellakula Charan Pavan Kumar",
+    "semester": "2"
+  },
+  "25H71A0452": {
+    "attended": 58,
+    "department": "ECE-A",
+    "name": "Thota Harshitha",
+    "semester": "2"
+  },
+  "25H71A0453": {
+    "attended": 48,
+    "department": "ECE-A",
+    "name": "Thota Jogindra",
+    "semester": "2"
+  },
+  "25H71A0455": {
+    "attended": 4,
+    "department": "ECE-A",
+    "name": "Togiti Ganesh",
+    "semester": "2"
+  },
+  "25H71A0456": {
+    "attended": 45,
+    "department": "ECE-A",
+    "name": "Uppala Sankeerthana",
+    "semester": "2"
+  },
+  "25H71A0457": {
+    "attended": 48,
+    "department": "ECE-A",
+    "name": "Uppathala Jyothi",
+    "semester": "2"
+  },
+  "25H71A0458": {
+    "attended": 38,
+    "department": "ECE-A",
+    "name": "Uttaravalli Hari Krishna",
+    "semester": "2"
+  },
+  "25H71A0459": {
+    "attended": 57,
+    "department": "ECE-A",
+    "name": "Varadaboina Naga Satish",
+    "semester": "2"
+  },
+  "25H71A0460": {
+    "attended": 53,
+    "department": "ECE-A",
+    "name": "Varre Udaya Lakshmi",
+    "semester": "2"
+  },
+  "25H71A0461": {
+    "attended": 35,
+    "department": "ECE-A",
+    "name": "Veeramalla Alekhya",
+    "semester": "2"
+  },
+  "25H71A0463": {
+    "attended": 40,
+    "department": "ECE-A",
+    "name": "Viswanadhapalli Deepthi",
+    "semester": "2"
+  },
+  "25H71A0464": {
+    "attended": 32,
+    "department": "ECE-A",
+    "name": "Vunnam Akhilesh",
+    "semester": "2"
+  },
+  "25H71A0465": {
+    "attended": 55,
+    "department": "ECE-A",
+    "name": "Yaragorla Durga Amrutha",
+    "semester": "2"
+  },
+  "25H71A0466": {
+    "attended": 27,
+    "department": "ECE-A",
+    "name": "Yetrin Thala Karthik",
+    "semester": "2"
+  },
+  "25H71A0467": {
+    "attended": 36,
+    "department": "ECE-B",
+    "name": "Arepalli Avinash",
+    "semester": "2"
+  },
+  "25H71A0468": {
+    "attended": 42,
+    "department": "ECE-B",
+    "name": "Ayiluri Chandrasekhara Reddy",
+    "semester": "2"
+  },
+  "25H71A0469": {
+    "attended": 44,
+    "department": "ECE-B",
+    "name": "Badineni Gayatri",
+    "semester": "2"
+  },
+  "25H71A0470": {
+    "attended": 43,
+    "department": "ECE-B",
+    "name": "Baggi Sathvik",
+    "semester": "2"
+  },
+  "25H71A0471": {
+    "attended": 26,
+    "department": "ECE-B",
+    "name": "Boothpuru Koushik",
+    "semester": "2"
+  },
+  "25H71A0472": {
+    "attended": 41,
+    "department": "ECE-B",
+    "name": "Burgula Satya Venkata Naga Sai",
+    "semester": "2"
+  },
+  "25H71A0473": {
+    "attended": 20,
+    "department": "ECE-B",
+    "name": "Chalamalasetty Komala Venkata Sai",
+    "semester": "2"
+  },
+  "25H71A0474": {
+    "attended": 47,
+    "department": "ECE-B",
+    "name": "Chinta Pujitha",
+    "semester": "2"
+  },
+  "25H71A0475": {
+    "attended": 35,
+    "department": "ECE-B",
+    "name": "Dondapati Teja Sri",
+    "semester": "2"
+  },
+  "25H71A0476": {
+    "attended": 47,
+    "department": "ECE-B",
+    "name": "Garine Lakshmi Srikari",
+    "semester": "2"
+  },
+  "25H71A0477": {
+    "attended": 42,
+    "department": "ECE-B",
+    "name": "Gattu Gowtham Kumar",
+    "semester": "2"
+  },
+  "25H71A0478": {
+    "attended": 45,
+    "department": "ECE-B",
+    "name": "Gera Kumar",
+    "semester": "2"
+  },
+  "25H71A0479": {
+    "attended": 28,
+    "department": "ECE-B",
+    "name": "Golla Prabhavathi",
+    "semester": "2"
+  },
+  "25H71A0480": {
+    "attended": 34,
+    "department": "ECE-B",
+    "name": "Gundala Ushaswi",
+    "semester": "2"
+  },
+  "25H71A0481": {
+    "attended": 44,
+    "department": "ECE-B",
+    "name": "Gundemeda Dhakshiana Murthi",
+    "semester": "2"
+  },
+  "25H71A0482": {
+    "attended": 27,
+    "department": "ECE-B",
+    "name": "Gunja Raji",
+    "semester": "2"
+  },
+  "25H71A0483": {
+    "attended": 23,
+    "department": "ECE-B",
+    "name": "Junjappa Gari Charan",
+    "semester": "2"
+  },
+  "25H71A0484": {
+    "attended": 28,
+    "department": "ECE-B",
+    "name": "Jujjuvarapu Bhaskar",
+    "semester": "2"
+  },
+  "25H71A0485": {
+    "attended": 16,
+    "department": "ECE-B",
+    "name": "Kakarla Lakshmi Prasanna",
+    "semester": "2"
+  },
+  "25H71A0486": {
+    "attended": 0,
+    "department": "ECE-B",
+    "name": "Kama Amrutha Pragna",
+    "semester": "2"
+  },
+  "25H71A0487": {
+    "attended": 11,
+    "department": "ECE-B",
+    "name": "Kanala Devadasu",
+    "semester": "2"
+  },
+  "25H71A0488": {
+    "attended": 23,
+    "department": "ECE-B",
+    "name": "Kancharla Satish Babu",
+    "semester": "2"
+  },
+  "25H71A0489": {
+    "attended": 23,
+    "department": "ECE-B",
+    "name": "Kanchi Poornesh",
+    "semester": "2"
+  },
+  "25H71A0490": {
+    "attended": 25,
+    "department": "ECE-B",
+    "name": "Katragadda Nandini",
+    "semester": "2"
+  },
+  "25H71A0491": {
+    "attended": 42,
+    "department": "ECE-B",
+    "name": "Kodeti Sandeep",
+    "semester": "2"
+  },
+  "25H71A0492": {
+    "attended": 25,
+    "department": "ECE-B",
+    "name": "Kokkiligadda Naga Prasanna",
+    "semester": "2"
+  },
+  "25H71A0493": {
+    "attended": 32,
+    "department": "ECE-B",
+    "name": "Koppula Mamatha Rani",
+    "semester": "2"
+  },
+  "25H71A0494": {
+    "attended": 33,
+    "department": "ECE-B",
+    "name": "Kotte Sai Dhanushya",
+    "semester": "2"
+  },
+  "25H71A0495": {
+    "attended": 22,
+    "department": "ECE-B",
+    "name": "Kunduru Srinivasa Mani Deep Reddy",
+    "semester": "2"
+  },
+  "25H71A0496": {
+    "attended": 39,
+    "department": "ECE-B",
+    "name": "Lakkisetti Bhargavi",
+    "semester": "2"
+  },
+  "25H71A0497": {
+    "attended": 18,
+    "department": "ECE-B",
+    "name": "Lopinti Dileep Kumar",
+    "semester": "2"
+  },
+  "25H71A0498": {
+    "attended": 40,
+    "department": "ECE-B",
+    "name": "Mada Hasini",
+    "semester": "2"
+  },
+  "25H71A0499": {
+    "attended": 36,
+    "department": "ECE-B",
+    "name": "Malle Sravan Kumar",
+    "semester": "2"
+  },
+  "25H71A04A0": {
+    "attended": 27,
+    "department": "ECE-B",
+    "name": "Muktavarapu Vivek Sai",
+    "semester": "2"
+  },
+  "25H71A04A1": {
+    "attended": 39,
+    "department": "ECE-B",
+    "name": "Mullapati Karthik",
+    "semester": "2"
+  },
+  "25H71A04A2": {
+    "attended": 31,
+    "department": "ECE-B",
+    "name": "Nimmathota Gowtham Srivatsav",
+    "semester": "2"
+  },
+  "25H71A04A3": {
+    "attended": 23,
+    "department": "ECE-B",
+    "name": "Palla Ram Charan Teja",
+    "semester": "2"
+  },
+  "25H71A04A4": {
+    "attended": 1,
+    "department": "ECE-B",
+    "name": "Parsepu Bhaskara Rao",
+    "semester": "2"
+  },
+  "25H71A04A6": {
+    "attended": 16,
+    "department": "ECE-B",
+    "name": "Patchigolla Hemanth",
+    "semester": "2"
+  },
+  "25H71A04A7": {
+    "attended": 27,
+    "department": "ECE-B",
+    "name": "Peeta Ajay Kumar",
+    "semester": "2"
+  },
+  "25H71A04A8": {
+    "attended": 32,
+    "department": "ECE-B",
+    "name": "Penugurthi Naga Karthik",
+    "semester": "2"
+  },
+  "25H71A04A9": {
+    "attended": 22,
+    "department": "ECE-B",
+    "name": "Polinedi Triveni",
+    "semester": "2"
+  },
+  "25H71A04B0": {
+    "attended": 34,
+    "department": "ECE-B",
+    "name": "Potluri Devi Naga Sai Charan",
+    "semester": "2"
+  },
+  "25H71A04B1": {
+    "attended": 21,
+    "department": "ECE-B",
+    "name": "Ragula Harshita",
+    "semester": "2"
+  },
+  "25H71A04B2": {
+    "attended": 48,
+    "department": "ECE-B",
+    "name": "Rudravarapu Manogna",
+    "semester": "2"
+  },
+  "25H71A04B3": {
+    "attended": 33,
+    "department": "ECE-B",
+    "name": "Saketi Sravani",
+    "semester": "2"
+  },
+  "25H71A04B4": {
+    "attended": 21,
+    "department": "ECE-B",
+    "name": "Segi Reddy Rakesh Reddy",
+    "semester": "2"
+  },
+  "25H71A04B5": {
+    "attended": 8,
+    "department": "ECE-B",
+    "name": "Shaik Faruk Ali",
+    "semester": "2"
+  },
+  "25H71A04B6": {
+    "attended": 34,
+    "department": "ECE-B",
+    "name": "Shaik Nazeer",
+    "semester": "2"
+  },
+  "25H71A04B7": {
+    "attended": 40,
+    "department": "ECE-B",
+    "name": "Shaik Saniya",
+    "semester": "2"
+  },
+  "25H71A04B8": {
+    "attended": 13,
+    "department": "ECE-B",
+    "name": "Shaik Shabeer",
+    "semester": "2"
+  },
+  "25H71A04B9": {
+    "attended": 47,
+    "department": "ECE-B",
+    "name": "Somoju Dayini Venkata Triveni",
+    "semester": "2"
+  },
+  "25H71A04C0": {
+    "attended": 39,
+    "department": "ECE-B",
+    "name": "Talakayala Hemasree",
+    "semester": "2"
+  },
+  "25H71A04C1": {
+    "attended": 45,
+    "department": "ECE-B",
+    "name": "Thokala Ram Tej",
+    "semester": "2"
+  },
+  "25H71A04C2": {
+    "attended": 19,
+    "department": "ECE-B",
+    "name": "Thotakura Nandini",
+    "semester": "2"
+  },
+  "25H71A04C3": {
+    "attended": 45,
+    "department": "ECE-B",
+    "name": "Thottempudi Chandu",
+    "semester": "2"
+  },
+  "25H71A04C4": {
+    "attended": 46,
+    "department": "ECE-B",
+    "name": "Tumma Uday Kiran",
+    "semester": "2"
+  },
+  "25H71A04C5": {
+    "attended": 35,
+    "department": "ECE-B",
+    "name": "Valiveti Venkata Thanush Kumar",
+    "semester": "2"
+  },
+  "25H71A04C6": {
+    "attended": 42,
+    "department": "ECE-B",
+    "name": "Vanipenta Venkata Bhargavi",
+    "semester": "2"
+  },
+  "25H71A04C7": {
+    "attended": 42,
+    "department": "ECE-B",
+    "name": "Veeramalla Karthik",
+    "semester": "2"
+  },
+  "25H71A04C8": {
+    "attended": 33,
+    "department": "ECE-B",
+    "name": "Vegineti Urmila",
+    "semester": "2"
+  },
+  "25H71A04C9": {
+    "attended": 42,
+    "department": "ECE-B",
+    "name": "Velisetty Naveen",
+    "semester": "2"
+  },
+  "25H71A04D0": {
+    "attended": 33,
+    "department": "ECE-B",
+    "name": "Velpula Keerthi",
+    "semester": "2"
+  },
+  "25H71A04D1": {
+    "attended": 34,
+    "department": "ECE-B",
+    "name": "Yarupalli Durga Prasad",
+    "semester": "2"
+  },
+  "25H71A04D2": {
+    "attended": 38,
+    "department": "ECE-B",
+    "name": "Yedida Jairam",
+    "semester": "2"
+  },
+  "25H71A04D3": {
+    "attended": 22,
+    "department": "ECE-C",
+    "name": "Anagani Abhishek",
+    "semester": "2"
+  },
+  "25H71A04D4": {
+    "attended": 26,
+    "department": "ECE-C",
+    "name": "Ande Varshitha",
+    "semester": "2"
+  },
+  "25H71A04D5": {
+    "attended": 22,
+    "department": "ECE-C",
+    "name": "Avanigadda Himaja",
+    "semester": "2"
+  },
+  "25H71A04D6": {
+    "attended": 21,
+    "department": "ECE-C",
+    "name": "Badineni Sambasivarao",
+    "semester": "2"
+  },
+  "25H71A04D7": {
+    "attended": 17,
+    "department": "ECE-C",
+    "name": "Belagam Archana",
+    "semester": "2"
+  },
+  "25H71A04D8": {
+    "attended": 22,
+    "department": "ECE-C",
+    "name": "Bondalapati Meenakshi",
+    "semester": "2"
+  },
+  "25H71A04D9": {
+    "attended": 29,
+    "department": "ECE-C",
+    "name": "Cheni Chandrika",
+    "semester": "2"
+  },
+  "25H71A04E0": {
+    "attended": 34,
+    "department": "ECE-C",
+    "name": "Chirravuri Dhatri Surya Kanakadurga",
+    "semester": "2"
+  },
+  "25H71A04E1": {
+    "attended": 25,
+    "department": "ECE-C",
+    "name": "Dammala Naga Venkata Mohan Krishna",
+    "semester": "2"
+  },
+  "25H71A04E2": {
+    "attended": 0,
+    "department": "ECE-C",
+    "name": "Gaddala Poojitha",
+    "semester": "2"
+  },
+  "25H71A04E3": {
+    "attended": 12,
+    "department": "ECE-C",
+    "name": "Gumma Sai Dhanunjay",
+    "semester": "2"
+  },
+  "25H71A04E4": {
+    "attended": 29,
+    "department": "ECE-C",
+    "name": "Jakkula Venkatesh",
+    "semester": "2"
+  },
+  "25H71A04E5": {
+    "attended": 31,
+    "department": "ECE-C",
+    "name": "Kalathoti Sri Sivani",
+    "semester": "2"
+  },
+  "25H71A04E6": {
+    "attended": 18,
+    "department": "ECE-C",
+    "name": "Kammari Naga Achari",
+    "semester": "2"
+  },
+  "25H71A04E7": {
+    "attended": 21,
+    "department": "ECE-C",
+    "name": "Kaniganthi Aswanth",
+    "semester": "2"
+  },
+  "25H71A04E8": {
+    "attended": 29,
+    "department": "ECE-C",
+    "name": "Karnati Bala Venkateswaramma",
+    "semester": "2"
+  },
+  "25H71A04E9": {
+    "attended": 21,
+    "department": "ECE-C",
+    "name": "Kolluru Mahitha",
+    "semester": "2"
+  },
+  "25H71A04F0": {
+    "attended": 20,
+    "department": "ECE-C",
+    "name": "Kondeboyina Sivaiah",
+    "semester": "2"
+  },
+  "25H71A04F1": {
+    "attended": 23,
+    "department": "ECE-C",
+    "name": "Kota Anand Kumar",
+    "semester": "2"
+  },
+  "25H71A04F2": {
+    "attended": 29,
+    "department": "ECE-C",
+    "name": "Kuncham Venkatesh",
+    "semester": "2"
+  },
+  "25H71A04F3": {
+    "attended": 33,
+    "department": "ECE-C",
+    "name": "Kuraganti Mounika",
+    "semester": "2"
+  },
+  "25H71A04F4": {
+    "attended": 16,
+    "department": "ECE-C",
+    "name": "Madasu Pujitha",
+    "semester": "2"
+  },
+  "25H71A04F5": {
+    "attended": 14,
+    "department": "ECE-C",
+    "name": "Maddhula Lakshmi Reddy",
+    "semester": "2"
+  },
+  "25H71A04F6": {
+    "attended": 26,
+    "department": "ECE-C",
+    "name": "Mahankali Narasimha Rao",
+    "semester": "2"
+  },
+  "25H71A04F7": {
+    "attended": 17,
+    "department": "ECE-C",
+    "name": "Pasupuleti Sivadurga Rao",
+    "semester": "2"
+  },
+  "25H71A04F8": {
+    "attended": 16,
+    "department": "ECE-C",
+    "name": "Mekapothula Bharath Kumar Reddy",
+    "semester": "2"
+  },
+  "25H71A04F9": {
+    "attended": 27,
+    "department": "ECE-C",
+    "name": "Midhe Tarak Manosh",
+    "semester": "2"
+  },
+  "25H71A04G0": {
+    "attended": 16,
+    "department": "ECE-C",
+    "name": "Munaga Lateef Kumar",
+    "semester": "2"
+  },
+  "25H71A04G1": {
+    "attended": 21,
+    "department": "ECE-C",
+    "name": "Nariboyina Bharath Kumar",
+    "semester": "2"
+  },
+  "25H71A04G2": {
+    "attended": 27,
+    "department": "ECE-C",
+    "name": "Narsimsetti Durga Sri",
+    "semester": "2"
+  },
+  "25H71A04G3": {
+    "attended": 17,
+    "department": "ECE-C",
+    "name": "Narukulla Alekhya",
+    "semester": "2"
+  },
+  "25H71A04G4": {
+    "attended": 26,
+    "department": "ECE-C",
+    "name": "Pagadam Raja",
+    "semester": "2"
+  },
+  "25H71A04G5": {
+    "attended": 27,
+    "department": "ECE-C",
+    "name": "Palla Ramesh",
+    "semester": "2"
+  },
+  "25H71A04G6": {
+    "attended": 27,
+    "department": "ECE-C",
+    "name": "Pamujula Nokesh Naga",
+    "semester": "2"
+  },
+  "25H71A04G7": {
+    "attended": 23,
+    "department": "ECE-C",
+    "name": "Pathuri Devarathnam",
+    "semester": "2"
+  },
+  "25H71A04G8": {
+    "attended": 12,
+    "department": "ECE-C",
+    "name": "Patibandla Srinivas",
+    "semester": "2"
+  },
+  "25H71A04G9": {
+    "attended": 26,
+    "department": "ECE-C",
+    "name": "Pilla Jyothika",
+    "semester": "2"
+  },
+  "25H71A04H0": {
+    "attended": 16,
+    "department": "ECE-C",
+    "name": "Pilli Durga Ranjith",
+    "semester": "2"
+  },
+  "25H71A04H1": {
+    "attended": 15,
+    "department": "ECE-C",
+    "name": "Polavarapu Divya Vani",
+    "semester": "2"
+  },
+  "25H71A04H2": {
+    "attended": 14,
+    "department": "ECE-C",
+    "name": "Polisetti Sushanth",
+    "semester": "2"
+  },
+  "25H71A04H3": {
+    "attended": 14,
+    "department": "ECE-C",
+    "name": "Ponnapula Venkata Navadeep",
+    "semester": "2"
+  },
+  "25H71A04H4": {
+    "attended": 0,
+    "department": "ECE-C",
+    "name": "Reddy Harish",
+    "semester": "2"
+  },
+  "25H71A04H6": {
+    "attended": 26,
+    "department": "ECE-C",
+    "name": "Sandireddy Naga Chetan",
+    "semester": "2"
+  },
+  "25H71A04H7": {
+    "attended": 23,
+    "department": "ECE-C",
+    "name": "Sanikommu Kavya Varshini",
+    "semester": "2"
+  },
+  "25H71A04H8": {
+    "attended": 30,
+    "department": "ECE-C",
+    "name": "Shaik Ahamad Hussain",
+    "semester": "2"
+  },
+  "25H71A04H9": {
+    "attended": 18,
+    "department": "ECE-C",
+    "name": "Shaik Juber",
+    "semester": "2"
+  },
+  "25H71A04I0": {
+    "attended": 24,
+    "department": "ECE-C",
+    "name": "Shaik Munna",
+    "semester": "2"
+  },
+  "25H71A04I1": {
+    "attended": 18,
+    "department": "ECE-C",
+    "name": "Syed Hussian",
+    "semester": "2"
+  },
+  "25H71A04I2": {
+    "attended": 23,
+    "department": "ECE-C",
+    "name": "Thalla Mahitha",
+    "semester": "2"
+  },
+  "25H71A04I3": {
+    "attended": 23,
+    "department": "ECE-C",
+    "name": "Thokala Lakshman Teja",
+    "semester": "2"
+  },
+  "25H71A04I4": {
+    "attended": 25,
+    "department": "ECE-C",
+    "name": "Thota Sarveswara Rao",
+    "semester": "2"
+  },
+  "25H71A04I5": {
+    "attended": 19,
+    "department": "ECE-C",
+    "name": "Vallepu Arjun",
+    "semester": "2"
+  },
+  "25H71A04I6": {
+    "attended": 7,
+    "department": "ECE-C",
+    "name": "Velpula Pushpa Teja",
+    "semester": "2"
+  },
+  "25H71A04I7": {
+    "attended": 7,
+    "department": "ECE-C",
+    "name": "Vemula Ghnaneswar",
+    "semester": "2"
+  },
+  "25H71A04I8": {
+    "attended": 25,
+    "department": "ECE-C",
+    "name": "Vemula Sai Meghana",
+    "semester": "2"
+  },
+  "25H71A04I9": {
+    "attended": 14,
+    "department": "ECE-C",
+    "name": "Vinnakota Venu Gopal",
+    "semester": "2"
+  },
+  "25H71A04J0": {
+    "attended": 27,
+    "department": "ECE-C",
+    "name": "Viswanadhapalli Sridevi",
+    "semester": "2"
+  },
+  "25H71A04J1": {
+    "attended": 19,
+    "department": "ECE-C",
+    "name": "Yelamandala Venkata Hari Subhramanya Gopi",
+    "semester": "2"
+  },
+  "25H71A04J2": {
+    "attended": 25,
+    "department": "ECE-C",
+    "name": "M.NARASIMHA SAILESH",
+    "semester": "2"
+  },
+  "25H71A0501": {
+    "attended": 49,
+    "department": "CSE-A",
+    "name": "Aishitha Kosuri",
+    "semester": "2"
+  },
+  "25H71A0502": {
+    "attended": 38,
+    "department": "CSE-A",
+    "name": "Anchuri Manasa",
+    "semester": "2"
+  },
+  "25H71A0503": {
+    "attended": 44,
+    "department": "CSE-A",
+    "name": "Badavath Bhargavi",
+    "semester": "2"
+  },
+  "25H71A0504": {
+    "attended": 50,
+    "department": "CSE-A",
+    "name": "Badavath Vasudha Sri",
+    "semester": "2"
+  },
+  "25H71A0505": {
+    "attended": 45,
+    "department": "CSE-A",
+    "name": "Badisa Uday Kiran",
+    "semester": "2"
+  },
+  "25H71A0506": {
+    "attended": 5,
+    "department": "CSE-A",
+    "name": "Bethala Ajay Kumar",
+    "semester": "2"
+  },
+  "25H71A0507": {
+    "attended": 43,
+    "department": "CSE-A",
+    "name": "Bhavanam Sri Nadh Reddy",
+    "semester": "2"
+  },
+  "25H71A0508": {
+    "attended": 12,
+    "department": "CSE-A",
+    "name": "Bikki Sai Venkata Siva Narayana",
+    "semester": "2"
+  },
+  "25H71A0509": {
+    "attended": 28,
+    "department": "CSE-A",
+    "name": "Bikki Sri Ganesh",
+    "semester": "2"
+  },
+  "25H71A0510": {
+    "attended": 33,
+    "department": "CSE-A",
+    "name": "Billa Jaswanth",
+    "semester": "2"
+  },
+  "25H71A0511": {
+    "attended": 48,
+    "department": "CSE-A",
+    "name": "Boddu Venkata Lakshmi",
+    "semester": "2"
+  },
+  "25H71A0512": {
+    "attended": 13,
+    "department": "CSE-A",
+    "name": "Bogem Sumanth",
+    "semester": "2"
+  },
+  "25H71A0513": {
+    "attended": 16,
+    "department": "CSE-A",
+    "name": "Bonala Anil Sukumar",
+    "semester": "2"
+  },
+  "25H71A0514": {
+    "attended": 37,
+    "department": "CSE-A",
+    "name": "Cherupalli Keshavaraam",
+    "semester": "2"
+  },
+  "25H71A0515": {
+    "attended": 39,
+    "department": "CSE-A",
+    "name": "Chinta Lohitha Sri",
+    "semester": "2"
+  },
+  "25H71A0516": {
+    "attended": 12,
+    "department": "CSE-A",
+    "name": "Dondapati Vikshith",
+    "semester": "2"
+  },
+  "25H71A0517": {
+    "attended": 40,
+    "department": "CSE-A",
+    "name": "Doti Sai Pavan",
+    "semester": "2"
+  },
+  "25H71A0518": {
+    "attended": 33,
+    "department": "CSE-A",
+    "name": "Eedara Mahalakshmi",
+    "semester": "2"
+  },
+  "25H71A0519": {
+    "attended": 32,
+    "department": "CSE-A",
+    "name": "Gangavarapu Mahendra Reddy",
+    "semester": "2"
+  },
+  "25H71A0520": {
+    "attended": 29,
+    "department": "CSE-A",
+    "name": "Gantela Geetha",
+    "semester": "2"
+  },
+  "25H71A0521": {
+    "attended": 18,
+    "department": "CSE-A",
+    "name": "Jogi Hemanth Venkata Manikanta",
+    "semester": "2"
+  },
+  "25H71A0522": {
+    "attended": 33,
+    "department": "CSE-A",
+    "name": "Kalavakuntla Naga Lakshmi",
+    "semester": "2"
+  },
+  "25H71A0523": {
+    "attended": 38,
+    "department": "CSE-A",
+    "name": "Kambala Dharani",
+    "semester": "2"
+  },
+  "25H71A0524": {
+    "attended": 28,
+    "department": "CSE-A",
+    "name": "Katukuri Apurva",
+    "semester": "2"
+  },
+  "25H71A0525": {
+    "attended": 49,
+    "department": "CSE-A",
+    "name": "Killampudi Sai Charan Teja",
+    "semester": "2"
+  },
+  "25H71A0526": {
+    "attended": 40,
+    "department": "CSE-A",
+    "name": "Kolusu Sravani",
+    "semester": "2"
+  },
+  "25H71A0527": {
+    "attended": 40,
+    "department": "CSE-A",
+    "name": "Kona Bhavani Sankar",
+    "semester": "2"
+  },
+  "25H71A0528": {
+    "attended": 37,
+    "department": "CSE-A",
+    "name": "Kondepati Rishmitha",
+    "semester": "2"
+  },
+  "25H71A0529": {
+    "attended": 44,
+    "department": "CSE-A",
+    "name": "Kondru Vinay",
+    "semester": "2"
+  },
+  "25H71A0530": {
+    "attended": 29,
+    "department": "CSE-A",
+    "name": "Kongara Priyanka",
+    "semester": "2"
+  },
+  "25H71A0531": {
+    "attended": 20,
+    "department": "CSE-A",
+    "name": "Konisetty Siva Parvathi",
+    "semester": "2"
+  },
+  "25H71A0532": {
+    "attended": 16,
+    "department": "CSE-A",
+    "name": "Koraganji Hemanth",
+    "semester": "2"
+  },
+  "25H71A0533": {
+    "attended": 2,
+    "department": "CSE-A",
+    "name": "Kunjanbarth Prasanth",
+    "semester": "2"
+  },
+  "25H71A0534": {
+    "attended": 35,
+    "department": "CSE-A",
+    "name": "Lam Srujana",
+    "semester": "2"
+  },
+  "25H71A0535": {
+    "attended": 42,
+    "department": "CSE-A",
+    "name": "Maddipatla Jyothsna",
+    "semester": "2"
+  },
+  "25H71A0536": {
+    "attended": 26,
+    "department": "CSE-A",
+    "name": "Mahammad Anwar",
+    "semester": "2"
+  },
+  "25H71A0537": {
+    "attended": 43,
+    "department": "CSE-A",
+    "name": "Malladi Dudu Sainadh",
+    "semester": "2"
+  },
+  "25H71A0538": {
+    "attended": 25,
+    "department": "CSE-A",
+    "name": "Mannem Dhanush",
+    "semester": "2"
+  },
+  "25H71A0539": {
+    "attended": 50,
+    "department": "CSE-A",
+    "name": "Molli Rohith",
+    "semester": "2"
+  },
+  "25H71A0540": {
+    "attended": 51,
+    "department": "CSE-A",
+    "name": "Morla Sai Meghana",
+    "semester": "2"
+  },
+  "25H71A0541": {
+    "attended": 1,
+    "department": "CSE-A",
+    "name": "Moruboyina Harshitha",
+    "semester": "2"
+  },
+  "25H71A0542": {
+    "attended": 12,
+    "department": "CSE-A",
+    "name": "Muraboina Venkata Nithin",
+    "semester": "2"
+  },
+  "25H71A0543": {
+    "attended": 39,
+    "department": "CSE-A",
+    "name": "Nemalipuri Annapurnamma",
+    "semester": "2"
+  },
+  "25H71A0544": {
+    "attended": 28,
+    "department": "CSE-A",
+    "name": "Padala Nosmitha",
+    "semester": "2"
+  },
+  "25H71A0545": {
+    "attended": 27,
+    "department": "CSE-A",
+    "name": "Paduchuri Sai Kumar",
+    "semester": "2"
+  },
+  "25H71A0546": {
+    "attended": 36,
+    "department": "CSE-A",
+    "name": "Paladugula Grishma Sri",
+    "semester": "2"
+  },
+  "25H71A0547": {
+    "attended": 48,
+    "department": "CSE-A",
+    "name": "Pandalaneni Bhavya Manikanta",
+    "semester": "2"
+  },
+  "25H71A0548": {
+    "attended": 18,
+    "department": "CSE-A",
+    "name": "Paramasivan Lakshmi Charan",
+    "semester": "2"
+  },
+  "25H71A0549": {
+    "attended": 16,
+    "department": "CSE-A",
+    "name": "Pareddy Srisanjeevini",
+    "semester": "2"
+  },
+  "25H71A0550": {
+    "attended": 28,
+    "department": "CSE-A",
+    "name": "Pathan Naziya",
+    "semester": "2"
+  },
+  "25H71A0551": {
+    "attended": 39,
+    "department": "CSE-A",
+    "name": "Pitha Divya Sri Sai",
+    "semester": "2"
+  },
+  "25H71A0552": {
+    "attended": 29,
+    "department": "CSE-A",
+    "name": "Podalakuru Gireesh Kumar",
+    "semester": "2"
+  },
+  "25H71A0553": {
+    "attended": 28,
+    "department": "CSE-A",
+    "name": "Potla Naresh",
+    "semester": "2"
+  },
+  "25H71A0554": {
+    "attended": 28,
+    "department": "CSE-A",
+    "name": "Puttupu Hemanth Kumar",
+    "semester": "2"
+  },
+  "25H71A0555": {
+    "attended": 47,
+    "department": "CSE-A",
+    "name": "Ranga Sai Krishna Chaitanya",
+    "semester": "2"
+  },
+  "25H71A0556": {
+    "attended": 42,
+    "department": "CSE-A",
+    "name": "Ravulapati Jaisantosh",
+    "semester": "2"
+  },
+  "25H71A0557": {
+    "attended": 31,
+    "department": "CSE-A",
+    "name": "Reddymalla Nirusha",
+    "semester": "2"
+  },
+  "25H71A0558": {
+    "attended": 25,
+    "department": "CSE-A",
+    "name": "Saladula Nehan Balaji",
+    "semester": "2"
+  },
+  "25H71A0559": {
+    "attended": 35,
+    "department": "CSE-A",
+    "name": "Shaik Mahammad Nazeer",
+    "semester": "2"
+  },
+  "25H71A0560": {
+    "attended": 17,
+    "department": "CSE-A",
+    "name": "Shaik Moulali",
+    "semester": "2"
+  },
+  "25H71A0561": {
+    "attended": 40,
+    "department": "CSE-A",
+    "name": "Shaik Nazeefa",
+    "semester": "2"
+  },
+  "25H71A0562": {
+    "attended": 27,
+    "department": "CSE-A",
+    "name": "Shaik Sameera",
+    "semester": "2"
+  },
+  "25H71A0563": {
+    "attended": 38,
+    "department": "CSE-A",
+    "name": "Tamatam Divya",
+    "semester": "2"
+  },
+  "25H71A0565": {
+    "attended": 26,
+    "department": "CSE-A",
+    "name": "Yalavarthi Drupadh",
+    "semester": "2"
+  },
+  "25H71A0566": {
+    "attended": 46,
+    "department": "CSE-A",
+    "name": "Yaramreddy Sruthi",
+    "semester": "2"
+  },
+  "25H71A0567": {
+    "attended": 61,
+    "department": "CSE-B",
+    "name": "Aarikatla Pushpa",
+    "semester": "2"
+  },
+  "25H71A0568": {
+    "attended": 27,
+    "department": "CSE-B",
+    "name": "Akkala Naveen Reddy",
+    "semester": "2"
+  },
+  "25H71A0569": {
+    "attended": 39,
+    "department": "CSE-B",
+    "name": "Alokam Hari Babu",
+    "semester": "2"
+  },
+  "25H71A0570": {
+    "attended": 32,
+    "department": "CSE-B",
+    "name": "Angirekula Mallikharjuna",
+    "semester": "2"
+  },
+  "25H71A0571": {
+    "attended": 51,
+    "department": "CSE-B",
+    "name": "Banavath Venkata Chiranjeevi",
+    "semester": "2"
+  },
+  "25H71A0572": {
+    "attended": 1,
+    "department": "CSE-B",
+    "name": "Bevara Nikhil Kumar",
+    "semester": "2"
+  },
+  "25H71A0573": {
+    "attended": 42,
+    "department": "CSE-B",
+    "name": "Bikkavolu Varshitha",
+    "semester": "2"
+  },
+  "25H71A0574": {
+    "attended": 61,
+    "department": "CSE-B",
+    "name": "Bondalapati Vegaprithi",
+    "semester": "2"
+  },
+  "25H71A0575": {
+    "attended": 47,
+    "department": "CSE-B",
+    "name": "Chalamala Madhav",
+    "semester": "2"
+  },
+  "25H71A0576": {
+    "attended": 32,
+    "department": "CSE-B",
+    "name": "Cherukuri Neelima",
+    "semester": "2"
+  },
+  "25H71A0577": {
+    "attended": 44,
+    "department": "CSE-B",
+    "name": "Chinka Aparna",
+    "semester": "2"
+  },
+  "25H71A0578": {
+    "attended": 48,
+    "department": "CSE-B",
+    "name": "Chunduru Charitha Venkata Bhavani",
+    "semester": "2"
+  },
+  "25H71A0579": {
+    "attended": 26,
+    "department": "CSE-B",
+    "name": "Dabbugottu Malasri",
+    "semester": "2"
+  },
+  "25H71A0580": {
+    "attended": 34,
+    "department": "CSE-B",
+    "name": "Dogiparthi Anjaneya Prasad",
+    "semester": "2"
+  },
+  "25H71A0581": {
+    "attended": 20,
+    "department": "CSE-B",
+    "name": "Gogulampati Kumar",
+    "semester": "2"
+  },
+  "25H71A0583": {
+    "attended": 29,
+    "department": "CSE-B",
+    "name": "Gosu Upendra",
+    "semester": "2"
+  },
+  "25H71A0584": {
+    "attended": 11,
+    "department": "CSE-B",
+    "name": "Gottam Nagesh Kumar",
+    "semester": "2"
+  },
+  "25H71A0585": {
+    "attended": 35,
+    "department": "CSE-B",
+    "name": "Gundepogu Mohan",
+    "semester": "2"
+  },
+  "25H71A0586": {
+    "attended": 20,
+    "department": "CSE-B",
+    "name": "Kakani Naga Karthik",
+    "semester": "2"
+  },
+  "25H71A0587": {
+    "attended": 61,
+    "department": "CSE-B",
+    "name": "Kambhampati Mahima",
+    "semester": "2"
+  },
+  "25H71A0588": {
+    "attended": 61,
+    "department": "CSE-B",
+    "name": "Karanki Bandhavya",
+    "semester": "2"
+  },
+  "25H71A0589": {
+    "attended": 43,
+    "department": "CSE-B",
+    "name": "Kasarla Supriya",
+    "semester": "2"
+  },
+  "25H71A0590": {
+    "attended": 61,
+    "department": "CSE-B",
+    "name": "Katakam Chandana Sri Kanaka Maha Lakshmi",
+    "semester": "2"
+  },
+  "25H71A0591": {
+    "attended": 34,
+    "department": "CSE-B",
+    "name": "Katikitala Varun",
+    "semester": "2"
+  },
+  "25H71A0592": {
+    "attended": 38,
+    "department": "CSE-B",
+    "name": "Kona Jayasri",
+    "semester": "2"
+  },
+  "25H71A0593": {
+    "attended": 42,
+    "department": "CSE-B",
+    "name": "Kondapalli Chandi Priya",
+    "semester": "2"
+  },
+  "25H71A0594": {
+    "attended": 51,
+    "department": "CSE-B",
+    "name": "Konidi Dempul Puja",
+    "semester": "2"
+  },
+  "25H71A0595": {
+    "attended": 48,
+    "department": "CSE-B",
+    "name": "Korikana Narayana Rao",
+    "semester": "2"
+  },
+  "25H71A0596": {
+    "attended": 7,
+    "department": "CSE-B",
+    "name": "Kotha Sai Teja",
+    "semester": "2"
+  },
+  "25H71A0597": {
+    "attended": 32,
+    "department": "CSE-B",
+    "name": "Kothapalli Srinidhi",
+    "semester": "2"
+  },
+  "25H71A0598": {
+    "attended": 17,
+    "department": "CSE-B",
+    "name": "Kurra Siva Raju",
+    "semester": "2"
+  },
+  "25H71A0599": {
+    "attended": 27,
+    "department": "CSE-B",
+    "name": "Maddala Avinash",
+    "semester": "2"
+  },
+  "25H71A05A0": {
+    "attended": 10,
+    "department": "CSE-B",
+    "name": "Maguluri Sudheer Kumar",
+    "semester": "2"
+  },
+  "25H71A05A2": {
+    "attended": 49,
+    "department": "CSE-B",
+    "name": "Malkapurapu Damesh",
+    "semester": "2"
+  },
+  "25H71A05A3": {
+    "attended": 53,
+    "department": "CSE-B",
+    "name": "Mallampalli Yaswanth",
+    "semester": "2"
+  },
+  "25H71A05A4": {
+    "attended": 3,
+    "department": "CSE-B",
+    "name": "Malneedi Bharath Chowdary",
+    "semester": "2"
+  },
+  "25H71A05A5": {
+    "attended": 41,
+    "department": "CSE-B",
+    "name": "Marripalli Bhavani",
+    "semester": "2"
+  },
+  "25H71A05A6": {
+    "attended": 32,
+    "department": "CSE-B",
+    "name": "Maturi Neeraja Priya",
+    "semester": "2"
+  },
+  "25H71A05A7": {
+    "attended": 19,
+    "department": "CSE-B",
+    "name": "Mohammad Aslam",
+    "semester": "2"
+  },
+  "25H71A05A8": {
+    "attended": 23,
+    "department": "CSE-B",
+    "name": "Mohammad Muzakeerun",
+    "semester": "2"
+  },
+  "25H71A05A9": {
+    "attended": 57,
+    "department": "CSE-B",
+    "name": "Muni Harshith Dama",
+    "semester": "2"
+  },
+  "25H71A05AA": {
+    "attended": 44,
+    "department": "CSE-F",
+    "name": "Koppolu Sahini",
+    "semester": "2"
+  },
+  "25H71A05AB": {
+    "attended": 42,
+    "department": "CSE-F",
+    "name": "Lingala Kiranmai",
+    "semester": "2"
+  },
+  "25H71A05AC": {
+    "attended": 53,
+    "department": "CSE-F",
+    "name": "Madiraju Usha",
+    "semester": "2"
+  },
+  "25H71A05AD": {
+    "attended": 10,
+    "department": "CSE-F",
+    "name": "Madisetti Chowshika",
+    "semester": "2"
+  },
+  "25H71A05AE": {
+    "attended": 26,
+    "department": "CSE-F",
+    "name": "Maginam Thrinesh",
+    "semester": "2"
+  },
+  "25H71A05AF": {
+    "attended": 44,
+    "department": "CSE-F",
+    "name": "Magisetti Prasanthi",
+    "semester": "2"
+  },
+  "25H71A05AG": {
+    "attended": 41,
+    "department": "CSE-F",
+    "name": "Manda Mukesh",
+    "semester": "2"
+  },
+  "25H71A05AH": {
+    "attended": 0,
+    "department": "CSE-F",
+    "name": "Marripudi Tarunteja",
+    "semester": "2"
+  },
+  "25H71A05AI": {
+    "attended": 17,
+    "department": "CSE-F",
+    "name": "Medepalli Aditya",
+    "semester": "2"
+  },
+  "25H71A05AJ": {
+    "attended": 24,
+    "department": "CSE-F",
+    "name": "Medisetti Ananth Kumar Venkat",
+    "semester": "2"
+  },
+  "25H71A05AK": {
+    "attended": 55,
+    "department": "CSE-F",
+    "name": "Meer Abbas Hussain",
+    "semester": "2"
+  },
+  "25H71A05AL": {
+    "attended": 53,
+    "department": "CSE-F",
+    "name": "Meesala Uma",
+    "semester": "2"
+  },
+  "25H71A05AM": {
+    "attended": 53,
+    "department": "CSE-F",
+    "name": "Merakanapalli Uma",
+    "semester": "2"
+  },
+  "25H71A05AN": {
+    "attended": 27,
+    "department": "CSE-F",
+    "name": "Padamata Rajesh",
+    "semester": "2"
+  },
+  "25H71A05AO": {
+    "attended": 46,
+    "department": "CSE-F",
+    "name": "Pakalapati Komal Krishna",
+    "semester": "2"
+  },
+  "25H71A05AP": {
+    "attended": 47,
+    "department": "CSE-F",
+    "name": "Panthangi Mahalakshmi",
+    "semester": "2"
+  },
+  "25H71A05AQ": {
+    "attended": 41,
+    "department": "CSE-F",
+    "name": "Pathan Karishma",
+    "semester": "2"
+  },
+  "25H71A05AR": {
+    "attended": 22,
+    "department": "CSE-F",
+    "name": "Pendyala Omkar Venkata Guru Sai",
+    "semester": "2"
+  },
+  "25H71A05AS": {
+    "attended": 43,
+    "department": "CSE-F",
+    "name": "Popuru Pujitha",
+    "semester": "2"
+  },
+  "25H71A05AT": {
+    "attended": 52,
+    "department": "CSE-F",
+    "name": "Pothuraju Raghu",
+    "semester": "2"
+  },
+  "25H71A05AU": {
+    "attended": 42,
+    "department": "CSE-F",
+    "name": "Pottabathina Jaya Sivaram",
+    "semester": "2"
+  },
+  "25H71A05AV": {
+    "attended": 21,
+    "department": "CSE-F",
+    "name": "Pulavarthi Amarbabu",
+    "semester": "2"
+  },
+  "25H71A05AW": {
+    "attended": 45,
+    "department": "CSE-F",
+    "name": "Pulicherla Venkata Lakshmi",
+    "semester": "2"
+  },
+  "25H71A05AX": {
+    "attended": 35,
+    "department": "CSE-F",
+    "name": "Rayapudi Mani Teja",
+    "semester": "2"
+  },
+  "25H71A05AY": {
+    "attended": 37,
+    "department": "CSE-F",
+    "name": "Shaik Abdul Mohidh",
+    "semester": "2"
+  },
+  "25H71A05AZ": {
+    "attended": 44,
+    "department": "CSE-F",
+    "name": "Shaik Almas Sultana",
+    "semester": "2"
+  },
+  "25H71A05B0": {
+    "attended": 1,
+    "department": "CSE-B",
+    "name": "Namala Praveen",
+    "semester": "2"
+  },
+  "25H71A05B1": {
+    "attended": 45,
+    "department": "CSE-B",
+    "name": "Nanneboiena Venkatesh",
+    "semester": "2"
+  },
+  "25H71A05B2": {
+    "attended": 37,
+    "department": "CSE-B",
+    "name": "Pala Abhinay",
+    "semester": "2"
+  },
+  "25H71A05B3": {
+    "attended": 55,
+    "department": "CSE-B",
+    "name": "Parimi Dhana Raj",
+    "semester": "2"
+  },
+  "25H71A05B4": {
+    "attended": 52,
+    "department": "CSE-B",
+    "name": "Parimi Vamsi",
+    "semester": "2"
+  },
+  "25H71A05B5": {
+    "attended": 39,
+    "department": "CSE-B",
+    "name": "Raavi Chetan Anand",
+    "semester": "2"
+  },
+  "25H71A05B6": {
+    "attended": 58,
+    "department": "CSE-B",
+    "name": "Rayidi Haritha",
+    "semester": "2"
+  },
+  "25H71A05B7": {
+    "attended": 39,
+    "department": "CSE-B",
+    "name": "Salluri Neethu",
+    "semester": "2"
+  },
+  "25H71A05B8": {
+    "attended": 14,
+    "department": "CSE-B",
+    "name": "Sanaka Disindhar Sita Ram Sai",
+    "semester": "2"
+  },
+  "25H71A05B9": {
+    "attended": 38,
+    "department": "CSE-B",
+    "name": "Saripalli Sagar",
+    "semester": "2"
+  },
+  "25H71A05BA": {
+    "attended": 53,
+    "department": "CSE-F",
+    "name": "Shaik Gani Farukhmiya",
+    "semester": "2"
+  },
+  "25H71A05BC": {
+    "attended": 41,
+    "department": "CSE-F",
+    "name": "Shaik Mubina",
+    "semester": "2"
+  },
+  "25H71A05BD": {
+    "attended": 40,
+    "department": "CSE-F",
+    "name": "Shaik Vaseem",
+    "semester": "2"
+  },
+  "25H71A05BE": {
+    "attended": 32,
+    "department": "CSE-F",
+    "name": "Singipilla Lalith Kumar",
+    "semester": "2"
+  },
+  "25H71A05BF": {
+    "attended": 31,
+    "department": "CSE-F",
+    "name": "Sivarathri Durga",
+    "semester": "2"
+  },
+  "25H71A05BG": {
+    "attended": 26,
+    "department": "CSE-F",
+    "name": "Tella Naveen",
+    "semester": "2"
+  },
+  "25H71A05BH": {
+    "attended": 32,
+    "department": "CSE-F",
+    "name": "Thota Ramya",
+    "semester": "2"
+  },
+  "25H71A05BI": {
+    "attended": 38,
+    "department": "CSE-F",
+    "name": "Vinukonda Neha",
+    "semester": "2"
+  },
+  "25H71A05BK": {
+    "attended": 32,
+    "department": "CSE-F",
+    "name": "Yanaki Nikhil Varun",
+    "semester": "2"
+  },
+  "25H71A05C0": {
+    "attended": 18,
+    "department": "CSE-B",
+    "name": "Seelam Venkata Narasimharao",
+    "semester": "2"
+  },
+  "25H71A05C1": {
+    "attended": 44,
+    "department": "CSE-B",
+    "name": "Shaik Khahim",
+    "semester": "2"
+  },
+  "25H71A05C2": {
+    "attended": 51,
+    "department": "CSE-B",
+    "name": "Shaik Mahammad Saif",
+    "semester": "2"
+  },
+  "25H71A05C3": {
+    "attended": 61,
+    "department": "CSE-B",
+    "name": "Shaik Samrin",
+    "semester": "2"
+  },
+  "25H71A05C4": {
+    "attended": 52,
+    "department": "CSE-B",
+    "name": "Shaik Susmithabhi",
+    "semester": "2"
+  },
+  "25H71A05C5": {
+    "attended": 41,
+    "department": "CSE-B",
+    "name": "Shaik Uddand Said",
+    "semester": "2"
+  },
+  "25H71A05C6": {
+    "attended": 26,
+    "department": "CSE-B",
+    "name": "Srikakulapu Uma Chandini",
+    "semester": "2"
+  },
+  "25H71A05C7": {
+    "attended": 30,
+    "department": "CSE-B",
+    "name": "Syed Jasmine",
+    "semester": "2"
+  },
+  "25H71A05C8": {
+    "attended": 53,
+    "department": "CSE-B",
+    "name": "Talari Nandini",
+    "semester": "2"
+  },
+  "25H71A05C9": {
+    "attended": 31,
+    "department": "CSE-B",
+    "name": "Talluri Hemanth Kumar",
+    "semester": "2"
+  },
+  "25H71A05D0": {
+    "attended": 52,
+    "department": "CSE-B",
+    "name": "Vaddana Sudeepthi",
+    "semester": "2"
+  },
+  "25H71A05D1": {
+    "attended": 38,
+    "department": "CSE-B",
+    "name": "Vooturi Priyanka",
+    "semester": "2"
+  },
+  "25H71A05D2": {
+    "attended": 48,
+    "department": "CSE-B",
+    "name": "Yandrapati Charvi",
+    "semester": "2"
+  },
+  "25H71A05D3": {
+    "attended": 56,
+    "department": "CSE-C",
+    "name": "Akula Rajini",
+    "semester": "2"
+  },
+  "25H71A05D4": {
+    "attended": 24,
+    "department": "CSE-C",
+    "name": "Allu Harsha Vardhan",
+    "semester": "2"
+  },
+  "25H71A05D5": {
+    "attended": 32,
+    "department": "CSE-C",
+    "name": "Avula Lakshmi Narayana",
+    "semester": "2"
+  },
+  "25H71A05D6": {
+    "attended": 49,
+    "department": "CSE-C",
+    "name": "Badisa Venkata Lakshmi Siva Kumari",
+    "semester": "2"
+  },
+  "25H71A05D7": {
+    "attended": 20,
+    "department": "CSE-C",
+    "name": "Balsu Nandhini",
+    "semester": "2"
+  },
+  "25H71A05D8": {
+    "attended": 36,
+    "department": "CSE-C",
+    "name": "Banavathu Maheswari Bai",
+    "semester": "2"
+  },
+  "25H71A05D9": {
+    "attended": 32,
+    "department": "CSE-C",
+    "name": "Bandaru Vidyasagar",
+    "semester": "2"
+  },
+  "25H71A05E0": {
+    "attended": 25,
+    "department": "CSE-C",
+    "name": "Bandi Uma",
+    "semester": "2"
+  },
+  "25H71A05E1": {
+    "attended": 42,
+    "department": "CSE-C",
+    "name": "Bellapu Kartheek",
+    "semester": "2"
+  },
+  "25H71A05E2": {
+    "attended": 39,
+    "department": "CSE-C",
+    "name": "Bhukya Hima Sagar",
+    "semester": "2"
+  },
+  "25H71A05E3": {
+    "attended": 47,
+    "department": "CSE-C",
+    "name": "Biyyala Bhavani",
+    "semester": "2"
+  },
+  "25H71A05E4": {
+    "attended": 51,
+    "department": "CSE-C",
+    "name": "Challagonda Venu",
+    "semester": "2"
+  },
+  "25H71A05E5": {
+    "attended": 40,
+    "department": "CSE-C",
+    "name": "Chegondi Suresh",
+    "semester": "2"
+  },
+  "25H71A05E6": {
+    "attended": 50,
+    "department": "CSE-C",
+    "name": "Chimmini Naveen",
+    "semester": "2"
+  },
+  "25H71A05E7": {
+    "attended": 46,
+    "department": "CSE-C",
+    "name": "Chintapalli Lakshmi Durga Saranya",
+    "semester": "2"
+  },
+  "25H71A05E8": {
+    "attended": 50,
+    "department": "CSE-C",
+    "name": "Dunna Pujitha",
+    "semester": "2"
+  },
+  "25H71A05E9": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Eerla Bindusri",
+    "semester": "2"
+  },
+  "25H71A05F0": {
+    "attended": 7,
+    "department": "CSE-C",
+    "name": "Erla Manikanta",
+    "semester": "2"
+  },
+  "25H71A05F1": {
+    "attended": 25,
+    "department": "CSE-C",
+    "name": "Gollapalli Siva Gopi Chand",
+    "semester": "2"
+  },
+  "25H71A05F2": {
+    "attended": 34,
+    "department": "CSE-C",
+    "name": "Gudepu Sandeep",
+    "semester": "2"
+  },
+  "25H71A05F3": {
+    "attended": 41,
+    "department": "CSE-C",
+    "name": "Gummadivelli Prajwal",
+    "semester": "2"
+  },
+  "25H71A05F4": {
+    "attended": 53,
+    "department": "CSE-C",
+    "name": "Gunji Ganga Bhavani",
+    "semester": "2"
+  },
+  "25H71A05F5": {
+    "attended": 55,
+    "department": "CSE-C",
+    "name": "Guttula Lakshmi Teja Hari Kumar",
+    "semester": "2"
+  },
+  "25H71A05F6": {
+    "attended": 39,
+    "department": "CSE-C",
+    "name": "Ilapogu Babu",
+    "semester": "2"
+  },
+  "25H71A05F7": {
+    "attended": 47,
+    "department": "CSE-C",
+    "name": "Jetipiti Ramcharan",
+    "semester": "2"
+  },
+  "25H71A05F8": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Kaithepalli Karthikeya",
+    "semester": "2"
+  },
+  "25H71A05F9": {
+    "attended": 33,
+    "department": "CSE-C",
+    "name": "Kasaragadda Sai Mahathi",
+    "semester": "2"
+  },
+  "25H71A05G0": {
+    "attended": 50,
+    "department": "CSE-C",
+    "name": "Katevarapu Anu",
+    "semester": "2"
+  },
+  "25H71A05G1": {
+    "attended": 51,
+    "department": "CSE-C",
+    "name": "Kodali Krupa Niharika",
+    "semester": "2"
+  },
+  "25H71A05G2": {
+    "attended": 39,
+    "department": "CSE-C",
+    "name": "Kona Jyothi Krishna",
+    "semester": "2"
+  },
+  "25H71A05G3": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Korata Lohith Venkata Sai Raju",
+    "semester": "2"
+  },
+  "25H71A05G4": {
+    "attended": 15,
+    "department": "CSE-C",
+    "name": "Kotha Yeswanth Gopal Krishna",
+    "semester": "2"
+  },
+  "25H71A05G6": {
+    "attended": 50,
+    "department": "CSE-C",
+    "name": "Mandala Bhavana",
+    "semester": "2"
+  },
+  "25H71A05G7": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Mandru Rohith",
+    "semester": "2"
+  },
+  "25H71A05G8": {
+    "attended": 32,
+    "department": "CSE-C",
+    "name": "Martha Hemanth",
+    "semester": "2"
+  },
+  "25H71A05G9": {
+    "attended": 45,
+    "department": "CSE-C",
+    "name": "Matta Thiru Ranganadh",
+    "semester": "2"
+  },
+  "25H71A05H0": {
+    "attended": 42,
+    "department": "CSE-C",
+    "name": "Midde Vasanthi",
+    "semester": "2"
+  },
+  "25H71A05H1": {
+    "attended": 20,
+    "department": "CSE-C",
+    "name": "Miriyala Praveen",
+    "semester": "2"
+  },
+  "25H71A05H2": {
+    "attended": 30,
+    "department": "CSE-C",
+    "name": "Mohammad Husna",
+    "semester": "2"
+  },
+  "25H71A05H4": {
+    "attended": 8,
+    "department": "CSE-C",
+    "name": "Narukulla Deepak Chowdary",
+    "semester": "2"
+  },
+  "25H71A05H5": {
+    "attended": 38,
+    "department": "CSE-C",
+    "name": "Pagadala Hemanth Kumar",
+    "semester": "2"
+  },
+  "25H71A05H6": {
+    "attended": 31,
+    "department": "CSE-C",
+    "name": "Palanki Nikhitha",
+    "semester": "2"
+  },
+  "25H71A05H7": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Pamarthi Jaswanthi",
+    "semester": "2"
+  },
+  "25H71A05H8": {
+    "attended": 33,
+    "department": "CSE-C",
+    "name": "Pendli Abhishay",
+    "semester": "2"
+  },
+  "25H71A05H9": {
+    "attended": 34,
+    "department": "CSE-C",
+    "name": "Penugonda Sri Mouli Krishna",
+    "semester": "2"
+  },
+  "25H71A05I0": {
+    "attended": 43,
+    "department": "CSE-C",
+    "name": "Raavi Keerthi Priya",
+    "semester": "2"
+  },
+  "25H71A05I1": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Raavi Shanmukha Priya",
+    "semester": "2"
+  },
+  "25H71A05I2": {
+    "attended": 28,
+    "department": "CSE-C",
+    "name": "Rajaboena Komali Sree",
+    "semester": "2"
+  },
+  "25H71A05I3": {
+    "attended": 34,
+    "department": "CSE-C",
+    "name": "Ravuri Rama Harinadh",
+    "semester": "2"
+  },
+  "25H71A05I4": {
+    "attended": 28,
+    "department": "CSE-C",
+    "name": "Rayala Lokesh",
+    "semester": "2"
+  },
+  "25H71A05I5": {
+    "attended": 39,
+    "department": "CSE-C",
+    "name": "Sareddy Pranav Kumar Reddy",
+    "semester": "2"
+  },
+  "25H71A05I6": {
+    "attended": 48,
+    "department": "CSE-C",
+    "name": "Sayyad Farjana",
+    "semester": "2"
+  },
+  "25H71A05I7": {
+    "attended": 50,
+    "department": "CSE-C",
+    "name": "Shaik Dilshad Begum",
+    "semester": "2"
+  },
+  "25H71A05I8": {
+    "attended": 50,
+    "department": "CSE-C",
+    "name": "Shaik Karishma",
+    "semester": "2"
+  },
+  "25H71A05I9": {
+    "attended": 55,
+    "department": "CSE-C",
+    "name": "Shaik Nowmon",
+    "semester": "2"
+  },
+  "25H71A05J0": {
+    "attended": 29,
+    "department": "CSE-C",
+    "name": "Shaik Rizwan",
+    "semester": "2"
+  },
+  "25H71A05J1": {
+    "attended": 43,
+    "department": "CSE-C",
+    "name": "Shaik Rizwana",
+    "semester": "2"
+  },
+  "25H71A05J2": {
+    "attended": 51,
+    "department": "CSE-C",
+    "name": "Sunke Lakshmi Deepa",
+    "semester": "2"
+  },
+  "25H71A05J3": {
+    "attended": 45,
+    "department": "CSE-C",
+    "name": "Tripurani Chaitanya Lakshmi",
+    "semester": "2"
+  },
+  "25H71A05J4": {
+    "attended": 15,
+    "department": "CSE-C",
+    "name": "Thangirala Ravi Kumar",
+    "semester": "2"
+  },
+  "25H71A05J5": {
+    "attended": 33,
+    "department": "CSE-C",
+    "name": "Yaddanapudi Gowthami",
+    "semester": "2"
+  },
+  "25H71A05J6": {
+    "attended": 42,
+    "department": "CSE-C",
+    "name": "Yadlapalli Naga Chaithanya",
+    "semester": "2"
+  },
+  "25H71A05J7": {
+    "attended": 54,
+    "department": "CSE-C",
+    "name": "Yalamanchili Tejasri",
+    "semester": "2"
+  },
+  "25H71A05J8": {
+    "attended": 42,
+    "department": "CSE-C",
+    "name": "Yeruva Venkata Rakesh",
+    "semester": "2"
+  },
+  "25H71A05J9": {
+    "attended": 16,
+    "department": "CSE-D",
+    "name": "Abdul Khadeer",
+    "semester": "2"
+  },
+  "25H71A05K0": {
+    "attended": 17,
+    "department": "CSE-D",
+    "name": "Amarlapudi Kowsik",
+    "semester": "2"
+  },
+  "25H71A05K1": {
+    "attended": 55,
+    "department": "CSE-D",
+    "name": "Babbadi Yagneswara Rao",
+    "semester": "2"
+  },
+  "25H71A05K2": {
+    "attended": 59,
+    "department": "CSE-D",
+    "name": "Baddula Lasya",
+    "semester": "2"
+  },
+  "25H71A05K3": {
+    "attended": 49,
+    "department": "CSE-D",
+    "name": "Banavathu Nandini",
+    "semester": "2"
+  },
+  "25H71A05K4": {
+    "attended": 36,
+    "department": "CSE-D",
+    "name": "Bandhaviramam Ram Karthikeya",
+    "semester": "2"
+  },
+  "25H71A05K5": {
+    "attended": 34,
+    "department": "CSE-D",
+    "name": "Battula Nithish",
+    "semester": "2"
+  },
+  "25H71A05K6": {
+    "attended": 59,
+    "department": "CSE-D",
+    "name": "Bejawada Kowshik Gopi Reddy",
+    "semester": "2"
+  },
+  "25H71A05K7": {
+    "attended": 30,
+    "department": "CSE-D",
+    "name": "Budalapati Akshay Kiran",
+    "semester": "2"
+  },
+  "25H71A05K8": {
+    "attended": 26,
+    "department": "CSE-D",
+    "name": "Chakiri Deevena",
+    "semester": "2"
+  },
+  "25H71A05K9": {
+    "attended": 36,
+    "department": "CSE-D",
+    "name": "Chappidi Manasa",
+    "semester": "2"
+  },
+  "25H71A05L0": {
+    "attended": 49,
+    "department": "CSE-D",
+    "name": "Cherukuri Sirisha",
+    "semester": "2"
+  },
+  "25H71A05L1": {
+    "attended": 49,
+    "department": "CSE-D",
+    "name": "Chintala Cheruvu Suresh",
+    "semester": "2"
+  },
+  "25H71A05L2": {
+    "attended": 46,
+    "department": "CSE-D",
+    "name": "Dakkamadugula Pavithra",
+    "semester": "2"
+  },
+  "25H71A05L3": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Damuluri Yasaswini",
+    "semester": "2"
+  },
+  "25H71A05L4": {
+    "attended": 50,
+    "department": "CSE-D",
+    "name": "Dondapati Bhargava",
+    "semester": "2"
+  },
+  "25H71A05L5": {
+    "attended": 50,
+    "department": "CSE-D",
+    "name": "Gangavarapu Satwika",
+    "semester": "2"
+  },
+  "25H71A05L7": {
+    "attended": 58,
+    "department": "CSE-D",
+    "name": "Garapati Abhishek",
+    "semester": "2"
+  },
+  "25H71A05L8": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Goda T S S Manikanta Praveen Kumar",
+    "semester": "2"
+  },
+  "25H71A05L9": {
+    "attended": 9,
+    "department": "CSE-D",
+    "name": "Gunji Ashok",
+    "semester": "2"
+  },
+  "25H71A05M0": {
+    "attended": 29,
+    "department": "CSE-D",
+    "name": "Jakkula Venu",
+    "semester": "2"
+  },
+  "25H71A05M1": {
+    "attended": 20,
+    "department": "CSE-D",
+    "name": "Jonna Sivanaga Lakshmi",
+    "semester": "2"
+  },
+  "25H71A05M2": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Kakumani Jaswanth",
+    "semester": "2"
+  },
+  "25H71A05M3": {
+    "attended": 54,
+    "department": "CSE-D",
+    "name": "Kandula Anjani",
+    "semester": "2"
+  },
+  "25H71A05M4": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Kantam Lekya",
+    "semester": "2"
+  },
+  "25H71A05M5": {
+    "attended": 31,
+    "department": "CSE-D",
+    "name": "Karlapudi Siva Nageswara Rao",
+    "semester": "2"
+  },
+  "25H71A05M6": {
+    "attended": 17,
+    "department": "CSE-D",
+    "name": "Karri Yaswanth",
+    "semester": "2"
+  },
+  "25H71A05M7": {
+    "attended": 48,
+    "department": "CSE-D",
+    "name": "Katakam Pujitha Durga",
+    "semester": "2"
+  },
+  "25H71A05M8": {
+    "attended": 35,
+    "department": "CSE-D",
+    "name": "Kollati Sai Akshara",
+    "semester": "2"
+  },
+  "25H71A05M9": {
+    "attended": 20,
+    "department": "CSE-D",
+    "name": "Kollipara Charan Teja",
+    "semester": "2"
+  },
+  "25H71A05N0": {
+    "attended": 20,
+    "department": "CSE-D",
+    "name": "Kothapalli Mahesh",
+    "semester": "2"
+  },
+  "25H71A05N1": {
+    "attended": 41,
+    "department": "CSE-D",
+    "name": "Madala Roshith Venkata Naga Sai",
+    "semester": "2"
+  },
+  "25H71A05N2": {
+    "attended": 53,
+    "department": "CSE-D",
+    "name": "Maradani Jaswanth Sai",
+    "semester": "2"
+  },
+  "25H71A05N3": {
+    "attended": 49,
+    "department": "CSE-D",
+    "name": "Marepalli Lucky",
+    "semester": "2"
+  },
+  "25H71A05N4": {
+    "attended": 44,
+    "department": "CSE-D",
+    "name": "Mecharla Gowtham",
+    "semester": "2"
+  },
+  "25H71A05N5": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Methukumalli Rajamouli",
+    "semester": "2"
+  },
+  "25H71A05N6": {
+    "attended": 31,
+    "department": "CSE-D",
+    "name": "Midatha Pravallika",
+    "semester": "2"
+  },
+  "25H71A05N7": {
+    "attended": 33,
+    "department": "CSE-D",
+    "name": "Miriyala Lakshmi Venkata Siva Sai",
+    "semester": "2"
+  },
+  "25H71A05N8": {
+    "attended": 46,
+    "department": "CSE-D",
+    "name": "Mohammad Ayesha Siddika",
+    "semester": "2"
+  },
+  "25H71A05N9": {
+    "attended": 48,
+    "department": "CSE-D",
+    "name": "Moram Bhanu",
+    "semester": "2"
+  },
+  "25H71A05O0": {
+    "attended": 34,
+    "department": "CSE-D",
+    "name": "Muvva Pranitha",
+    "semester": "2"
+  },
+  "25H71A05O1": {
+    "attended": 43,
+    "department": "CSE-D",
+    "name": "Nagavarapu Vinay Kumar",
+    "semester": "2"
+  },
+  "25H71A05O2": {
+    "attended": 33,
+    "department": "CSE-D",
+    "name": "Narala Venkata Krishna Reddy",
+    "semester": "2"
+  },
+  "25H71A05O3": {
+    "attended": 47,
+    "department": "CSE-D",
+    "name": "Navuluri Sriram",
+    "semester": "2"
+  },
+  "25H71A05O4": {
+    "attended": 31,
+    "department": "CSE-D",
+    "name": "Nimmagadda Ravindra Babu",
+    "semester": "2"
+  },
+  "25H71A05O5": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Podduturi Sai",
+    "semester": "2"
+  },
+  "25H71A05O6": {
+    "attended": 45,
+    "department": "CSE-D",
+    "name": "Pothina Likhitha",
+    "semester": "2"
+  },
+  "25H71A05O7": {
+    "attended": 61,
+    "department": "CSE-D",
+    "name": "Rajarapu Kowshik",
+    "semester": "2"
+  },
+  "25H71A05O8": {
+    "attended": 52,
+    "department": "CSE-D",
+    "name": "Rali Madhavi",
+    "semester": "2"
+  },
+  "25H71A05O9": {
+    "attended": 35,
+    "department": "CSE-D",
+    "name": "Ramala Bharath Chand",
+    "semester": "2"
+  },
+  "25H71A05P0": {
+    "attended": 38,
+    "department": "CSE-D",
+    "name": "Rayidi Naga Hareesh",
+    "semester": "2"
+  },
+  "25H71A05P1": {
+    "attended": 39,
+    "department": "CSE-D",
+    "name": "Sakshi Madhavi",
+    "semester": "2"
+  },
+  "25H71A05P2": {
+    "attended": 36,
+    "department": "CSE-D",
+    "name": "Sarikonda Brahmaraju",
+    "semester": "2"
+  },
+  "25H71A05P3": {
+    "attended": 4,
+    "department": "CSE-D",
+    "name": "Shaik Abdul Azam",
+    "semester": "2"
+  },
+  "25H71A05P4": {
+    "attended": 21,
+    "department": "CSE-D",
+    "name": "Shaik Adil",
+    "semester": "2"
+  },
+  "25H71A05P5": {
+    "attended": 32,
+    "department": "CSE-D",
+    "name": "Shaik Salman",
+    "semester": "2"
+  },
+  "25H71A05P6": {
+    "attended": 47,
+    "department": "CSE-D",
+    "name": "Shaik Saniya",
+    "semester": "2"
+  },
+  "25H71A05P7": {
+    "attended": 45,
+    "department": "CSE-D",
+    "name": "Swargam Sagar Sai",
+    "semester": "2"
+  },
+  "25H71A05P8": {
+    "attended": 39,
+    "department": "CSE-D",
+    "name": "Tanuku Karthik",
+    "semester": "2"
+  },
+  "25H71A05P9": {
+    "attended": 54,
+    "department": "CSE-D",
+    "name": "Thanga Venkata Bhavana",
+    "semester": "2"
+  },
+  "25H71A05Q0": {
+    "attended": 56,
+    "department": "CSE-D",
+    "name": "Thati Sai Koteswari",
+    "semester": "2"
+  },
+  "25H71A05Q1": {
+    "attended": 53,
+    "department": "CSE-D",
+    "name": "Uppu Durga Prasanna",
+    "semester": "2"
+  },
+  "25H71A05Q2": {
+    "attended": 43,
+    "department": "CSE-D",
+    "name": "Vallapuram Ajay",
+    "semester": "2"
+  },
+  "25H71A05Q3": {
+    "attended": 43,
+    "department": "CSE-D",
+    "name": "Vallapuram Revathi",
+    "semester": "2"
+  },
+  "25H71A05Q4": {
+    "attended": 42,
+    "department": "CSE-D",
+    "name": "Yandrapalli Jayanth",
+    "semester": "2"
+  },
+  "25H71A05Q5": {
+    "attended": 40,
+    "department": "CSE-E",
+    "name": "Akula Hara Gopal Rao",
+    "semester": "2"
+  },
+  "25H71A05Q6": {
+    "attended": 35,
+    "department": "CSE-E",
+    "name": "Baliboina Rahul Sai",
+    "semester": "2"
+  },
+  "25H71A05Q7": {
+    "attended": 29,
+    "department": "CSE-E",
+    "name": "Banka Nikitha Swarupa",
+    "semester": "2"
+  },
+  "25H71A05Q8": {
+    "attended": 53,
+    "department": "CSE-E",
+    "name": "Banki Anirudh",
+    "semester": "2"
+  },
+  "25H71A05Q9": {
+    "attended": 9,
+    "department": "CSE-E",
+    "name": "Bathula Hemasri",
+    "semester": "2"
+  },
+  "25H71A05R1": {
+    "attended": 42,
+    "department": "CSE-E",
+    "name": "Bellamkonda Teja",
+    "semester": "2"
+  },
+  "25H71A05R2": {
+    "attended": 45,
+    "department": "CSE-E",
+    "name": "Bellapu Akshitha",
+    "semester": "2"
+  },
+  "25H71A05R3": {
+    "attended": 34,
+    "department": "CSE-E",
+    "name": "Bevara Jogeswar",
+    "semester": "2"
+  },
+  "25H71A05R4": {
+    "attended": 25,
+    "department": "CSE-E",
+    "name": "Buraga Mahendra Babu",
+    "semester": "2"
+  },
+  "25H71A05R5": {
+    "attended": 18,
+    "department": "CSE-E",
+    "name": "Chindam Sivaraju",
+    "semester": "2"
+  },
+  "25H71A05R6": {
+    "attended": 53,
+    "department": "CSE-E",
+    "name": "Chinta Ramya Sri",
+    "semester": "2"
+  },
+  "25H71A05R7": {
+    "attended": 46,
+    "department": "CSE-E",
+    "name": "Chukkapalli Rama Teja",
+    "semester": "2"
+  },
+  "25H71A05R8": {
+    "attended": 27,
+    "department": "CSE-E",
+    "name": "Chunchu Kumar Babu",
+    "semester": "2"
+  },
+  "25H71A05R9": {
+    "attended": 3,
+    "department": "CSE-E",
+    "name": "Dachineni Brahmaiah",
+    "semester": "2"
+  },
+  "25H71A05S0": {
+    "attended": 4,
+    "department": "CSE-E",
+    "name": "Danduprolu Manikanta Kumar",
+    "semester": "2"
+  },
+  "25H71A05S1": {
+    "attended": 37,
+    "department": "CSE-E",
+    "name": "Ganji Vinay Kumar",
+    "semester": "2"
+  },
+  "25H71A05S2": {
+    "attended": 52,
+    "department": "CSE-E",
+    "name": "Gannavarapu Durga Chandini",
+    "semester": "2"
+  },
+  "25H71A05S4": {
+    "attended": 30,
+    "department": "CSE-E",
+    "name": "Gorantla Sambhavi",
+    "semester": "2"
+  },
+  "25H71A05S5": {
+    "attended": 14,
+    "department": "CSE-E",
+    "name": "Gorre Prabhu Priya Darshan",
+    "semester": "2"
+  },
+  "25H71A05S6": {
+    "attended": 39,
+    "department": "CSE-E",
+    "name": "Gugulothu Thrishanth",
+    "semester": "2"
+  },
+  "25H71A05S7": {
+    "attended": 37,
+    "department": "CSE-E",
+    "name": "Gunti Sai Krishna",
+    "semester": "2"
+  },
+  "25H71A05S8": {
+    "attended": 3,
+    "department": "CSE-E",
+    "name": "Gutta Jaswanth",
+    "semester": "2"
+  },
+  "25H71A05S9": {
+    "attended": 43,
+    "department": "CSE-E",
+    "name": "Jampu Vamsi",
+    "semester": "2"
+  },
+  "25H71A05T0": {
+    "attended": 23,
+    "department": "CSE-E",
+    "name": "Kadavakollu Bhanu Sri",
+    "semester": "2"
+  },
+  "25H71A05T1": {
+    "attended": 21,
+    "department": "CSE-E",
+    "name": "Karalapati Saranya",
+    "semester": "2"
+  },
+  "25H71A05T2": {
+    "attended": 56,
+    "department": "CSE-E",
+    "name": "Katta Sridhatri",
+    "semester": "2"
+  },
+  "25H71A05T3": {
+    "attended": 16,
+    "department": "CSE-E",
+    "name": "Kolli Akhil",
+    "semester": "2"
+  },
+  "25H71A05T4": {
+    "attended": 49,
+    "department": "CSE-E",
+    "name": "Komma Siva Karthik",
+    "semester": "2"
+  },
+  "25H71A05T5": {
+    "attended": 35,
+    "department": "CSE-E",
+    "name": "Kumbha Isha Devika",
+    "semester": "2"
+  },
+  "25H71A05T6": {
+    "attended": 40,
+    "department": "CSE-E",
+    "name": "Madaraboyina Mithun",
+    "semester": "2"
+  },
+  "25H71A05T7": {
+    "attended": 45,
+    "department": "CSE-E",
+    "name": "Mallipudi Bala Siva Naga Sowmya Sri",
+    "semester": "2"
+  },
+  "25H71A05T8": {
+    "attended": 34,
+    "department": "CSE-E",
+    "name": "Mangalapudi Mahalakshmi",
+    "semester": "2"
+  },
+  "25H71A05T9": {
+    "attended": 53,
+    "department": "CSE-E",
+    "name": "Mannem Sailaja",
+    "semester": "2"
+  },
+  "25H71A05U0": {
+    "attended": 5,
+    "department": "CSE-E",
+    "name": "Mareedu Yoganandh Sai",
+    "semester": "2"
+  },
+  "25H71A05U1": {
+    "attended": 23,
+    "department": "CSE-E",
+    "name": "Morthala Mahesh Reddy",
+    "semester": "2"
+  },
+  "25H71A05U2": {
+    "attended": 28,
+    "department": "CSE-E",
+    "name": "Nakkana Sravani",
+    "semester": "2"
+  },
+  "25H71A05U3": {
+    "attended": 41,
+    "department": "CSE-E",
+    "name": "Nalamadula Sindhu",
+    "semester": "2"
+  },
+  "25H71A05U4": {
+    "attended": 42,
+    "department": "CSE-E",
+    "name": "Neduri Venkata Kowshik",
+    "semester": "2"
+  },
+  "25H71A05U5": {
+    "attended": 51,
+    "department": "CSE-E",
+    "name": "Ninducharla Vyshnavi",
+    "semester": "2"
+  },
+  "25H71A05U6": {
+    "attended": 26,
+    "department": "CSE-E",
+    "name": "Padidapu Srinivasulu",
+    "semester": "2"
+  },
+  "25H71A05U7": {
+    "attended": 1,
+    "department": "CSE-E",
+    "name": "Parsha Lakshmi Priya",
+    "semester": "2"
+  },
+  "25H71A05U8": {
+    "attended": 38,
+    "department": "CSE-E",
+    "name": "Pinniboyina Bhavani",
+    "semester": "2"
+  },
+  "25H71A05U9": {
+    "attended": 39,
+    "department": "CSE-E",
+    "name": "Pokala Raghuvaran",
+    "semester": "2"
+  },
+  "25H71A05V0": {
+    "attended": 39,
+    "department": "CSE-E",
+    "name": "Polagani Anil",
+    "semester": "2"
+  },
+  "25H71A05V1": {
+    "attended": 45,
+    "department": "CSE-E",
+    "name": "Prathipati Krishnaveni",
+    "semester": "2"
+  },
+  "25H71A05V2": {
+    "attended": 32,
+    "department": "CSE-E",
+    "name": "Ramisetti Jyothi",
+    "semester": "2"
+  },
+  "25H71A05V3": {
+    "attended": 27,
+    "department": "CSE-E",
+    "name": "Revini Sahith Babu",
+    "semester": "2"
+  },
+  "25H71A05V4": {
+    "attended": 18,
+    "department": "CSE-E",
+    "name": "Sadula Sisindra Reddy",
+    "semester": "2"
+  },
+  "25H71A05V6": {
+    "attended": 21,
+    "department": "CSE-E",
+    "name": "Sandra Kavya Sri",
+    "semester": "2"
+  },
+  "25H71A05V7": {
+    "attended": 43,
+    "department": "CSE-E",
+    "name": "Seshambeti Nithish Kumar",
+    "semester": "2"
+  },
+  "25H71A05V8": {
+    "attended": 28,
+    "department": "CSE-E",
+    "name": "Shaik Baba",
+    "semester": "2"
+  },
+  "25H71A05V9": {
+    "attended": 20,
+    "department": "CSE-E",
+    "name": "Shaik Baji Saida",
+    "semester": "2"
+  },
+  "25H71A05W0": {
+    "attended": 42,
+    "department": "CSE-E",
+    "name": "Shaik Najma",
+    "semester": "2"
+  },
+  "25H71A05W1": {
+    "attended": 40,
+    "department": "CSE-E",
+    "name": "Shaik Naziya",
+    "semester": "2"
+  },
+  "25H71A05W2": {
+    "attended": 39,
+    "department": "CSE-E",
+    "name": "Thangella Eswara Prasad",
+    "semester": "2"
+  },
+  "25H71A05W3": {
+    "attended": 44,
+    "department": "CSE-E",
+    "name": "Thumu Akhila",
+    "semester": "2"
+  },
+  "25H71A05W4": {
+    "attended": 51,
+    "department": "CSE-E",
+    "name": "Vaddi Divya",
+    "semester": "2"
+  },
+  "25H71A05W5": {
+    "attended": 34,
+    "department": "CSE-E",
+    "name": "Valluru Suresh Babu",
+    "semester": "2"
+  },
+  "25H71A05W6": {
+    "attended": 22,
+    "department": "CSE-E",
+    "name": "Vantrapati Sudha Girija",
+    "semester": "2"
+  },
+  "25H71A05W7": {
+    "attended": 38,
+    "department": "CSE-E",
+    "name": "Varikuti Bangaram",
+    "semester": "2"
+  },
+  "25H71A05W8": {
+    "attended": 45,
+    "department": "CSE-E",
+    "name": "Vennaboina Chandan Kumar",
+    "semester": "2"
+  },
+  "25H71A05W9": {
+    "attended": 19,
+    "department": "CSE-E",
+    "name": "Vinukonda Joseph",
+    "semester": "2"
+  },
+  "25H71A05X0": {
+    "attended": 25,
+    "department": "CSE-E",
+    "name": "Yarragorla Venkata Manasa",
+    "semester": "2"
+  },
+  "25H71A05X1": {
+    "attended": 23,
+    "department": "CSE-F",
+    "name": "Abburi Anusha",
+    "semester": "2"
+  },
+  "25H71A05X2": {
+    "attended": 50,
+    "department": "CSE-F",
+    "name": "Acchi Naveen Kumar",
+    "semester": "2"
+  },
+  "25H71A05X3": {
+    "attended": 27,
+    "department": "CSE-F",
+    "name": "Ammula Dhanusha",
+    "semester": "2"
+  },
+  "25H71A05X4": {
+    "attended": 26,
+    "department": "CSE-F",
+    "name": "Amudala Sumanth",
+    "semester": "2"
+  },
+  "25H71A05X5": {
+    "attended": 34,
+    "department": "CSE-F",
+    "name": "Andraju Chaitanya Kumar",
+    "semester": "2"
+  },
+  "25H71A05X6": {
+    "attended": 7,
+    "department": "CSE-F",
+    "name": "Balasani Mohan Venkata Satyanarayana",
+    "semester": "2"
+  },
+  "25H71A05X7": {
+    "attended": 53,
+    "department": "CSE-F",
+    "name": "Bellamkonda Naga Lakshmi",
+    "semester": "2"
+  },
+  "25H71A05X8": {
+    "attended": 45,
+    "department": "CSE-F",
+    "name": "Bellapu Swapna",
+    "semester": "2"
+  },
+  "25H71A05X9": {
+    "attended": 39,
+    "department": "CSE-F",
+    "name": "Bevara Rohith",
+    "semester": "2"
+  },
+  "25H71A05Y0": {
+    "attended": 46,
+    "department": "CSE-F",
+    "name": "Bojja Pavani",
+    "semester": "2"
+  },
+  "25H71A05Y1": {
+    "attended": 44,
+    "department": "CSE-F",
+    "name": "Bonam Sundhar Paul",
+    "semester": "2"
+  },
+  "25H71A05Y2": {
+    "attended": 42,
+    "department": "CSE-F",
+    "name": "Budigi Indhu Bhargavi",
+    "semester": "2"
+  },
+  "25H71A05Y3": {
+    "attended": 55,
+    "department": "CSE-F",
+    "name": "Chanamala Mounika",
+    "semester": "2"
+  },
+  "25H71A05Y4": {
+    "attended": 51,
+    "department": "CSE-F",
+    "name": "Chigurupati Triveni",
+    "semester": "2"
+  },
+  "25H71A05Y5": {
+    "attended": 15,
+    "department": "CSE-F",
+    "name": "Chipilla Chandra Vamsi",
+    "semester": "2"
+  },
+  "25H71A05Y6": {
+    "attended": 50,
+    "department": "CSE-F",
+    "name": "Dande Ram Charan",
+    "semester": "2"
+  },
+  "25H71A05Y7": {
+    "attended": 32,
+    "department": "CSE-F",
+    "name": "Dunna Praveen",
+    "semester": "2"
+  },
+  "25H71A05Y8": {
+    "attended": 24,
+    "department": "CSE-F",
+    "name": "Ethamsetty Sai Durga Varshini",
+    "semester": "2"
+  },
+  "25H71A05Y9": {
+    "attended": 39,
+    "department": "CSE-F",
+    "name": "Gaddala Jaswanth",
+    "semester": "2"
+  },
+  "25H71A05Z0": {
+    "attended": 27,
+    "department": "CSE-F",
+    "name": "Gandarapu Chaitanya Sai",
+    "semester": "2"
+  },
+  "25H71A05Z1": {
+    "attended": 27,
+    "department": "CSE-F",
+    "name": "Gandla Mahindra",
+    "semester": "2"
+  },
+  "25H71A05Z2": {
+    "attended": 38,
+    "department": "CSE-F",
+    "name": "Gonthupuli Aravind Naga Sai",
+    "semester": "2"
+  },
+  "25H71A05Z3": {
+    "attended": 44,
+    "department": "CSE-F",
+    "name": "Illa Vijaya Siva Naga Rani",
+    "semester": "2"
+  },
+  "25H71A05Z4": {
+    "attended": 39,
+    "department": "CSE-F",
+    "name": "Itha Lakshmi Kumari",
+    "semester": "2"
+  },
+  "25H71A05Z5": {
+    "attended": 44,
+    "department": "CSE-F",
+    "name": "Javvaji Venkat Karthik",
+    "semester": "2"
+  },
+  "25H71A05Z6": {
+    "attended": 33,
+    "department": "CSE-F",
+    "name": "Jujjuru Hemanth",
+    "semester": "2"
+  },
+  "25H71A05Z7": {
+    "attended": 33,
+    "department": "CSE-F",
+    "name": "Kakani Saranya",
+    "semester": "2"
+  },
+  "25H71A05Z8": {
+    "attended": 9,
+    "department": "CSE-F",
+    "name": "Karuku Karthik",
+    "semester": "2"
+  },
+  "25H71A05Z9": {
+    "attended": 15,
+    "department": "CSE-F",
+    "name": "Konala Joshua",
+    "semester": "2"
+  },
+  "25H71A1201": {
+    "attended": 7,
+    "department": "IT-A",
+    "name": "Abburi Ramesh Babu",
+    "semester": "2"
+  },
+  "25H71A1202": {
+    "attended": 0,
+    "department": "IT-A",
+    "name": "Allada Simhadri",
+    "semester": "2"
+  },
+  "25H71A1203": {
+    "attended": 22,
+    "department": "IT-A",
+    "name": "Attuluri Keerthana",
+    "semester": "2"
+  },
+  "25H71A1204": {
+    "attended": 46,
+    "department": "IT-A",
+    "name": "Bethu Prasanthi",
+    "semester": "2"
+  },
+  "25H71A1205": {
+    "attended": 34,
+    "department": "IT-A",
+    "name": "Bhagyasri Sambamurugan",
+    "semester": "2"
+  },
+  "25H71A1206": {
+    "attended": 27,
+    "department": "IT-A",
+    "name": "Bhavanam Nandini",
+    "semester": "2"
+  },
+  "25H71A1207": {
+    "attended": 0,
+    "department": "IT-A",
+    "name": "Chava Prasanth Kumar Chowdary",
+    "semester": "2"
+  },
+  "25H71A1208": {
+    "attended": 35,
+    "department": "IT-A",
+    "name": "Cherukupalli Ruthu",
+    "semester": "2"
+  },
+  "25H71A1209": {
+    "attended": 31,
+    "department": "IT-A",
+    "name": "Chirumamilla Sri Lakshmi Naga Bhavya",
+    "semester": "2"
+  },
+  "25H71A1210": {
+    "attended": 58,
+    "department": "IT-A",
+    "name": "Choragudi Gnana Rishi Karthikeya",
+    "semester": "2"
+  },
+  "25H71A1211": {
+    "attended": 14,
+    "department": "IT-A",
+    "name": "Damera Jyoti Chandar",
+    "semester": "2"
+  },
+  "25H71A1212": {
+    "attended": 24,
+    "department": "IT-A",
+    "name": "Dasari Jaswanth",
+    "semester": "2"
+  },
+  "25H71A1213": {
+    "attended": 44,
+    "department": "IT-A",
+    "name": "Doddi Devi Sri Sai Charan Avinash",
+    "semester": "2"
+  },
+  "25H71A1214": {
+    "attended": 11,
+    "department": "IT-A",
+    "name": "Dumpala Manoj Kumar",
+    "semester": "2"
+  },
+  "25H71A1215": {
+    "attended": 35,
+    "department": "IT-A",
+    "name": "Duryodhanula Tanu Sree",
+    "semester": "2"
+  },
+  "25H71A1216": {
+    "attended": 32,
+    "department": "IT-A",
+    "name": "Eeda Srinivas",
+    "semester": "2"
+  },
+  "25H71A1217": {
+    "attended": 41,
+    "department": "IT-A",
+    "name": "Gadde Vijay Kumar",
+    "semester": "2"
+  },
+  "25H71A1218": {
+    "attended": 47,
+    "department": "IT-A",
+    "name": "Gade Ravi Teja",
+    "semester": "2"
+  },
+  "25H71A1219": {
+    "attended": 30,
+    "department": "IT-A",
+    "name": "Garimella Jaswanth",
+    "semester": "2"
+  },
+  "25H71A1220": {
+    "attended": 31,
+    "department": "IT-A",
+    "name": "Gavidi Suresh",
+    "semester": "2"
+  },
+  "25H71A1221": {
+    "attended": 31,
+    "department": "IT-A",
+    "name": "Gottipati Varshika",
+    "semester": "2"
+  },
+  "25H71A1222": {
+    "attended": 33,
+    "department": "IT-A",
+    "name": "Javvaji Hemanth",
+    "semester": "2"
+  },
+  "25H71A1223": {
+    "attended": 27,
+    "department": "IT-A",
+    "name": "Kalapala Akhila",
+    "semester": "2"
+  },
+  "25H71A1224": {
+    "attended": 52,
+    "department": "IT-A",
+    "name": "Kannakota Divya Sri",
+    "semester": "2"
+  },
+  "25H71A1225": {
+    "attended": 58,
+    "department": "IT-A",
+    "name": "Kanuru Rajesh",
+    "semester": "2"
+  },
+  "25H71A1226": {
+    "attended": 38,
+    "department": "IT-A",
+    "name": "Kommu Karthik",
+    "semester": "2"
+  },
+  "25H71A1227": {
+    "attended": 1,
+    "department": "IT-A",
+    "name": "Kondaveeti Asha Jyothi",
+    "semester": "2"
+  },
+  "25H71A1228": {
+    "attended": 21,
+    "department": "IT-A",
+    "name": "Konka Bhanu Prakash",
+    "semester": "2"
+  },
+  "25H71A1229": {
+    "attended": 37,
+    "department": "IT-A",
+    "name": "Kopalli Sruthi",
+    "semester": "2"
+  },
+  "25H71A1230": {
+    "attended": 22,
+    "department": "IT-A",
+    "name": "Koppula Sindhu",
+    "semester": "2"
+  },
+  "25H71A1231": {
+    "attended": 39,
+    "department": "IT-A",
+    "name": "Macharla Akash",
+    "semester": "2"
+  },
+  "25H71A1232": {
+    "attended": 23,
+    "department": "IT-A",
+    "name": "Mavilla Syam Kumar",
+    "semester": "2"
+  },
+  "25H71A1233": {
+    "attended": 41,
+    "department": "IT-A",
+    "name": "Mellempudi Lekhana",
+    "semester": "2"
+  },
+  "25H71A1234": {
+    "attended": 33,
+    "department": "IT-A",
+    "name": "Mutyala Lavanya",
+    "semester": "2"
+  },
+  "25H71A1235": {
+    "attended": 1,
+    "department": "IT-A",
+    "name": "Naga Karthik",
+    "semester": "2"
+  },
+  "25H71A1236": {
+    "attended": 15,
+    "department": "IT-A",
+    "name": "Nagoju Yuthvesh",
+    "semester": "2"
+  },
+  "25H71A1237": {
+    "attended": 29,
+    "department": "IT-A",
+    "name": "Nandyala Naveen",
+    "semester": "2"
+  },
+  "25H71A1238": {
+    "attended": 46,
+    "department": "IT-A",
+    "name": "Obulareddy Rekha Reddy",
+    "semester": "2"
+  },
+  "25H71A1239": {
+    "attended": 48,
+    "department": "IT-A",
+    "name": "Oleti Ravi Kiran",
+    "semester": "2"
+  },
+  "25H71A1240": {
+    "attended": 49,
+    "department": "IT-A",
+    "name": "Pabbireddy Meghana",
+    "semester": "2"
+  },
+  "25H71A1241": {
+    "attended": 51,
+    "department": "IT-A",
+    "name": "Paidi Kishore Kumar",
+    "semester": "2"
+  },
+  "25H71A1242": {
+    "attended": 3,
+    "department": "IT-A",
+    "name": "Pasam Umadevi",
+    "semester": "2"
+  },
+  "25H71A1243": {
+    "attended": 24,
+    "department": "IT-A",
+    "name": "Pathan Thoushik Meera Khan",
+    "semester": "2"
+  },
+  "25H71A1244": {
+    "attended": 29,
+    "department": "IT-A",
+    "name": "Pattamsetti Sneha",
+    "semester": "2"
+  },
+  "25H71A1245": {
+    "attended": 3,
+    "department": "IT-A",
+    "name": "Peddapurapu Hasini",
+    "semester": "2"
+  },
+  "25H71A1246": {
+    "attended": 21,
+    "department": "IT-A",
+    "name": "Puvvala Lakshmi Rajyam",
+    "semester": "2"
+  },
+  "25H71A1247": {
+    "attended": 33,
+    "department": "IT-A",
+    "name": "Rampurapu Sasi Vardhan",
+    "semester": "2"
+  },
+  "25H71A1248": {
+    "attended": 52,
+    "department": "IT-A",
+    "name": "Sankarasetty Yagnesh",
+    "semester": "2"
+  },
+  "25H71A1249": {
+    "attended": 13,
+    "department": "IT-A",
+    "name": "Satuluri Narasimha Rao",
+    "semester": "2"
+  },
+  "25H71A1251": {
+    "attended": 10,
+    "department": "IT-A",
+    "name": "Shaik Naseer Ahmed",
+    "semester": "2"
+  },
+  "25H71A1252": {
+    "attended": 39,
+    "department": "IT-A",
+    "name": "Shaik Rubina Jahan",
+    "semester": "2"
+  },
+  "25H71A1253": {
+    "attended": 36,
+    "department": "IT-A",
+    "name": "Shaik Sahil",
+    "semester": "2"
+  },
+  "25H71A1254": {
+    "attended": 16,
+    "department": "IT-A",
+    "name": "Shaik Sameer",
+    "semester": "2"
+  },
+  "25H71A1255": {
+    "attended": 38,
+    "department": "IT-A",
+    "name": "Sreeram Mahalakshmi Akshaya",
+    "semester": "2"
+  },
+  "25H71A1256": {
+    "attended": 19,
+    "department": "IT-A",
+    "name": "Sundaradasu Varun Prasad",
+    "semester": "2"
+  },
+  "25H71A1257": {
+    "attended": 34,
+    "department": "IT-A",
+    "name": "Taddi Bindupriya",
+    "semester": "2"
+  },
+  "25H71A1258": {
+    "attended": 40,
+    "department": "IT-A",
+    "name": "Tadepalli Triveni",
+    "semester": "2"
+  },
+  "25H71A1259": {
+    "attended": 31,
+    "department": "IT-A",
+    "name": "Thipparthi Uma Sankar",
+    "semester": "2"
+  },
+  "25H71A1260": {
+    "attended": 47,
+    "department": "IT-A",
+    "name": "Thota Dwaraka",
+    "semester": "2"
+  },
+  "25H71A1261": {
+    "attended": 14,
+    "department": "IT-A",
+    "name": "Thotakura Brahma Teja",
+    "semester": "2"
+  },
+  "25H71A1262": {
+    "attended": 46,
+    "department": "IT-A",
+    "name": "Uppu Shanmukha Priya",
+    "semester": "2"
+  },
+  "25H71A1263": {
+    "attended": 16,
+    "department": "IT-A",
+    "name": "Vemavarapu Anand",
+    "semester": "2"
+  },
+  "25H71A1264": {
+    "attended": 45,
+    "department": "IT-A",
+    "name": "Vemula Utthez",
+    "semester": "2"
+  },
+  "25H71A1265": {
+    "attended": 36,
+    "department": "IT-A",
+    "name": "Yamana Kavya",
+    "semester": "2"
+  },
+  "25H71A1267": {
+    "attended": 45,
+    "department": "IT-B",
+    "name": "Angadala Sowjanya",
+    "semester": "2"
+  },
+  "25H71A1268": {
+    "attended": 30,
+    "department": "IT-B",
+    "name": "Anubolu Yasoda Devi",
+    "semester": "2"
+  },
+  "25H71A1269": {
+    "attended": 40,
+    "department": "IT-B",
+    "name": "Azmeera Harshitha",
+    "semester": "2"
+  },
+  "25H71A1270": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Bhukya Amareswar",
+    "semester": "2"
+  },
+  "25H71A1271": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Boori Tanuja",
+    "semester": "2"
+  },
+  "25H71A1272": {
+    "attended": 17,
+    "department": "IT-B",
+    "name": "Bowrisetty Naga Venkata Ayyappa",
+    "semester": "2"
+  },
+  "25H71A1273": {
+    "attended": 12,
+    "department": "IT-B",
+    "name": "Chabattina Sowmya",
+    "semester": "2"
+  },
+  "25H71A1274": {
+    "attended": 1,
+    "department": "IT-B",
+    "name": "Chinthagumpala Venkata Sai",
+    "semester": "2"
+  },
+  "25H71A1275": {
+    "attended": 12,
+    "department": "IT-B",
+    "name": "Danam Naveen",
+    "semester": "2"
+  },
+  "25H71A1276": {
+    "attended": 14,
+    "department": "IT-B",
+    "name": "Dokku Jahnavi",
+    "semester": "2"
+  },
+  "25H71A1277": {
+    "attended": 35,
+    "department": "IT-B",
+    "name": "Eripilla Juhi Sree",
+    "semester": "2"
+  },
+  "25H71A1278": {
+    "attended": 11,
+    "department": "IT-B",
+    "name": "Evuri Soma Sai Shekar Reddy",
+    "semester": "2"
+  },
+  "25H71A1279": {
+    "attended": 23,
+    "department": "IT-B",
+    "name": "Ganta Lakshmi Reddy",
+    "semester": "2"
+  },
+  "25H71A1280": {
+    "attended": 16,
+    "department": "IT-B",
+    "name": "Garlapati Srinivasa Rao",
+    "semester": "2"
+  },
+  "25H71A1281": {
+    "attended": 11,
+    "department": "IT-B",
+    "name": "Goriparthi Gokul Yadav",
+    "semester": "2"
+  },
+  "25H71A1282": {
+    "attended": 11,
+    "department": "IT-B",
+    "name": "Goriparthi Thanush",
+    "semester": "2"
+  },
+  "25H71A1283": {
+    "attended": 0,
+    "department": "IT-B",
+    "name": "Iaka Sai Bharath",
+    "semester": "2"
+  },
+  "25H71A1284": {
+    "attended": 17,
+    "department": "IT-B",
+    "name": "Jatangi Mounish",
+    "semester": "2"
+  },
+  "25H71A1285": {
+    "attended": 28,
+    "department": "IT-B",
+    "name": "Jonnalagadda Keerthi Sree",
+    "semester": "2"
+  },
+  "25H71A1286": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Kalavala Saranya",
+    "semester": "2"
+  },
+  "25H71A1287": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Konka Jaya Sree",
+    "semester": "2"
+  },
+  "25H71A1288": {
+    "attended": 0,
+    "department": "IT-B",
+    "name": "Koppula Mokshith",
+    "semester": "2"
+  },
+  "25H71A1289": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Koppula Sathvika",
+    "semester": "2"
+  },
+  "25H71A1290": {
+    "attended": 22,
+    "department": "IT-B",
+    "name": "Manchi Mounika",
+    "semester": "2"
+  },
+  "25H71A1291": {
+    "attended": 14,
+    "department": "IT-B",
+    "name": "Mandapati Anand Kumar",
+    "semester": "2"
+  },
+  "25H71A1292": {
+    "attended": 42,
+    "department": "IT-B",
+    "name": "Mannem Hema Sri",
+    "semester": "2"
+  },
+  "25H71A1293": {
+    "attended": 14,
+    "department": "IT-B",
+    "name": "Mohammad Ashrafulla",
+    "semester": "2"
+  },
+  "25H71A1294": {
+    "attended": 16,
+    "department": "IT-B",
+    "name": "Mohammad Hameed",
+    "semester": "2"
+  },
+  "25H71A1295": {
+    "attended": 18,
+    "department": "IT-B",
+    "name": "Mudadla Yaswanth",
+    "semester": "2"
+  },
+  "25H71A1296": {
+    "attended": 42,
+    "department": "IT-B",
+    "name": "Nadakuduti Swaroopa",
+    "semester": "2"
+  },
+  "25H71A1297": {
+    "attended": 7,
+    "department": "IT-B",
+    "name": "Nakka Lakshmi Venkata Prashanth",
+    "semester": "2"
+  },
+  "25H71A1298": {
+    "attended": 15,
+    "department": "IT-B",
+    "name": "Nancherla Subramanyam",
+    "semester": "2"
+  },
+  "25H71A1299": {
+    "attended": 24,
+    "department": "IT-B",
+    "name": "Narala Renuka",
+    "semester": "2"
+  },
+  "25H71A12A0": {
+    "attended": 16,
+    "department": "IT-B",
+    "name": "Narra Tharun Sri Sai",
+    "semester": "2"
+  },
+  "25H71A12A1": {
+    "attended": 40,
+    "department": "IT-B",
+    "name": "Nimmathota Alekhya",
+    "semester": "2"
+  },
+  "25H71A12A2": {
+    "attended": 18,
+    "department": "IT-B",
+    "name": "Pamulapati Chandu",
+    "semester": "2"
+  },
+  "25H71A12A3": {
+    "attended": 34,
+    "department": "IT-B",
+    "name": "Pamulapati Naga Trisha",
+    "semester": "2"
+  },
+  "25H71A12A4": {
+    "attended": 44,
+    "department": "IT-B",
+    "name": "Patapanchala Bharathi",
+    "semester": "2"
+  },
+  "25H71A12A5": {
+    "attended": 3,
+    "department": "IT-B",
+    "name": "Pathikayala Bhavani Prasad",
+    "semester": "2"
+  },
+  "25H71A12A6": {
+    "attended": 21,
+    "department": "IT-B",
+    "name": "Pentela Mounika",
+    "semester": "2"
+  },
+  "25H71A12A7": {
+    "attended": 11,
+    "department": "IT-B",
+    "name": "Pilli Santhosh",
+    "semester": "2"
+  },
+  "25H71A12A8": {
+    "attended": 22,
+    "department": "IT-B",
+    "name": "Pradeep Reddy Sheelam",
+    "semester": "2"
+  },
+  "25H71A12A9": {
+    "attended": 16,
+    "department": "IT-B",
+    "name": "Pratthi Sameer",
+    "semester": "2"
+  },
+  "25H71A12B0": {
+    "attended": 28,
+    "department": "IT-B",
+    "name": "Pula Jeevan",
+    "semester": "2"
+  },
+  "25H71A12B1": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Rangu Prudhvi Sai Praveen Chari",
+    "semester": "2"
+  },
+  "25H71A12B2": {
+    "attended": 28,
+    "department": "IT-B",
+    "name": "Sangepu Praneetha",
+    "semester": "2"
+  },
+  "25H71A12B3": {
+    "attended": 4,
+    "department": "IT-B",
+    "name": "Seelam Chinna Dora",
+    "semester": "2"
+  },
+  "25H71A12B4": {
+    "attended": 33,
+    "department": "IT-B",
+    "name": "Seelam Lakshmi Narasamma",
+    "semester": "2"
+  },
+  "25H71A12B5": {
+    "attended": 13,
+    "department": "IT-B",
+    "name": "Shaik Gouse Mohiddin",
+    "semester": "2"
+  },
+  "25H71A12B6": {
+    "attended": 16,
+    "department": "IT-B",
+    "name": "Shaik Moulali",
+    "semester": "2"
+  },
+  "25H71A12B7": {
+    "attended": 19,
+    "department": "IT-B",
+    "name": "Shaik Sameer",
+    "semester": "2"
+  },
+  "25H71A12B8": {
+    "attended": 40,
+    "department": "IT-B",
+    "name": "Shaik Tajmunni",
+    "semester": "2"
+  },
+  "25H71A12B9": {
+    "attended": 15,
+    "department": "IT-B",
+    "name": "Syed Khaleel",
+    "semester": "2"
+  },
+  "25H71A12C0": {
+    "attended": 17,
+    "department": "IT-B",
+    "name": "Syed Salik",
+    "semester": "2"
+  },
+  "25H71A12C1": {
+    "attended": 18,
+    "department": "IT-B",
+    "name": "Thirumalaraju Geetha",
+    "semester": "2"
+  },
+  "25H71A12C2": {
+    "attended": 32,
+    "department": "IT-B",
+    "name": "Tirumalareddy Venkata Sai Charan Reddy",
+    "semester": "2"
+  },
+  "25H71A12C3": {
+    "attended": 19,
+    "department": "IT-B",
+    "name": "Uppela Harsha Vardhan Reddy",
+    "semester": "2"
+  },
+  "25H71A12C4": {
+    "attended": 33,
+    "department": "IT-B",
+    "name": "Vaddadi Sirisha",
+    "semester": "2"
+  },
+  "25H71A12C5": {
+    "attended": 27,
+    "department": "IT-B",
+    "name": "Vadde Dhanush Sai",
+    "semester": "2"
+  },
+  "25H71A12C6": {
+    "attended": 30,
+    "department": "IT-B",
+    "name": "Vallakati Kalyani",
+    "semester": "2"
+  },
+  "25H71A12C7": {
+    "attended": 21,
+    "department": "IT-B",
+    "name": "Valluri Kusuma Latha",
+    "semester": "2"
+  },
+  "25H71A12C8": {
+    "attended": 25,
+    "department": "IT-B",
+    "name": "Velagada Jagadeesh",
+    "semester": "2"
+  },
+  "25H71A12C9": {
+    "attended": 32,
+    "department": "IT-B",
+    "name": "Vellanki Nikhitha",
+    "semester": "2"
+  },
+  "25H71A12D0": {
+    "attended": 33,
+    "department": "IT-B",
+    "name": "Velpula Vennela",
+    "semester": "2"
+  },
+  "25H71A12D1": {
+    "attended": 33,
+    "department": "IT-B",
+    "name": "Vula Koushik Keerthan",
+    "semester": "2"
+  },
+  "25H71A12D2": {
+    "attended": 20,
+    "department": "IT-B",
+    "name": "Vunnam Abinash",
+    "semester": "2"
+  },
+  "25H71A5401": {
+    "attended": 36,
+    "department": "AIDS-A",
+    "name": "Adapala Manikanta",
+    "semester": "2"
+  },
+  "25H71A5402": {
+    "attended": 38,
+    "department": "AIDS-A",
+    "name": "Alladi Mahima",
+    "semester": "2"
+  },
+  "25H71A5403": {
+    "attended": 60,
+    "department": "AIDS-A",
+    "name": "Ayilapurapu Paparao",
+    "semester": "2"
+  },
+  "25H71A5404": {
+    "attended": 39,
+    "department": "AIDS-A",
+    "name": "Bandi Varsha",
+    "semester": "2"
+  },
+  "25H71A5405": {
+    "attended": 33,
+    "department": "AIDS-A",
+    "name": "Banka Chandra Koushik",
+    "semester": "2"
+  },
+  "25H71A5406": {
+    "attended": 37,
+    "department": "AIDS-A",
+    "name": "Bathala Indu",
+    "semester": "2"
+  },
+  "25H71A5407": {
+    "attended": 54,
+    "department": "AIDS-A",
+    "name": "Bejawada Rishi Venkata Durga Reddy",
+    "semester": "2"
+  },
+  "25H71A5408": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Bochha Nagamani",
+    "semester": "2"
+  },
+  "25H71A5409": {
+    "attended": 52,
+    "department": "AIDS-A",
+    "name": "Bodda Sai Kumar",
+    "semester": "2"
+  },
+  "25H71A5410": {
+    "attended": 5,
+    "department": "AIDS-A",
+    "name": "Bojjagani Rakesh",
+    "semester": "2"
+  },
+  "25H71A5411": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Chandana Jyothi Madhu Pujitha",
+    "semester": "2"
+  },
+  "25H71A5412": {
+    "attended": 43,
+    "department": "AIDS-A",
+    "name": "Chendyala Sai Jagadeesh",
+    "semester": "2"
+  },
+  "25H71A5413": {
+    "attended": 27,
+    "department": "AIDS-A",
+    "name": "Chirra Uday Kiran",
+    "semester": "2"
+  },
+  "25H71A5414": {
+    "attended": 41,
+    "department": "AIDS-A",
+    "name": "Chokkara Rajya Sri Sai Saraswathi",
+    "semester": "2"
+  },
+  "25H71A5415": {
+    "attended": 56,
+    "department": "AIDS-A",
+    "name": "Dangudubiyyapu Bhavya",
+    "semester": "2"
+  },
+  "25H71A5416": {
+    "attended": 21,
+    "department": "AIDS-A",
+    "name": "Daravath Yashwanth Naik",
+    "semester": "2"
+  },
+  "25H71A5417": {
+    "attended": 33,
+    "department": "AIDS-A",
+    "name": "Devarakonda Dhana Lakshmi",
+    "semester": "2"
+  },
+  "25H71A5418": {
+    "attended": 47,
+    "department": "AIDS-A",
+    "name": "Dommeti Amrutha",
+    "semester": "2"
+  },
+  "25H71A5419": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Galla Arumukha Pavan Sai",
+    "semester": "2"
+  },
+  "25H71A5420": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Gathram Durga Prasad",
+    "semester": "2"
+  },
+  "25H71A5421": {
+    "attended": 31,
+    "department": "AIDS-A",
+    "name": "Gogula Lakshmi Vyshnavi",
+    "semester": "2"
+  },
+  "25H71A5422": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Gudisa Bhargavi",
+    "semester": "2"
+  },
+  "25H71A5423": {
+    "attended": 54,
+    "department": "AIDS-A",
+    "name": "Guduru Rajesh",
+    "semester": "2"
+  },
+  "25H71A5424": {
+    "attended": 49,
+    "department": "AIDS-A",
+    "name": "Gurijala Saranya",
+    "semester": "2"
+  },
+  "25H71A5425": {
+    "attended": 43,
+    "department": "AIDS-A",
+    "name": "Kagita Gnanendra Kumar",
+    "semester": "2"
+  },
+  "25H71A5426": {
+    "attended": 44,
+    "department": "AIDS-A",
+    "name": "Kalla Yaswanth",
+    "semester": "2"
+  },
+  "25H71A5427": {
+    "attended": 58,
+    "department": "AIDS-A",
+    "name": "Kama Sreeja",
+    "semester": "2"
+  },
+  "25H71A5428": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Kambhampalli Himaja",
+    "semester": "2"
+  },
+  "25H71A5429": {
+    "attended": 15,
+    "department": "AIDS-A",
+    "name": "Kasimsetti Ranganaidu",
+    "semester": "2"
+  },
+  "25H71A5430": {
+    "attended": 22,
+    "department": "AIDS-A",
+    "name": "Kodali Keerthi Gowtham",
+    "semester": "2"
+  },
+  "25H71A5431": {
+    "attended": 57,
+    "department": "AIDS-A",
+    "name": "Kola Sai Satya Pavan Kalyan",
+    "semester": "2"
+  },
+  "25H71A5432": {
+    "attended": 5,
+    "department": "AIDS-A",
+    "name": "Kommanaboyina Srikanth",
+    "semester": "2"
+  },
+  "25H71A5433": {
+    "attended": 43,
+    "department": "AIDS-A",
+    "name": "Konaparthi Bhumika",
+    "semester": "2"
+  },
+  "25H71A5434": {
+    "attended": 41,
+    "department": "AIDS-A",
+    "name": "Koneti Naveen",
+    "semester": "2"
+  },
+  "25H71A5435": {
+    "attended": 30,
+    "department": "AIDS-A",
+    "name": "Kummitha Avinash Reddy",
+    "semester": "2"
+  },
+  "25H71A5436": {
+    "attended": 44,
+    "department": "AIDS-A",
+    "name": "Maddi Sadvika",
+    "semester": "2"
+  },
+  "25H71A5437": {
+    "attended": 52,
+    "department": "AIDS-A",
+    "name": "Manjula Venkata Durga Aswanth",
+    "semester": "2"
+  },
+  "25H71A5438": {
+    "attended": 30,
+    "department": "AIDS-A",
+    "name": "Marepalli Devadas",
+    "semester": "2"
+  },
+  "25H71A5439": {
+    "attended": 8,
+    "department": "AIDS-A",
+    "name": "Mohammad Afrin Begum",
+    "semester": "2"
+  },
+  "25H71A5440": {
+    "attended": 48,
+    "department": "AIDS-A",
+    "name": "Muppalla Roja",
+    "semester": "2"
+  },
+  "25H71A5441": {
+    "attended": 20,
+    "department": "AIDS-A",
+    "name": "Nakka Rohith Kumar",
+    "semester": "2"
+  },
+  "25H71A5442": {
+    "attended": 49,
+    "department": "AIDS-A",
+    "name": "Nallani Pranavi",
+    "semester": "2"
+  },
+  "25H71A5443": {
+    "attended": 20,
+    "department": "AIDS-A",
+    "name": "Neerudu Navyasri",
+    "semester": "2"
+  },
+  "25H71A5444": {
+    "attended": 30,
+    "department": "AIDS-A",
+    "name": "Paidimukkala Nishanth",
+    "semester": "2"
+  },
+  "25H71A5445": {
+    "attended": 38,
+    "department": "AIDS-A",
+    "name": "Pasam Hari Nitin Reddy",
+    "semester": "2"
+  },
+  "25H71A5446": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Pasupureddy Sahithi",
+    "semester": "2"
+  },
+  "25H71A5447": {
+    "attended": 49,
+    "department": "AIDS-A",
+    "name": "Perike Ravi Kumar",
+    "semester": "2"
+  },
+  "25H71A5448": {
+    "attended": 50,
+    "department": "AIDS-A",
+    "name": "Ponnuru Ravi Teja",
+    "semester": "2"
+  },
+  "25H71A5449": {
+    "attended": 20,
+    "department": "AIDS-A",
+    "name": "Ramoju Prabhakar Rao",
+    "semester": "2"
+  },
+  "25H71A5450": {
+    "attended": 35,
+    "department": "AIDS-A",
+    "name": "Ravi Sowmya Chowdary",
+    "semester": "2"
+  },
+  "25H71A5451": {
+    "attended": 10,
+    "department": "AIDS-A",
+    "name": "Reddy Lava Kumar",
+    "semester": "2"
+  },
+  "25H71A5452": {
+    "attended": 19,
+    "department": "AIDS-A",
+    "name": "Sapparapu Stephen Philip",
+    "semester": "2"
+  },
+  "25H71A5453": {
+    "attended": 57,
+    "department": "AIDS-A",
+    "name": "Sesham Jaya Sree",
+    "semester": "2"
+  },
+  "25H71A5454": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Shaik Abdul Rakheeb",
+    "semester": "2"
+  },
+  "25H71A5455": {
+    "attended": 35,
+    "department": "AIDS-A",
+    "name": "Shaik Azeez",
+    "semester": "2"
+  },
+  "25H71A5456": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Shaik Habeebunnisa",
+    "semester": "2"
+  },
+  "25H71A5457": {
+    "attended": 31,
+    "department": "AIDS-A",
+    "name": "Syed Riyaz",
+    "semester": "2"
+  },
+  "25H71A5458": {
+    "attended": 49,
+    "department": "AIDS-A",
+    "name": "Thalari Princy Susan",
+    "semester": "2"
+  },
+  "25H71A5459": {
+    "attended": 55,
+    "department": "AIDS-A",
+    "name": "Tumgam Harshitha",
+    "semester": "2"
+  },
+  "25H71A5460": {
+    "attended": 48,
+    "department": "AIDS-A",
+    "name": "Upputuri Analya",
+    "semester": "2"
+  },
+  "25H71A5461": {
+    "attended": 54,
+    "department": "AIDS-A",
+    "name": "Vasamsetti Lalitha Siva Durga",
+    "semester": "2"
+  },
+  "25H71A5462": {
+    "attended": 31,
+    "department": "AIDS-A",
+    "name": "Vemulapalli Sathya Sahithi",
+    "semester": "2"
+  },
+  "25H71A5463": {
+    "attended": 61,
+    "department": "AIDS-A",
+    "name": "Venna Tanuja",
+    "semester": "2"
+  },
+  "25H71A5464": {
+    "attended": 42,
+    "department": "AIDS-A",
+    "name": "Vinnakota Taruni",
+    "semester": "2"
+  },
+  "25H71A5465": {
+    "attended": 17,
+    "department": "AIDS-A",
+    "name": "Yalla Sathwik",
+    "semester": "2"
+  },
+  "25H71A5466": {
+    "attended": 5,
+    "department": "AIDS-A",
+    "name": "Yenuga Vignesh Sai",
+    "semester": "2"
+  },
+  "25H71A5467": {
+    "attended": 29,
+    "department": "AIDS-B",
+    "name": "Alavala Teja Sri",
+    "semester": "2"
+  },
+  "25H71A5468": {
+    "attended": 29,
+    "department": "AIDS-B",
+    "name": "Amaravadhi Sudharshan",
+    "semester": "2"
+  },
+  "25H71A5469": {
+    "attended": 30,
+    "department": "AIDS-B",
+    "name": "Anumola Rupa Sri",
+    "semester": "2"
+  },
+  "25H71A5470": {
+    "attended": 48,
+    "department": "AIDS-B",
+    "name": "Badvidu Guru Mahalakshmi",
+    "semester": "2"
+  },
+  "25H71A5471": {
+    "attended": 41,
+    "department": "AIDS-B",
+    "name": "Berala Nanda Vardhan",
+    "semester": "2"
+  },
+  "25H71A5472": {
+    "attended": 41,
+    "department": "AIDS-B",
+    "name": "Boccha Divya",
+    "semester": "2"
+  },
+  "25H71A5473": {
+    "attended": 46,
+    "department": "AIDS-B",
+    "name": "Boddu Venkata Swarna",
+    "semester": "2"
+  },
+  "25H71A5474": {
+    "attended": 25,
+    "department": "AIDS-B",
+    "name": "Bommireddy Bhanu Prakash",
+    "semester": "2"
+  },
+  "25H71A5475": {
+    "attended": 14,
+    "department": "AIDS-B",
+    "name": "Chamarthi Praveen Naga Satya Durga Sai",
+    "semester": "2"
+  },
+  "25H71A5476": {
+    "attended": 6,
+    "department": "AIDS-B",
+    "name": "Chapala Muni Chandu",
+    "semester": "2"
+  },
+  "25H71A5477": {
+    "attended": 36,
+    "department": "AIDS-B",
+    "name": "Chavadam Nagendra Babu",
+    "semester": "2"
+  },
+  "25H71A5478": {
+    "attended": 34,
+    "department": "AIDS-B",
+    "name": "Chennamsetti Siri Vennela",
+    "semester": "2"
+  },
+  "25H71A5479": {
+    "attended": 15,
+    "department": "AIDS-B",
+    "name": "Desaboina Dhathri",
+    "semester": "2"
+  },
+  "25H71A5480": {
+    "attended": 0,
+    "department": "AIDS-B",
+    "name": "Dhanakonda Venkata Lakshmana Tarun Kumar",
+    "semester": "2"
+  },
+  "25H71A5481": {
+    "attended": 12,
+    "department": "AIDS-B",
+    "name": "Duggeneni Pavan Teja",
+    "semester": "2"
+  },
+  "25H71A5482": {
+    "attended": 22,
+    "department": "AIDS-B",
+    "name": "Dupaguntla Chitra Hasini",
+    "semester": "2"
+  },
+  "25H71A5483": {
+    "attended": 32,
+    "department": "AIDS-B",
+    "name": "Enapanuri Akash",
+    "semester": "2"
+  },
+  "25H71A5484": {
+    "attended": 6,
+    "department": "AIDS-B",
+    "name": "Ettera Lokanath",
+    "semester": "2"
+  },
+  "25H71A5485": {
+    "attended": 28,
+    "department": "AIDS-B",
+    "name": "Goda Susmitha",
+    "semester": "2"
+  },
+  "25H71A5486": {
+    "attended": 19,
+    "department": "AIDS-B",
+    "name": "Gogireddy Yeswanth Reddy",
+    "semester": "2"
+  },
+  "25H71A5487": {
+    "attended": 28,
+    "department": "AIDS-B",
+    "name": "Gongati Vijaya Lakshmi",
+    "semester": "2"
+  },
+  "25H71A5488": {
+    "attended": 13,
+    "department": "AIDS-B",
+    "name": "Gottam Harish",
+    "semester": "2"
+  },
+  "25H71A5489": {
+    "attended": 37,
+    "department": "AIDS-B",
+    "name": "Gubbala Harini",
+    "semester": "2"
+  },
+  "25H71A5490": {
+    "attended": 19,
+    "department": "AIDS-B",
+    "name": "Gudapati Srinidhi",
+    "semester": "2"
+  },
+  "25H71A5491": {
+    "attended": 0,
+    "department": "AIDS-B",
+    "name": "Gunti Praneeth",
+    "semester": "2"
+  },
+  "25H71A5492": {
+    "attended": 9,
+    "department": "AIDS-B",
+    "name": "Indugamilli Venkata Naga Sai Charan",
+    "semester": "2"
+  },
+  "25H71A5493": {
+    "attended": 25,
+    "department": "AIDS-B",
+    "name": "Jagani Siva Santhosh Kumar",
+    "semester": "2"
+  },
+  "25H71A5494": {
+    "attended": 42,
+    "department": "AIDS-B",
+    "name": "Jana Durga Malleswara Rao",
+    "semester": "2"
+  },
+  "25H71A5495": {
+    "attended": 15,
+    "department": "AIDS-B",
+    "name": "Kanaparthi Sri Santh",
+    "semester": "2"
+  },
+  "25H71A5496": {
+    "attended": 45,
+    "department": "AIDS-B",
+    "name": "Kandi Venugopal Reddy",
+    "semester": "2"
+  },
+  "25H71A5497": {
+    "attended": 28,
+    "department": "AIDS-B",
+    "name": "Kesanapalli Jerusha",
+    "semester": "2"
+  },
+  "25H71A5498": {
+    "attended": 45,
+    "department": "AIDS-B",
+    "name": "Kokkiligadda Johnson",
+    "semester": "2"
+  },
+  "25H71A5499": {
+    "attended": 52,
+    "department": "AIDS-B",
+    "name": "Konakala Cherishma",
+    "semester": "2"
+  },
+  "25H71A54A0": {
+    "attended": 17,
+    "department": "AIDS-B",
+    "name": "Kotikala Rakesh",
+    "semester": "2"
+  },
+  "25H71A54A1": {
+    "attended": 25,
+    "department": "AIDS-B",
+    "name": "Madala Satya Sai Gowtham",
+    "semester": "2"
+  },
+  "25H71A54A2": {
+    "attended": 4,
+    "department": "AIDS-B",
+    "name": "Mallem Venkata Siva",
+    "semester": "2"
+  },
+  "25H71A54A3": {
+    "attended": 30,
+    "department": "AIDS-B",
+    "name": "Manda Divyasri",
+    "semester": "2"
+  },
+  "25H71A54A4": {
+    "attended": 47,
+    "department": "AIDS-B",
+    "name": "Mohammad Riazul Haq",
+    "semester": "2"
+  },
+  "25H71A54A5": {
+    "attended": 48,
+    "department": "AIDS-B",
+    "name": "Mutchumuri Lohith",
+    "semester": "2"
+  },
+  "25H71A54A6": {
+    "attended": 26,
+    "department": "AIDS-B",
+    "name": "Nallani Ratnakanth",
+    "semester": "2"
+  },
+  "25H71A54A7": {
+    "attended": 34,
+    "department": "AIDS-B",
+    "name": "Nammi Gowtham Avinash",
+    "semester": "2"
+  },
+  "25H71A54A8": {
+    "attended": 16,
+    "department": "AIDS-B",
+    "name": "Nandigam Rakesh",
+    "semester": "2"
+  },
+  "25H71A54A9": {
+    "attended": 43,
+    "department": "AIDS-B",
+    "name": "Pagadala Pranathi",
+    "semester": "2"
+  },
+  "25H71A54B0": {
+    "attended": 45,
+    "department": "AIDS-B",
+    "name": "Panchumarthi Sravanthi",
+    "semester": "2"
+  },
+  "25H71A54B1": {
+    "attended": 28,
+    "department": "AIDS-B",
+    "name": "Pasupuleti Lekha Hasini",
+    "semester": "2"
+  },
+  "25H71A54B2": {
+    "attended": 34,
+    "department": "AIDS-B",
+    "name": "Patchipala Keerthi",
+    "semester": "2"
+  },
+  "25H71A54B3": {
+    "attended": 33,
+    "department": "AIDS-B",
+    "name": "Ponna Santhosh Kumar",
+    "semester": "2"
+  },
+  "25H71A54B4": {
+    "attended": 41,
+    "department": "AIDS-B",
+    "name": "Popuri Gowri",
+    "semester": "2"
+  },
+  "25H71A54B5": {
+    "attended": 46,
+    "department": "AIDS-B",
+    "name": "Potharaju Sri Sai Vignesh",
+    "semester": "2"
+  },
+  "25H71A54B6": {
+    "attended": 30,
+    "department": "AIDS-B",
+    "name": "Pulapaka Supriya",
+    "semester": "2"
+  },
+  "25H71A54B7": {
+    "attended": 41,
+    "department": "AIDS-B",
+    "name": "Ravuri Lakshmi Manikanta",
+    "semester": "2"
+  },
+  "25H71A54B8": {
+    "attended": 38,
+    "department": "AIDS-B",
+    "name": "Shaik Hameeda Malin",
+    "semester": "2"
+  },
+  "25H71A54B9": {
+    "attended": 52,
+    "department": "AIDS-B",
+    "name": "Shaik Ibraheem Khalilulla",
+    "semester": "2"
+  },
+  "25H71A54C0": {
+    "attended": 15,
+    "department": "AIDS-B",
+    "name": "Shaik John Saida",
+    "semester": "2"
+  },
+  "25H71A54C1": {
+    "attended": 41,
+    "department": "AIDS-B",
+    "name": "Shaik Mahabube",
+    "semester": "2"
+  },
+  "25H71A54C2": {
+    "attended": 49,
+    "department": "AIDS-B",
+    "name": "Shaik Meer Mohiddin",
+    "semester": "2"
+  },
+  "25H71A54C3": {
+    "attended": 16,
+    "department": "AIDS-B",
+    "name": "Shaik Ruksana Anjum",
+    "semester": "2"
+  },
+  "25H71A54C4": {
+    "attended": 28,
+    "department": "AIDS-B",
+    "name": "Shaik Sajith",
+    "semester": "2"
+  },
+  "25H71A54C5": {
+    "attended": 29,
+    "department": "AIDS-B",
+    "name": "Shaik Yashmin Begam",
+    "semester": "2"
+  },
+  "25H71A54C6": {
+    "attended": 15,
+    "department": "AIDS-B",
+    "name": "Siripurapu Venumadav",
+    "semester": "2"
+  },
+  "25H71A54C7": {
+    "attended": 1,
+    "department": "AIDS-B",
+    "name": "Sriperambudhuri Pavani Vijaya Lakshmi",
+    "semester": "2"
+  },
+  "25H71A54C8": {
+    "attended": 41,
+    "department": "AIDS-B",
+    "name": "Surepalli Bhanu Deva Raj",
+    "semester": "2"
+  },
+  "25H71A54C9": {
+    "attended": 10,
+    "department": "AIDS-B",
+    "name": "Thirumalareddy Trivikram Reddy",
+    "semester": "2"
+  },
+  "25H71A54D0": {
+    "attended": 25,
+    "department": "AIDS-B",
+    "name": "Thokala Yedukondalu",
+    "semester": "2"
+  },
+  "25H71A54D1": {
+    "attended": 8,
+    "department": "AIDS-B",
+    "name": "Valla Mohan Sai Charan",
+    "semester": "2"
+  },
+  "25H71A54D2": {
+    "attended": 51,
+    "department": "AIDS-B",
+    "name": "Vinukollu Spurthi Sravya",
+    "semester": "2"
+  },
+  "25H71A54D3": {
+    "attended": 25,
+    "department": "AIDS-C",
+    "name": "Addanki Vinela",
+    "semester": "2"
+  },
+  "25H71A54D4": {
+    "attended": 18,
+    "department": "AIDS-C",
+    "name": "Alajangi Tulasi",
+    "semester": "2"
+  },
+  "25H71A54D5": {
+    "attended": 40,
+    "department": "AIDS-C",
+    "name": "Anumala Ganesh",
+    "semester": "2"
+  },
+  "25H71A54D6": {
+    "attended": 24,
+    "department": "AIDS-C",
+    "name": "Ayyala Nehasri",
+    "semester": "2"
+  },
+  "25H71A54D7": {
+    "attended": 1,
+    "department": "AIDS-C",
+    "name": "Badineni Manikanta",
+    "semester": "2"
+  },
+  "25H71A54D8": {
+    "attended": 28,
+    "department": "AIDS-C",
+    "name": "Baliboyina Anitha",
+    "semester": "2"
+  },
+  "25H71A54D9": {
+    "attended": 29,
+    "department": "AIDS-C",
+    "name": "Bandarupalli Sahithi",
+    "semester": "2"
+  },
+  "25H71A54E0": {
+    "attended": 6,
+    "department": "AIDS-C",
+    "name": "Bhukya Sai Siva",
+    "semester": "2"
+  },
+  "25H71A54E1": {
+    "attended": 26,
+    "department": "AIDS-C",
+    "name": "Bhupathi Rukendar",
+    "semester": "2"
+  },
+  "25H71A54E2": {
+    "attended": 44,
+    "department": "AIDS-C",
+    "name": "Bokka Akanksha",
+    "semester": "2"
+  },
+  "25H71A54E3": {
+    "attended": 50,
+    "department": "AIDS-C",
+    "name": "Bommali Bhanu Prakash",
+    "semester": "2"
+  },
+  "25H71A54E4": {
+    "attended": 46,
+    "department": "AIDS-C",
+    "name": "Chaluvadhi Pravanth",
+    "semester": "2"
+  },
+  "25H71A54E5": {
+    "attended": 17,
+    "department": "AIDS-C",
+    "name": "Cheemala Charan Teja",
+    "semester": "2"
+  },
+  "25H71A54E6": {
+    "attended": 50,
+    "department": "AIDS-C",
+    "name": "Chitrajipalli Sindhu Priya",
+    "semester": "2"
+  },
+  "25H71A54E7": {
+    "attended": 36,
+    "department": "AIDS-C",
+    "name": "Dakarapu Deven Gowthami",
+    "semester": "2"
+  },
+  "25H71A54E8": {
+    "attended": 37,
+    "department": "AIDS-C",
+    "name": "Devadiga Kavya Sree",
+    "semester": "2"
+  },
+  "25H71A54E9": {
+    "attended": 19,
+    "department": "AIDS-C",
+    "name": "Devara Pushpa Latha",
+    "semester": "2"
+  },
+  "25H71A54F0": {
+    "attended": 23,
+    "department": "AIDS-C",
+    "name": "Dubbaka Bharath",
+    "semester": "2"
+  },
+  "25H71A54F1": {
+    "attended": 28,
+    "department": "AIDS-C",
+    "name": "Gadidesi Nikitha",
+    "semester": "2"
+  },
+  "25H71A54F2": {
+    "attended": 33,
+    "department": "AIDS-C",
+    "name": "Ganji Poorna Chandra Rao",
+    "semester": "2"
+  },
+  "25H71A54F3": {
+    "attended": 40,
+    "department": "AIDS-C",
+    "name": "Garlapati Harika",
+    "semester": "2"
+  },
+  "25H71A54F4": {
+    "attended": 29,
+    "department": "AIDS-C",
+    "name": "Ghattamaneni Jaya Krishna",
+    "semester": "2"
+  },
+  "25H71A54F5": {
+    "attended": 31,
+    "department": "AIDS-C",
+    "name": "Gopu Mahesh Reddy",
+    "semester": "2"
+  },
+  "25H71A54F6": {
+    "attended": 28,
+    "department": "AIDS-C",
+    "name": "Gotte Sanjay",
+    "semester": "2"
+  },
+  "25H71A54F7": {
+    "attended": 31,
+    "department": "AIDS-C",
+    "name": "Jayamangala Deepika",
+    "semester": "2"
+  },
+  "25H71A54F8": {
+    "attended": 30,
+    "department": "AIDS-C",
+    "name": "Kandela Naveen",
+    "semester": "2"
+  },
+  "25H71A54F9": {
+    "attended": 24,
+    "department": "AIDS-C",
+    "name": "Kasarla Revanth",
+    "semester": "2"
+  },
+  "25H71A54G0": {
+    "attended": 46,
+    "department": "AIDS-C",
+    "name": "Kommu Jaswanth",
+    "semester": "2"
+  },
+  "25H71A54G1": {
+    "attended": 49,
+    "department": "AIDS-C",
+    "name": "Kotte William Kerry",
+    "semester": "2"
+  },
+  "25H71A54G2": {
+    "attended": 17,
+    "department": "AIDS-C",
+    "name": "Lingam Shyam Rohith",
+    "semester": "2"
+  },
+  "25H71A54G3": {
+    "attended": 24,
+    "department": "AIDS-C",
+    "name": "Maddala Moulika",
+    "semester": "2"
+  },
+  "25H71A54G4": {
+    "attended": 16,
+    "department": "AIDS-C",
+    "name": "Maddi Durga Vani",
+    "semester": "2"
+  },
+  "25H71A54G5": {
+    "attended": 24,
+    "department": "AIDS-C",
+    "name": "Malapati Mani Krishna Reddy",
+    "semester": "2"
+  },
+  "25H71A54G6": {
+    "attended": 25,
+    "department": "AIDS-C",
+    "name": "Mandala Chidvilas",
+    "semester": "2"
+  },
+  "25H71A54G7": {
+    "attended": 35,
+    "department": "AIDS-C",
+    "name": "Mandapati Keerthana",
+    "semester": "2"
+  },
+  "25H71A54G8": {
+    "attended": 35,
+    "department": "AIDS-C",
+    "name": "Mandrajula Mani Naga Teja",
+    "semester": "2"
+  },
+  "25H71A54G9": {
+    "attended": 23,
+    "department": "AIDS-C",
+    "name": "Modhela Venkatesh",
+    "semester": "2"
+  },
+  "25H71A54H0": {
+    "attended": 44,
+    "department": "AIDS-C",
+    "name": "Mohammad Zafar",
+    "semester": "2"
+  },
+  "25H71A54H1": {
+    "attended": 5,
+    "department": "AIDS-C",
+    "name": "Mohammad Ziyauddin",
+    "semester": "2"
+  },
+  "25H71A54H2": {
+    "attended": 1,
+    "department": "AIDS-C",
+    "name": "Mudavathu Vignesh Naik",
+    "semester": "2"
+  },
+  "25H71A54H3": {
+    "attended": 33,
+    "department": "AIDS-C",
+    "name": "Mutam Siva Shankar",
+    "semester": "2"
+  },
+  "25H71A54H4": {
+    "attended": 38,
+    "department": "AIDS-C",
+    "name": "Nagumalli Phani",
+    "semester": "2"
+  },
+  "25H71A54H5": {
+    "attended": 40,
+    "department": "AIDS-C",
+    "name": "Najana Lokesh",
+    "semester": "2"
+  },
+  "25H71A54H6": {
+    "attended": 30,
+    "department": "AIDS-C",
+    "name": "Nuthalapati Manohar",
+    "semester": "2"
+  },
+  "25H71A54H7": {
+    "attended": 41,
+    "department": "AIDS-C",
+    "name": "Orchu Sony",
+    "semester": "2"
+  },
+  "25H71A54H8": {
+    "attended": 32,
+    "department": "AIDS-C",
+    "name": "Pathan Toufiq Khan",
+    "semester": "2"
+  },
+  "25H71A54H9": {
+    "attended": 39,
+    "department": "AIDS-C",
+    "name": "Peeta Lakshmi Sujatha",
+    "semester": "2"
+  },
+  "25H71A54I0": {
+    "attended": 36,
+    "department": "AIDS-C",
+    "name": "Podili Harika",
+    "semester": "2"
+  },
+  "25H71A54I1": {
+    "attended": 44,
+    "department": "AIDS-C",
+    "name": "Potharlanka Bindu Chaithrika",
+    "semester": "2"
+  },
+  "25H71A54I2": {
+    "attended": 2,
+    "department": "AIDS-C",
+    "name": "Pudi Hemanth Kumar",
+    "semester": "2"
+  },
+  "25H71A54I3": {
+    "attended": 44,
+    "department": "AIDS-C",
+    "name": "Punna Vyshnavi",
+    "semester": "2"
+  },
+  "25H71A54I4": {
+    "attended": 50,
+    "department": "AIDS-C",
+    "name": "Pusuluri Mahitha",
+    "semester": "2"
+  },
+  "25H71A54I5": {
+    "attended": 46,
+    "department": "AIDS-C",
+    "name": "Ramireddy Jeevana Harshitha",
+    "semester": "2"
+  },
+  "25H71A54I6": {
+    "attended": 46,
+    "department": "AIDS-C",
+    "name": "Salikiti Saikala",
+    "semester": "2"
+  },
+  "25H71A54I7": {
+    "attended": 35,
+    "department": "AIDS-C",
+    "name": "Shaik Abeeda",
+    "semester": "2"
+  },
+  "25H71A54I9": {
+    "attended": 25,
+    "department": "AIDS-C",
+    "name": "Shaik Ayisha Forhath",
+    "semester": "2"
+  },
+  "25H71A54J0": {
+    "attended": 9,
+    "department": "AIDS-C",
+    "name": "Shaik Muthib Pasha",
+    "semester": "2"
+  },
+  "25H71A54J1": {
+    "attended": 44,
+    "department": "AIDS-C",
+    "name": "Shaik Nasrin Fathima",
+    "semester": "2"
+  },
+  "25H71A54J2": {
+    "attended": 47,
+    "department": "AIDS-C",
+    "name": "Singamsetty Mohan Naga Sai",
+    "semester": "2"
+  },
+  "25H71A54J3": {
+    "attended": 27,
+    "department": "AIDS-C",
+    "name": "Thirumalasetty Narayana Swami",
+    "semester": "2"
+  },
+  "25H71A54J4": {
+    "attended": 35,
+    "department": "AIDS-C",
+    "name": "Udugu Teja",
+    "semester": "2"
+  },
+  "25H71A54J5": {
+    "attended": 32,
+    "department": "AIDS-C",
+    "name": "Varabapana Abhilash",
+    "semester": "2"
+  },
+  "25H71A54J6": {
+    "attended": 35,
+    "department": "AIDS-C",
+    "name": "Vasantha Jayamma",
+    "semester": "2"
+  },
+  "25H71A54J7": {
+    "attended": 24,
+    "department": "AIDS-C",
+    "name": "Veereti Manoj Kumar",
+    "semester": "2"
+  },
+  "25H71A54J8": {
+    "attended": 32,
+    "department": "AIDS-C",
+    "name": "Vinta Roshini",
+    "semester": "2"
+  },
+  "25H71A6101": {
+    "attended": 50,
+    "department": "AIML-A",
+    "name": "Aanagondi Rajesh",
+    "semester": "2"
+  },
+  "25H71A6102": {
+    "attended": 35,
+    "department": "AIML-A",
+    "name": "Ailuri Maniprasanth Reddy",
+    "semester": "2"
+  },
+  "25H71A6103": {
+    "attended": 0,
+    "department": "AIML-A",
+    "name": "Aluri Premkumar",
+    "semester": "2"
+  },
+  "25H71A6104": {
+    "attended": 32,
+    "department": "AIML-A",
+    "name": "Araja Bhanu Charan",
+    "semester": "2"
+  },
+  "25H71A6105": {
+    "attended": 40,
+    "department": "AIML-A",
+    "name": "Baru Naga Venkata Suresh Babu",
+    "semester": "2"
+  },
+  "25H71A6106": {
+    "attended": 39,
+    "department": "AIML-A",
+    "name": "Bolla Sri Tejaswini",
+    "semester": "2"
+  },
+  "25H71A6107": {
+    "attended": 31,
+    "department": "AIML-A",
+    "name": "Challa Lalitha",
+    "semester": "2"
+  },
+  "25H71A6108": {
+    "attended": 37,
+    "department": "AIML-A",
+    "name": "Chandragiri Jaya Prakash",
+    "semester": "2"
+  },
+  "25H71A6109": {
+    "attended": 48,
+    "department": "AIML-A",
+    "name": "Chekka Lakshmi",
+    "semester": "2"
+  },
+  "25H71A6110": {
+    "attended": 49,
+    "department": "AIML-A",
+    "name": "Chinnapareddy Venkata Jagadesh Reddy",
+    "semester": "2"
+  },
+  "25H71A6111": {
+    "attended": 33,
+    "department": "AIML-A",
+    "name": "Chippidi Leela Sai Krishna",
+    "semester": "2"
+  },
+  "25H71A6112": {
+    "attended": 34,
+    "department": "AIML-A",
+    "name": "David George Eggoni",
+    "semester": "2"
+  },
+  "25H71A6113": {
+    "attended": 46,
+    "department": "AIML-A",
+    "name": "Gandla Siri",
+    "semester": "2"
+  },
+  "25H71A6114": {
+    "attended": 11,
+    "department": "AIML-A",
+    "name": "Janjanam Mokshith",
+    "semester": "2"
+  },
+  "25H71A6115": {
+    "attended": 55,
+    "department": "AIML-A",
+    "name": "Jonnalagadda Chetan Sai Krishna",
+    "semester": "2"
+  },
+  "25H71A6116": {
+    "attended": 17,
+    "department": "AIML-A",
+    "name": "Kadavakollu Pavansai",
+    "semester": "2"
+  },
+  "25H71A6117": {
+    "attended": 56,
+    "department": "AIML-A",
+    "name": "Kalla Jaya Varshini",
+    "semester": "2"
+  },
+  "25H71A6118": {
+    "attended": 50,
+    "department": "AIML-A",
+    "name": "Kancharla Navya",
+    "semester": "2"
+  },
+  "25H71A6119": {
+    "attended": 48,
+    "department": "AIML-A",
+    "name": "Katta Lakshmi",
+    "semester": "2"
+  },
+  "25H71A6120": {
+    "attended": 53,
+    "department": "AIML-A",
+    "name": "Katta Sai Sahith",
+    "semester": "2"
+  },
+  "25H71A6121": {
+    "attended": 14,
+    "department": "AIML-A",
+    "name": "Kommineni Yaswanth",
+    "semester": "2"
+  },
+  "25H71A6122": {
+    "attended": 46,
+    "department": "AIML-A",
+    "name": "Kommisetty Likhitha",
+    "semester": "2"
+  },
+  "25H71A6123": {
+    "attended": 40,
+    "department": "AIML-A",
+    "name": "Kongara Sravani",
+    "semester": "2"
+  },
+  "25H71A6125": {
+    "attended": 40,
+    "department": "AIML-A",
+    "name": "Kudirilla Tanuja",
+    "semester": "2"
+  },
+  "25H71A6126": {
+    "attended": 56,
+    "department": "AIML-A",
+    "name": "Kunchapu Sriramudu",
+    "semester": "2"
+  },
+  "25H71A6127": {
+    "attended": 56,
+    "department": "AIML-A",
+    "name": "Lam Pradeep Kumar",
+    "semester": "2"
+  },
+  "25H71A6128": {
+    "attended": 30,
+    "department": "AIML-A",
+    "name": "Maddanasetti Divya Harshini",
+    "semester": "2"
+  },
+  "25H71A6129": {
+    "attended": 56,
+    "department": "AIML-A",
+    "name": "Mancham Leelavathi",
+    "semester": "2"
+  },
+  "25H71A6130": {
+    "attended": 39,
+    "department": "AIML-A",
+    "name": "Manda Yogendra Babu",
+    "semester": "2"
+  },
+  "25H71A6131": {
+    "attended": 28,
+    "department": "AIML-A",
+    "name": "Matte Vennela",
+    "semester": "2"
+  },
+  "25H71A6132": {
+    "attended": 49,
+    "department": "AIML-A",
+    "name": "Mecharla Joshna Priya",
+    "semester": "2"
+  },
+  "25H71A6133": {
+    "attended": 7,
+    "department": "AIML-A",
+    "name": "Medagam Rama Subba Reddy",
+    "semester": "2"
+  },
+  "25H71A6134": {
+    "attended": 22,
+    "department": "AIML-A",
+    "name": "Mekala Hima Bindu",
+    "semester": "2"
+  },
+  "25H71A6135": {
+    "attended": 27,
+    "department": "AIML-A",
+    "name": "Motapothula Purna Chandu",
+    "semester": "2"
+  },
+  "25H71A6136": {
+    "attended": 54,
+    "department": "AIML-A",
+    "name": "Mukku Supriya",
+    "semester": "2"
+  },
+  "25H71A6137": {
+    "attended": 28,
+    "department": "AIML-A",
+    "name": "Munaga Nava Deep",
+    "semester": "2"
+  },
+  "25H71A6138": {
+    "attended": 19,
+    "department": "AIML-A",
+    "name": "Nagidi Govinda Raju",
+    "semester": "2"
+  },
+  "25H71A6139": {
+    "attended": 49,
+    "department": "AIML-A",
+    "name": "Nagulla Mohanth Siva Sai",
+    "semester": "2"
+  },
+  "25H71A6140": {
+    "attended": 30,
+    "department": "AIML-A",
+    "name": "Nalamolu Venkata Srihari",
+    "semester": "2"
+  },
+  "25H71A6141": {
+    "attended": 34,
+    "department": "AIML-A",
+    "name": "Nevuluri Praveen Kumar",
+    "semester": "2"
+  },
+  "25H71A6142": {
+    "attended": 39,
+    "department": "AIML-A",
+    "name": "Oleti Lohith",
+    "semester": "2"
+  },
+  "25H71A6143": {
+    "attended": 8,
+    "department": "AIML-A",
+    "name": "Pamarthi Sai Krishna",
+    "semester": "2"
+  },
+  "25H71A6144": {
+    "attended": 21,
+    "department": "AIML-A",
+    "name": "Payyavula Siva Shankar",
+    "semester": "2"
+  },
+  "25H71A6145": {
+    "attended": 54,
+    "department": "AIML-A",
+    "name": "Pilla Kalyan",
+    "semester": "2"
+  },
+  "25H71A6146": {
+    "attended": 37,
+    "department": "AIML-A",
+    "name": "Pinnenni Pehalya",
+    "semester": "2"
+  },
+  "25H71A6147": {
+    "attended": 35,
+    "department": "AIML-A",
+    "name": "Polisetti Venu",
+    "semester": "2"
+  },
+  "25H71A6148": {
+    "attended": 33,
+    "department": "AIML-A",
+    "name": "Ramisetti Susmitha",
+    "semester": "2"
+  },
+  "25H71A6149": {
+    "attended": 51,
+    "department": "AIML-A",
+    "name": "Ravuri Sri Sai Komal",
+    "semester": "2"
+  },
+  "25H71A6150": {
+    "attended": 51,
+    "department": "AIML-A",
+    "name": "Sarika Bhavagna",
+    "semester": "2"
+  },
+  "25H71A6151": {
+    "attended": 6,
+    "department": "AIML-A",
+    "name": "Sayyed Arshiya Kousar",
+    "semester": "2"
+  },
+  "25H71A6152": {
+    "attended": 46,
+    "department": "AIML-A",
+    "name": "Shaik Alima Nelofar",
+    "semester": "2"
+  },
+  "25H71A6153": {
+    "attended": 27,
+    "department": "AIML-A",
+    "name": "Shaik Hussain",
+    "semester": "2"
+  },
+  "25H71A6154": {
+    "attended": 35,
+    "department": "AIML-A",
+    "name": "Shaik Karishma",
+    "semester": "2"
+  },
+  "25H71A6155": {
+    "attended": 43,
+    "department": "AIML-A",
+    "name": "Shaik Salma",
+    "semester": "2"
+  },
+  "25H71A6156": {
+    "attended": 8,
+    "department": "AIML-A",
+    "name": "Suryadevara Charan",
+    "semester": "2"
+  },
+  "25H71A6157": {
+    "attended": 20,
+    "department": "AIML-A",
+    "name": "Syed Bilal",
+    "semester": "2"
+  },
+  "25H71A6158": {
+    "attended": 41,
+    "department": "AIML-A",
+    "name": "Tati Usha Sri",
+    "semester": "2"
+  },
+  "25H71A6159": {
+    "attended": 55,
+    "department": "AIML-A",
+    "name": "Teppali Harika",
+    "semester": "2"
+  },
+  "25H71A6160": {
+    "attended": 18,
+    "department": "AIML-A",
+    "name": "Thota Siva Sankar",
+    "semester": "2"
+  },
+  "25H71A6161": {
+    "attended": 7,
+    "department": "AIML-A",
+    "name": "Thotamasetty Bhanu Prasad",
+    "semester": "2"
+  },
+  "25H71A6162": {
+    "attended": 44,
+    "department": "AIML-A",
+    "name": "Varikuti Prem Kumar",
+    "semester": "2"
+  },
+  "25H71A6163": {
+    "attended": 14,
+    "department": "AIML-A",
+    "name": "Velagaleti Praveen Kumar",
+    "semester": "2"
+  },
+  "25H71A6164": {
+    "attended": 46,
+    "department": "AIML-A",
+    "name": "Vemu Venkateswara Rao",
+    "semester": "2"
+  },
+  "25H71A6165": {
+    "attended": 17,
+    "department": "AIML-A",
+    "name": "Yalamandala Sunil",
+    "semester": "2"
+  },
+  "25H71A6166": {
+    "attended": 47,
+    "department": "AIML-A",
+    "name": "Yatra Sanjuna",
+    "semester": "2"
+  },
+  "25H71A6167": {
+    "attended": 15,
+    "department": "AIML-B",
+    "name": "Akula Lakshmi Narasimha",
+    "semester": "2"
+  },
+  "25H71A6168": {
+    "attended": 33,
+    "department": "AIML-B",
+    "name": "Allamudi Murali Krishna",
+    "semester": "2"
+  },
+  "25H71A6169": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Ancha Omkar Chowdary",
+    "semester": "2"
+  },
+  "25H71A6170": {
+    "attended": 30,
+    "department": "AIML-B",
+    "name": "Bollam Bindusri",
+    "semester": "2"
+  },
+  "25H71A6171": {
+    "attended": 25,
+    "department": "AIML-B",
+    "name": "Bollam Reshma",
+    "semester": "2"
+  },
+  "25H71A6172": {
+    "attended": 14,
+    "department": "AIML-B",
+    "name": "Bollepogu Karthik",
+    "semester": "2"
+  },
+  "25H71A6173": {
+    "attended": 29,
+    "department": "AIML-B",
+    "name": "Boosi Mahima Jyothi",
+    "semester": "2"
+  },
+  "25H71A6174": {
+    "attended": 24,
+    "department": "AIML-B",
+    "name": "Challa Akhil",
+    "semester": "2"
+  },
+  "25H71A6175": {
+    "attended": 35,
+    "department": "AIML-B",
+    "name": "Chattu Saranya Lohitha",
+    "semester": "2"
+  },
+  "25H71A6176": {
+    "attended": 26,
+    "department": "AIML-B",
+    "name": "Chavala Poornesh",
+    "semester": "2"
+  },
+  "25H71A6177": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Chinni Suresh",
+    "semester": "2"
+  },
+  "25H71A6178": {
+    "attended": 8,
+    "department": "AIML-B",
+    "name": "Chunduri Shashank Naga Vignesh",
+    "semester": "2"
+  },
+  "25H71A6179": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Gangavarapu Deepika",
+    "semester": "2"
+  },
+  "25H71A6180": {
+    "attended": 25,
+    "department": "AIML-B",
+    "name": "Gavini Naveen",
+    "semester": "2"
+  },
+  "25H71A6181": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Gurram Rakesh Varma",
+    "semester": "2"
+  },
+  "25H71A6182": {
+    "attended": 25,
+    "department": "AIML-B",
+    "name": "Jada Srividhya",
+    "semester": "2"
+  },
+  "25H71A6183": {
+    "attended": 30,
+    "department": "AIML-B",
+    "name": "Janga Jasmitha Rani",
+    "semester": "2"
+  },
+  "25H71A6184": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Jonnakuti Keerthana Sri",
+    "semester": "2"
+  },
+  "25H71A6185": {
+    "attended": 29,
+    "department": "AIML-B",
+    "name": "Karnati Divya Rajya Lakshmi",
+    "semester": "2"
+  },
+  "25H71A6186": {
+    "attended": 33,
+    "department": "AIML-B",
+    "name": "Katta Srinanda Chaitanya Kumar",
+    "semester": "2"
+  },
+  "25H71A6187": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Kaviti Pujitha",
+    "semester": "2"
+  },
+  "25H71A6188": {
+    "attended": 32,
+    "department": "AIML-B",
+    "name": "Kommukuri Vijayalakshmi",
+    "semester": "2"
+  },
+  "25H71A6189": {
+    "attended": 3,
+    "department": "AIML-B",
+    "name": "Kotakonda Jaswanth",
+    "semester": "2"
+  },
+  "25H71A6190": {
+    "attended": 30,
+    "department": "AIML-B",
+    "name": "Kotaru Amrutha",
+    "semester": "2"
+  },
+  "25H71A6191": {
+    "attended": 31,
+    "department": "AIML-B",
+    "name": "Kotaru Amulya",
+    "semester": "2"
+  },
+  "25H71A6192": {
+    "attended": 12,
+    "department": "AIML-B",
+    "name": "Kukkala Pranay",
+    "semester": "2"
+  },
+  "25H71A6193": {
+    "attended": 21,
+    "department": "AIML-B",
+    "name": "Kunchala Yesuraja",
+    "semester": "2"
+  },
+  "25H71A6194": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Kuraku Mohan Krishna",
+    "semester": "2"
+  },
+  "25H71A6195": {
+    "attended": 33,
+    "department": "AIML-B",
+    "name": "Lam Suvarna Sandeep",
+    "semester": "2"
+  },
+  "25H71A6196": {
+    "attended": 31,
+    "department": "AIML-B",
+    "name": "M Madhulatha",
+    "semester": "2"
+  },
+  "25H71A6197": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Madhavarapu Siva Naga Ram Charan Hemanth",
+    "semester": "2"
+  },
+  "25H71A6198": {
+    "attended": 7,
+    "department": "AIML-B",
+    "name": "Madugula Suseel Kumar",
+    "semester": "2"
+  },
+  "25H71A6199": {
+    "attended": 4,
+    "department": "AIML-B",
+    "name": "Manchala Hemanth",
+    "semester": "2"
+  },
+  "25H71A61A0": {
+    "attended": 14,
+    "department": "AIML-B",
+    "name": "Mandali Dheemanth Nag",
+    "semester": "2"
+  },
+  "25H71A61A1": {
+    "attended": 26,
+    "department": "AIML-B",
+    "name": "Mandavi Mishra",
+    "semester": "2"
+  },
+  "25H71A61A2": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Mecharla Pravallika",
+    "semester": "2"
+  },
+  "25H71A61A3": {
+    "attended": 31,
+    "department": "AIML-B",
+    "name": "Meda Jaswanth",
+    "semester": "2"
+  },
+  "25H71A61A4": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Molleti Jaya Siva Rama Ganesh",
+    "semester": "2"
+  },
+  "25H71A61A5": {
+    "attended": 30,
+    "department": "AIML-B",
+    "name": "Muchinapalli M N V S Srinivas",
+    "semester": "2"
+  },
+  "25H71A61A6": {
+    "attended": 33,
+    "department": "AIML-B",
+    "name": "Nagapuri Gopi Manoj",
+    "semester": "2"
+  },
+  "25H71A61A7": {
+    "attended": 29,
+    "department": "AIML-B",
+    "name": "Nalajala Balaji",
+    "semester": "2"
+  },
+  "25H71A61A8": {
+    "attended": 21,
+    "department": "AIML-B",
+    "name": "Nali Narasimha Raju",
+    "semester": "2"
+  },
+  "25H71A61A9": {
+    "attended": 26,
+    "department": "AIML-B",
+    "name": "Nandyala Sarabaiah",
+    "semester": "2"
+  },
+  "25H71A61B0": {
+    "attended": 14,
+    "department": "AIML-B",
+    "name": "Neelam Srinivasa",
+    "semester": "2"
+  },
+  "25H71A61B1": {
+    "attended": 9,
+    "department": "AIML-B",
+    "name": "Palaparthi Samith Kumar",
+    "semester": "2"
+  },
+  "25H71A61B2": {
+    "attended": 13,
+    "department": "AIML-B",
+    "name": "Parasa Thanush",
+    "semester": "2"
+  },
+  "25H71A61B3": {
+    "attended": 22,
+    "department": "AIML-B",
+    "name": "Parella Naga Sudha",
+    "semester": "2"
+  },
+  "25H71A61B4": {
+    "attended": 29,
+    "department": "AIML-B",
+    "name": "Pothamsetty Kavya Sri",
+    "semester": "2"
+  },
+  "25H71A61B5": {
+    "attended": 34,
+    "department": "AIML-B",
+    "name": "Potnuri Sanjay",
+    "semester": "2"
+  },
+  "25H71A61B6": {
+    "attended": 32,
+    "department": "AIML-B",
+    "name": "Prem Teja Lakkabattula",
+    "semester": "2"
+  },
+  "25H71A61B7": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Rachabanti Gayathri",
+    "semester": "2"
+  },
+  "25H71A61B8": {
+    "attended": 32,
+    "department": "AIML-B",
+    "name": "Ramireddy Anusha",
+    "semester": "2"
+  },
+  "25H71A61B9": {
+    "attended": 29,
+    "department": "AIML-B",
+    "name": "Samudayapalepu Durga Devi",
+    "semester": "2"
+  },
+  "25H71A61C0": {
+    "attended": 31,
+    "department": "AIML-B",
+    "name": "Sayyad Hasma",
+    "semester": "2"
+  },
+  "25H71A61C1": {
+    "attended": 32,
+    "department": "AIML-B",
+    "name": "Shaik Akash",
+    "semester": "2"
+  },
+  "25H71A61C2": {
+    "attended": 32,
+    "department": "AIML-B",
+    "name": "Shaik Maleeha Aiman",
+    "semester": "2"
+  },
+  "25H71A61C3": {
+    "attended": 31,
+    "department": "AIML-B",
+    "name": "Shaik Sahera",
+    "semester": "2"
+  },
+  "25H71A61C4": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Shanmuk Rahul Joga",
+    "semester": "2"
+  },
+  "25H71A61C5": {
+    "attended": 20,
+    "department": "AIML-B",
+    "name": "Sunkara Siddha Hanu Ratna Manikanth",
+    "semester": "2"
+  },
+  "25H71A61C6": {
+    "attended": 25,
+    "department": "AIML-B",
+    "name": "Surapaneni Aswini",
+    "semester": "2"
+  },
+  "25H71A61C7": {
+    "attended": 25,
+    "department": "AIML-B",
+    "name": "Tammaneni Pedda Venkata Nithin Reddy",
+    "semester": "2"
+  },
+  "25H71A61C8": {
+    "attended": 17,
+    "department": "AIML-B",
+    "name": "Thalupula Gopinadh",
+    "semester": "2"
+  },
+  "25H71A61C9": {
+    "attended": 27,
+    "department": "AIML-B",
+    "name": "Thopula Bhargav Sai Amruth",
+    "semester": "2"
+  },
+  "25H71A61D0": {
+    "attended": 25,
+    "department": "AIML-B",
+    "name": "Vaka Lakshmi Jashnavi",
+    "semester": "2"
+  },
+  "25H71A61D1": {
+    "attended": 26,
+    "department": "AIML-B",
+    "name": "Vallepu Karthik",
+    "semester": "2"
+  }
+}
