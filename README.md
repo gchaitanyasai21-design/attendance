@@ -49,3 +49,15 @@ Set environment variables before running app:
 - `MAIL_FROM` (optional, defaults to `SMTP_USER`)
 
 If SMTP is not configured, the app shows a dev OTP message for testing.
+
+## SQLite to PostgreSQL Migration
+Use this once when moving existing local SQLite data to PostgreSQL (for Render).
+
+1. Set env vars:
+   - `DATABASE_URL` (Render Postgres connection string)
+   - `ATTENDANCE_DB_PATH` (optional, defaults to `attendance.db`)
+2. Run:
+   ```bash
+   python migrate_sqlite_to_postgres.py
+   ```
+3. Deploy app with `DATABASE_URL` set.

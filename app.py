@@ -12,6 +12,13 @@ import xml.etree.ElementTree as ET
 import zipfile
 from flask import Flask, flash, g, redirect, render_template, request, session, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
+
+try:
+    import psycopg
+    from psycopg.rows import dict_row
+except Exception:  # pragma: no cover - optional dependency
+    psycopg = None
+    dict_row = None
 try:
     from docx import Document
 except Exception:  # pragma: no cover - optional dependency
@@ -20,6 +27,7 @@ except Exception:  # pragma: no cover - optional dependency
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.join(os.environ.get("USERPROFILE", ""), "Downloads")
 DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
+DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
@@ -92,7 +100,7 @@ CIVIL_ATTENDANCE_DATA = [
 ]
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = "change-this-secret-key"
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", secrets.token_hex(32))
 app.config["SMTP_HOST"] = os.environ.get("SMTP_HOST", "")
 app.config["SMTP_PORT"] = int(os.environ.get("SMTP_PORT", "587"))
 app.config["SMTP_USER"] = os.environ.get("SMTP_USER", "")
@@ -113,13 +121,59 @@ _TIMETABLE_CACHE_MTIME: Optional[float] = None
 _ATTENDANCE_SNAPSHOT_CACHE: Optional[Dict[str, dict]] = None
 
 
+class DBConnection:
+    def __init__(self, conn, backend: str):
+        self._conn = conn
+        self.backend = backend
+
+    @staticmethod
+    def _convert_query(query: str):
+        return query.replace("?", "%s")
+
+    def execute(self, query: str, params=None):
+        if self.backend == "postgres":
+            return self._conn.execute(self._convert_query(query), params)
+        return self._conn.execute(query, params or ())
+
+    def executemany(self, query: str, seq_of_params):
+        if self.backend == "postgres":
+            return self._conn.executemany(self._convert_query(query), seq_of_params)
+        return self._conn.executemany(query, seq_of_params)
+
+    def executescript(self, script: str):
+        if self.backend == "postgres":
+            with self._conn.cursor() as cur:
+                cur.execute(script)
+            return None
+        return self._conn.executescript(script)
+
+    def commit(self):
+        self._conn.commit()
+
+    def close(self):
+        self._conn.close()
+
+
+def is_integrity_error(exc: Exception) -> bool:
+    if isinstance(exc, sqlite3.IntegrityError):
+        return True
+    return bool(psycopg and isinstance(exc, psycopg.IntegrityError))
+
+
 def get_db():
     if "db" not in g:
-        db_dir = os.path.dirname(DB_PATH)
-        if db_dir:
-            os.makedirs(db_dir, exist_ok=True)
-        g.db = sqlite3.connect(DB_PATH, timeout=60)
-        g.db.row_factory = sqlite3.Row
+        if DATABASE_URL:
+            if psycopg is None:
+                raise RuntimeError("DATABASE_URL is set, but psycopg is not installed.")
+            conn = psycopg.connect(DATABASE_URL, row_factory=dict_row)
+            g.db = DBConnection(conn, backend="postgres")
+        else:
+            db_dir = os.path.dirname(DB_PATH)
+            if db_dir:
+                os.makedirs(db_dir, exist_ok=True)
+            conn = sqlite3.connect(DB_PATH, timeout=60)
+            conn.row_factory = sqlite3.Row
+            g.db = DBConnection(conn, backend="sqlite")
     return g.db
 
 
@@ -175,42 +229,79 @@ def is_admin_teacher(db):
 
 def init_db():
     db = get_db()
-    db.executescript(
-        """
-        CREATE TABLE IF NOT EXISTS students (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            first_name TEXT,
-            last_name TEXT,
-            roll_no TEXT NOT NULL UNIQUE,
-            email TEXT,
-            password_hash TEXT,
-            reset_otp TEXT,
-            reset_otp_expires INTEGER,
-            department TEXT,
-            semester TEXT
-        );
+    if db.backend == "postgres":
+        db.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS students (
+                id BIGSERIAL PRIMARY KEY,
+                name TEXT NOT NULL,
+                first_name TEXT,
+                last_name TEXT,
+                roll_no TEXT NOT NULL UNIQUE,
+                email TEXT,
+                password_hash TEXT,
+                reset_otp TEXT,
+                reset_otp_expires BIGINT,
+                department TEXT,
+                semester TEXT
+            );
 
-        CREATE TABLE IF NOT EXISTS attendance_records (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            student_id INTEGER NOT NULL,
-            attendance_date TEXT NOT NULL,
-            subject TEXT NOT NULL,
-            status INTEGER NOT NULL CHECK(status IN (0, 1)),
-            FOREIGN KEY(student_id) REFERENCES students(id)
-        );
+            CREATE TABLE IF NOT EXISTS attendance_records (
+                id BIGSERIAL PRIMARY KEY,
+                student_id BIGINT NOT NULL REFERENCES students(id) ON DELETE CASCADE,
+                attendance_date TEXT NOT NULL,
+                subject TEXT NOT NULL,
+                status INTEGER NOT NULL CHECK(status IN (0, 1))
+            );
 
-        CREATE TABLE IF NOT EXISTS teachers (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            name TEXT NOT NULL,
-            username TEXT NOT NULL UNIQUE,
-            email TEXT,
-            password_hash TEXT NOT NULL,
-            reset_otp TEXT,
-            reset_otp_expires INTEGER
-        );
-        """
-    )
+            CREATE TABLE IF NOT EXISTS teachers (
+                id BIGSERIAL PRIMARY KEY,
+                name TEXT NOT NULL,
+                username TEXT NOT NULL UNIQUE,
+                email TEXT,
+                password_hash TEXT NOT NULL,
+                reset_otp TEXT,
+                reset_otp_expires BIGINT
+            );
+            """
+        )
+    else:
+        db.executescript(
+            """
+            CREATE TABLE IF NOT EXISTS students (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                first_name TEXT,
+                last_name TEXT,
+                roll_no TEXT NOT NULL UNIQUE,
+                email TEXT,
+                password_hash TEXT,
+                reset_otp TEXT,
+                reset_otp_expires INTEGER,
+                department TEXT,
+                semester TEXT
+            );
+
+            CREATE TABLE IF NOT EXISTS attendance_records (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                student_id INTEGER NOT NULL,
+                attendance_date TEXT NOT NULL,
+                subject TEXT NOT NULL,
+                status INTEGER NOT NULL CHECK(status IN (0, 1)),
+                FOREIGN KEY(student_id) REFERENCES students(id)
+            );
+
+            CREATE TABLE IF NOT EXISTS teachers (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                name TEXT NOT NULL,
+                username TEXT NOT NULL UNIQUE,
+                email TEXT,
+                password_hash TEXT NOT NULL,
+                reset_otp TEXT,
+                reset_otp_expires INTEGER
+            );
+            """
+        )
     _migrate_students_table(db)
     _migrate_teachers_table(db)
     _seed_default_teacher(db)
@@ -219,33 +310,46 @@ def init_db():
 
 
 def _migrate_students_table(db):
-    columns = {
-        row["name"] for row in db.execute("PRAGMA table_info(students)").fetchall()
-    }
+    if db.backend == "postgres":
+        db.executescript(
+            """
+            ALTER TABLE students ADD COLUMN IF NOT EXISTS email TEXT;
+            ALTER TABLE students ADD COLUMN IF NOT EXISTS first_name TEXT;
+            ALTER TABLE students ADD COLUMN IF NOT EXISTS last_name TEXT;
+            ALTER TABLE students ADD COLUMN IF NOT EXISTS password_hash TEXT;
+            ALTER TABLE students ADD COLUMN IF NOT EXISTS reset_otp TEXT;
+            ALTER TABLE students ADD COLUMN IF NOT EXISTS reset_otp_expires BIGINT;
+            """
+        )
+    else:
+        columns = {
+            row["name"] for row in db.execute("PRAGMA table_info(students)").fetchall()
+        }
 
-    if "email" not in columns:
-        db.execute("ALTER TABLE students ADD COLUMN email TEXT")
-    if "first_name" not in columns:
-        db.execute("ALTER TABLE students ADD COLUMN first_name TEXT")
-    if "last_name" not in columns:
-        db.execute("ALTER TABLE students ADD COLUMN last_name TEXT")
-    if "password_hash" not in columns:
-        db.execute("ALTER TABLE students ADD COLUMN password_hash TEXT")
-    if "reset_otp" not in columns:
-        db.execute("ALTER TABLE students ADD COLUMN reset_otp TEXT")
-    if "reset_otp_expires" not in columns:
-        db.execute("ALTER TABLE students ADD COLUMN reset_otp_expires INTEGER")
-    _ensure_students_email_not_unique(db)
+        if "email" not in columns:
+            db.execute("ALTER TABLE students ADD COLUMN email TEXT")
+        if "first_name" not in columns:
+            db.execute("ALTER TABLE students ADD COLUMN first_name TEXT")
+        if "last_name" not in columns:
+            db.execute("ALTER TABLE students ADD COLUMN last_name TEXT")
+        if "password_hash" not in columns:
+            db.execute("ALTER TABLE students ADD COLUMN password_hash TEXT")
+        if "reset_otp" not in columns:
+            db.execute("ALTER TABLE students ADD COLUMN reset_otp TEXT")
+        if "reset_otp_expires" not in columns:
+            db.execute("ALTER TABLE students ADD COLUMN reset_otp_expires INTEGER")
+        _ensure_students_email_not_unique(db)
 
     db.execute(
         "CREATE UNIQUE INDEX IF NOT EXISTS idx_students_roll_no ON students(roll_no)"
     )
-    email_index = db.execute(
-        "SELECT sql FROM sqlite_master WHERE type = 'index' AND name = 'idx_students_email'"
-    ).fetchone()
-    email_index_sql = (email_index["sql"] or "").upper() if email_index else ""
-    if "UNIQUE INDEX" in email_index_sql:
-        db.execute("DROP INDEX idx_students_email")
+    if db.backend == "sqlite":
+        email_index = db.execute(
+            "SELECT sql FROM sqlite_master WHERE type = 'index' AND name = 'idx_students_email'"
+        ).fetchone()
+        email_index_sql = (email_index["sql"] or "").upper() if email_index else ""
+        if "UNIQUE INDEX" in email_index_sql:
+            db.execute("DROP INDEX idx_students_email")
     db.execute(
         "CREATE INDEX IF NOT EXISTS idx_students_email ON students(email)"
     )
@@ -271,6 +375,9 @@ def _migrate_students_table(db):
 
 
 def _ensure_students_email_not_unique(db):
+    if db.backend != "sqlite":
+        return
+
     students_table_sql = db.execute(
         "SELECT sql FROM sqlite_master WHERE type = 'table' AND name = 'students'"
     ).fetchone()
@@ -368,15 +475,24 @@ def _seed_admin_teacher(db):
 
 
 def _migrate_teachers_table(db):
-    columns = {
-        row["name"] for row in db.execute("PRAGMA table_info(teachers)").fetchall()
-    }
-    if "email" not in columns:
-        db.execute("ALTER TABLE teachers ADD COLUMN email TEXT")
-    if "reset_otp" not in columns:
-        db.execute("ALTER TABLE teachers ADD COLUMN reset_otp TEXT")
-    if "reset_otp_expires" not in columns:
-        db.execute("ALTER TABLE teachers ADD COLUMN reset_otp_expires INTEGER")
+    if db.backend == "postgres":
+        db.executescript(
+            """
+            ALTER TABLE teachers ADD COLUMN IF NOT EXISTS email TEXT;
+            ALTER TABLE teachers ADD COLUMN IF NOT EXISTS reset_otp TEXT;
+            ALTER TABLE teachers ADD COLUMN IF NOT EXISTS reset_otp_expires BIGINT;
+            """
+        )
+    else:
+        columns = {
+            row["name"] for row in db.execute("PRAGMA table_info(teachers)").fetchall()
+        }
+        if "email" not in columns:
+            db.execute("ALTER TABLE teachers ADD COLUMN email TEXT")
+        if "reset_otp" not in columns:
+            db.execute("ALTER TABLE teachers ADD COLUMN reset_otp TEXT")
+        if "reset_otp_expires" not in columns:
+            db.execute("ALTER TABLE teachers ADD COLUMN reset_otp_expires INTEGER")
 
     db.execute(
         "CREATE UNIQUE INDEX IF NOT EXISTS idx_teachers_username ON teachers(username)"
@@ -1441,7 +1557,9 @@ def teacher_change_credentials():
                 (new_username, new_email, next_password_hash, teacher_id),
             )
             db.commit()
-        except sqlite3.IntegrityError:
+        except Exception as exc:
+            if not is_integrity_error(exc):
+                raise
             flash("Username already exists.", "error")
             return render_template("teacher_change_credentials.html", teacher=teacher)
 
@@ -1574,7 +1692,9 @@ def admin():
                     )
                     db.commit()
                     flash("Faculty added.", "success")
-                except sqlite3.IntegrityError:
+                except Exception as exc:
+                    if not is_integrity_error(exc):
+                        raise
                     flash("Faculty username already exists.", "error")
 
         if action == "remove_teacher":
