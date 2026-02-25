@@ -45,6 +45,7 @@ body {
   gap: 12px;
   flex-wrap: wrap;
   margin-bottom: 12px;
+  position: relative;
 }
 .topbar h1 {
   margin: 0;
@@ -52,9 +53,63 @@ body {
   width: 100%;
   text-align: center;
 }
-nav {
+.panel-logo {
   width: 100%;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.panel-logo-img {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 0 6px;
+}
+.menu {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.menu-toggle {
+  list-style: none;
+  cursor: pointer;
+  width: 40px;
+  height: 34px;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: 0 6px 16px rgba(15, 108, 189, 0.12);
+}
+.menu-toggle::-webkit-details-marker {
+  display: none;
+}
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
+}
+.menu-dropdown {
+  position: absolute;
+  right: 0;
+  top: 44px;
+  min-width: 200px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  box-shadow: 0 18px 30px rgba(15, 108, 189, 0.12);
+}
+.menu:not([open]) .menu-dropdown {
+  display: none;
 }
 .back-row {
   width: 100%;
@@ -66,11 +121,15 @@ nav {
   text-decoration: none;
   font-weight: 600;
 }
-nav a {
-  margin-left: 10px;
+.menu-dropdown a {
   color: var(--primary);
   text-decoration: none;
   font-weight: 600;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+.menu-dropdown a:hover {
+  background: rgba(15, 108, 189, 0.08);
 }
 .card {
   background: var(--card);

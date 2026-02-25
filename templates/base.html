@@ -9,6 +9,11 @@
 <body class="{% if request.endpoint == 'login' %}login-body{% endif %}" {% if request.endpoint == 'login' %}style="background-image: url('{{ url_for('static', filename='login-building.jpg') }}')" {% endif %}>
   <div class="container">
     <header class="topbar">
+      {% if session.get('role') in ['student', 'teacher'] %}
+        <div class="panel-logo">
+          <img class="panel-logo-img" src="{{ url_for('static', filename='login-logo.png') }}" alt="College Logo">
+        </div>
+      {% endif %}
       <h1>
         DVR &amp; Dr.HS<br>
         MIC COLLEGE OF TECHNOLOGY
@@ -18,20 +23,28 @@
       {% elif session.get('role') == 'teacher' and request.endpoint != 'admin' %}
         <p class="back-row"><a href="{{ url_for('admin') }}">&larr; Back</a></p>
       {% endif %}
-      <nav>
-        {% if session.get('role') == 'student' %}
-          <a href="{{ url_for('change_password') }}">Change Password</a>
-          <a href="{{ url_for('timetable') }}">Time Table</a>
-          <a href="{{ url_for('logout') }}">Logout</a>
-        {% elif session.get('role') == 'teacher' %}
-          <a href="{{ url_for('admin') }}">Faculty Panel</a>
-          <a href="{{ url_for('teacher_notifications') }}">Notifications</a>
-          <a href="{{ url_for('teacher_students') }}">Student Details</a>
-          <a href="{{ url_for('teacher_change_credentials') }}">Change Credentials</a>
-          <a href="{{ url_for('logout') }}">Logout</a>
-        {% else %}
-        {% endif %}
-      </nav>
+      {% if session.get('role') == 'student' or session.get('role') == 'teacher' %}
+        <details class="menu">
+          <summary class="menu-toggle" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <nav class="menu-dropdown">
+            {% if session.get('role') == 'student' %}
+              <a href="{{ url_for('change_password') }}">Change Password</a>
+              <a href="{{ url_for('timetable') }}">Time Table</a>
+              <a href="{{ url_for('logout') }}">Logout</a>
+            {% elif session.get('role') == 'teacher' %}
+              <a href="{{ url_for('admin') }}">Faculty Panel</a>
+              <a href="{{ url_for('teacher_notifications') }}">Notifications</a>
+              <a href="{{ url_for('teacher_students') }}">Student Details</a>
+              <a href="{{ url_for('teacher_change_credentials') }}">Change Credentials</a>
+              <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+          </nav>
+        </details>
+      {% endif %}
     </header>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
@@ -46,5 +59,26 @@
 
     {% block content %}{% endblock %}
   </div>
+  <script>
+    (function () {
+      const menu = document.querySelector('.menu');
+      if (!menu) return;
+      const closeMenu = () => { menu.open = false; };
+
+      document.addEventListener('click', (event) => {
+        if (!menu.open) return;
+        if (!menu.contains(event.target)) closeMenu();
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeMenu();
+      });
+
+      const links = menu.querySelectorAll('a');
+      links.forEach((link) => {
+        link.addEventListener('click', closeMenu);
+      });
+    })();
+  </script>
 </body>
 </html>
