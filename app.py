@@ -140,7 +140,8 @@ class DBConnection:
 
     def executemany(self, query: str, seq_of_params):
         if self.backend == "postgres":
-            return self._conn.executemany(self._convert_query(query), seq_of_params)
+            with self._conn.cursor() as cur:
+                return cur.executemany(self._convert_query(query), seq_of_params)
         return self._conn.executemany(query, seq_of_params)
 
     def executescript(self, script: str):
