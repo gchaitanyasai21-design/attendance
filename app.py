@@ -12,6 +12,9 @@ import xml.etree.ElementTree as ET
 import zipfile
 from flask import Flask, flash, g, redirect, render_template, request, session, url_for
 from werkzeug.security import check_password_hash, generate_password_hash
+from dotenv import load_dotenv
+
+load_dotenv()
 
 try:
     import psycopg

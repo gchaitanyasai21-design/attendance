@@ -2,6 +2,9 @@ import os
 import sqlite3
 
 import psycopg
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def create_postgres_tables(pg_conn):
