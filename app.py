@@ -10,7 +10,8 @@ from email.message import EmailMessage
 from typing import Dict, List, Optional
 import xml.etree.ElementTree as ET
 import zipfile
-from flask import Flask, flash, g, redirect, render_template, request, session, url_for
+from flask import Flask, flash, g, jsonify, redirect, render_template, request, session, url_for
+from werkzeug.middleware.proxy_fix import ProxyFix
 from werkzeug.security import check_password_hash, generate_password_hash
 from dotenv import load_dotenv
 
@@ -31,6 +32,10 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.join(os.environ.get("USERPROFILE", ""), "Downloads")
 DB_PATH = os.environ.get("ATTENDANCE_DB_PATH", "").strip() or os.path.join(BASE_DIR, "attendance.db")
 DATABASE_URL = os.environ.get("DATABASE_URL", "").strip()
+DATABASE_FALLBACK_SQLITE = os.environ.get("DATABASE_FALLBACK_SQLITE", "1") == "1"
+AUTO_NORMALIZE_ATTENDANCE_ON_STARTUP = (
+    os.environ.get("AUTO_NORMALIZE_ATTENDANCE_ON_STARTUP", "0") == "1"
+)
 MIN_PERCENTAGE = 75.0
 COLLEGE_NAME = "MIC COLLEGE OF TECHNOLOGY"
 SNAPSHOT_DATE = date(2026, 1, 31)
@@ -103,6 +108,7 @@ CIVIL_ATTENDANCE_DATA = [
 ]
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app, x_for=1, x_proto=1, x_host=1, x_port=1)
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", secrets.token_hex(32))
 app.config["SMTP_HOST"] = os.environ.get("SMTP_HOST", "")
 app.config["SMTP_PORT"] = int(os.environ.get("SMTP_PORT", "587"))
@@ -117,6 +123,7 @@ DEFAULT_TEACHER_EMAIL = os.environ.get("TEACHER_EMAIL", "teacher@college.local")
 ADMIN_TEACHER_USERNAME = os.environ.get("ADMIN_TEACHER_USERNAME", "HODMIC@").strip().lower()
 ADMIN_TEACHER_PASSWORD = os.environ.get("ADMIN_TEACHER_PASSWORD", "hod123@").strip()
 ADMIN_TEACHER_EMAIL = os.environ.get("ADMIN_TEACHER_EMAIL", "hodmic@college.local").strip().lower()
+EXTERNAL_SYNC_TOKEN = os.environ.get("EXTERNAL_SYNC_TOKEN", "").strip()
 
 _TIMETABLE_CACHE: Dict[str, dict] = {}
 _TIMETABLE_CACHE_PATH: Optional[str] = None
@@ -169,8 +176,18 @@ def get_db():
         if DATABASE_URL:
             if psycopg is None:
                 raise RuntimeError("DATABASE_URL is set, but psycopg is not installed.")
-            conn = psycopg.connect(DATABASE_URL, row_factory=dict_row)
-            g.db = DBConnection(conn, backend="postgres")
+            try:
+                conn = psycopg.connect(DATABASE_URL, row_factory=dict_row)
+                g.db = DBConnection(conn, backend="postgres")
+            except Exception:
+                if not DATABASE_FALLBACK_SQLITE:
+                    raise
+                db_dir = os.path.dirname(DB_PATH)
+                if db_dir:
+                    os.makedirs(db_dir, exist_ok=True)
+                conn = sqlite3.connect(DB_PATH, timeout=60)
+                conn.row_factory = sqlite3.Row
+                g.db = DBConnection(conn, backend="sqlite")
         else:
             db_dir = os.path.dirname(DB_PATH)
             if db_dir:
@@ -222,6 +239,173 @@ def get_logged_in_teacher(db):
     if not teacher_id:
         return None
     return db.execute("SELECT * FROM teachers WHERE id = ?", (teacher_id,)).fetchone()
+
+
+def _extract_bearer_token():
+    auth_header = (request.headers.get("Authorization", "") or "").strip()
+    if auth_header.lower().startswith("bearer "):
+        return auth_header[7:].strip()
+    return ""
+
+
+def _is_external_sync_authorized():
+    if not EXTERNAL_SYNC_TOKEN:
+        return False
+    received_token = _extract_bearer_token()
+    if not received_token:
+        return False
+    return secrets.compare_digest(received_token, EXTERNAL_SYNC_TOKEN)
+
+
+def _safe_text(value):
+    if value is None:
+        return ""
+    return str(value).strip()
+
+
+def _safe_attendance_status(value):
+    if isinstance(value, bool):
+        return 1 if value else 0
+    if isinstance(value, (int, float)):
+        return 1 if int(value) == 1 else 0
+    as_text = _safe_text(value).lower()
+    return 1 if as_text in {"1", "true", "present", "p"} else 0
+
+
+def _upsert_students_from_sync(db, students_payload):
+    inserted = 0
+    updated = 0
+    skipped = 0
+    errors = []
+
+    for index, item in enumerate(students_payload, start=1):
+        if not isinstance(item, dict):
+            skipped += 1
+            errors.append(f"students[{index}] is not an object")
+            continue
+
+        roll_no = _safe_text(item.get("roll_no"))
+        if not roll_no:
+            skipped += 1
+            errors.append(f"students[{index}] missing roll_no")
+            continue
+
+        first_name = _safe_text(item.get("first_name"))
+        last_name = _safe_text(item.get("last_name"))
+        full_name = _safe_text(item.get("name"))
+        if not full_name:
+            full_name = " ".join(part for part in [first_name, last_name] if part).strip()
+        if not full_name:
+            full_name = roll_no
+
+        email = _safe_text(item.get("email")) or f"{roll_no.lower()}@college.local"
+        department = _safe_text(item.get("department"))
+        semester = _safe_text(item.get("semester"))
+
+        existing = db.execute(
+            "SELECT id FROM students WHERE roll_no = ?",
+            (roll_no,),
+        ).fetchone()
+
+        if existing:
+            db.execute(
+                """
+                UPDATE students
+                SET name = ?, first_name = ?, last_name = ?, email = ?, department = ?, semester = ?
+                WHERE id = ?
+                """,
+                (
+                    full_name,
+                    first_name or None,
+                    last_name or None,
+                    email,
+                    department or None,
+                    semester or None,
+                    existing["id"],
+                ),
+            )
+            updated += 1
+        else:
+            db.execute(
+                """
+                INSERT INTO students(name, first_name, last_name, roll_no, email, password_hash, department, semester)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    full_name,
+                    first_name or None,
+                    last_name or None,
+                    roll_no,
+                    email,
+                    generate_password_hash(roll_no),
+                    department or None,
+                    semester or None,
+                ),
+            )
+            inserted += 1
+
+    return {"inserted": inserted, "updated": updated, "skipped": skipped, "errors": errors}
+
+
+def _insert_attendance_from_sync(db, attendance_payload):
+    inserted = 0
+    updated = 0
+    skipped = 0
+    errors = []
+
+    for index, item in enumerate(attendance_payload, start=1):
+        if not isinstance(item, dict):
+            skipped += 1
+            errors.append(f"attendance[{index}] is not an object")
+            continue
+
+        roll_no = _safe_text(item.get("roll_no"))
+        subject = _safe_text(item.get("subject"))
+        attendance_date = _safe_text(item.get("attendance_date")) or date.today().isoformat()
+        status = _safe_attendance_status(item.get("status"))
+
+        if not roll_no or not subject:
+            skipped += 1
+            errors.append(f"attendance[{index}] missing roll_no or subject")
+            continue
+
+        student = db.execute(
+            "SELECT id FROM students WHERE roll_no = ?",
+            (roll_no,),
+        ).fetchone()
+        if not student:
+            skipped += 1
+            errors.append(f"attendance[{index}] roll_no {roll_no} not found")
+            continue
+
+        existing = db.execute(
+            """
+            SELECT id
+            FROM attendance_records
+            WHERE student_id = ? AND attendance_date = ? AND subject = ?
+            ORDER BY id DESC
+            LIMIT 1
+            """,
+            (student["id"], attendance_date, subject),
+        ).fetchone()
+
+        if existing:
+            db.execute(
+                "UPDATE attendance_records SET status = ? WHERE id = ?",
+                (status, existing["id"]),
+            )
+            updated += 1
+        else:
+            db.execute(
+                """
+                INSERT INTO attendance_records(student_id, attendance_date, subject, status)
+                VALUES (?, ?, ?, ?)
+                """,
+                (student["id"], attendance_date, subject, status),
+            )
+            inserted += 1
+
+    return {"inserted": inserted, "updated": updated, "skipped": skipped, "errors": errors}
 
 
 def is_admin_teacher(db):
@@ -1189,6 +1373,11 @@ def normalize_attendance_window_if_needed():
     db.commit()
 
 
+def run_startup_maintenance():
+    if AUTO_NORMALIZE_ATTENDANCE_ON_STARTUP:
+        normalize_attendance_window_if_needed()
+
+
 def send_otp_email(to_email: str, otp: str):
     if not app.config["SMTP_HOST"] or not app.config["SMTP_USER"] or not app.config["SMTP_PASSWORD"]:
         raise RuntimeError("SMTP is not configured.")
@@ -1883,9 +2072,10 @@ def teacher_notifications():
         LEFT JOIN attendance_records ar ON ar.student_id = s.id
         GROUP BY s.id, s.name, s.roll_no, s.department, s.semester
         HAVING COUNT(ar.id) > 0
-           AND ((100.0 * SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END)) / COUNT(ar.id)) < 30
+           AND ((100.0 * SUM(CASE WHEN ar.status = 1 THEN 1 ELSE 0 END)) / COUNT(ar.id)) < ?
         ORDER BY attendance_percentage ASC, s.roll_no ASC
-        """
+        """,
+        (MIN_PERCENTAGE,),
     ).fetchall()
 
     return render_template(
@@ -1894,13 +2084,48 @@ def teacher_notifications():
     )
 
 
+@app.route("/api/integrations/push", methods=["POST"])
+def integrations_push():
+    if not _is_external_sync_authorized():
+        return jsonify({"ok": False, "error": "Unauthorized"}), 401
+
+    payload = request.get_json(silent=True)
+    if not isinstance(payload, dict):
+        return jsonify({"ok": False, "error": "Invalid JSON payload"}), 400
+
+    students_payload = payload.get("students", [])
+    attendance_payload = payload.get("attendance", [])
+
+    if not isinstance(students_payload, list) or not isinstance(attendance_payload, list):
+        return jsonify(
+            {
+                "ok": False,
+                "error": "Both 'students' and 'attendance' must be arrays when provided",
+            }
+        ), 400
+
+    db = get_db()
+    student_result = _upsert_students_from_sync(db, students_payload)
+    attendance_result = _insert_attendance_from_sync(db, attendance_payload)
+    db.commit()
+
+    return jsonify(
+        {
+            "ok": True,
+            "students": student_result,
+            "attendance": attendance_result,
+        }
+    )
+
+
 with app.app_context():
     init_db()
-    normalize_attendance_window_if_needed()
+    run_startup_maintenance()
 
 
 if __name__ == "__main__":
     with app.app_context():
         init_db()
-        normalize_attendance_window_if_needed()
+        run_startup_maintenance()
     app.run(host="0.0.0.0", port=5000, debug=True)
+ 
